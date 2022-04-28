@@ -1,9 +1,9 @@
 import React from 'react'
 import { faTowerCell } from '@fortawesome/free-solid-svg-icons'
-import Page from '../layouts/page'
+import Title from '../layouts/title'
 
 export default function Latest() {
   return (
-    <Page title='latest' icon={faTowerCell} />
+    <Title pageName='latest' />
   )
 }

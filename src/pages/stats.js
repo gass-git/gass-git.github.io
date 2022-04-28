@@ -1,9 +1,9 @@
 import React from 'react'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
-import Page from '../layouts/page'
+import Title from '../layouts/title'
 
 export default function Stats() {
   return (
-    <Page title='stats' icon={faChartLine} />
+    <Title pageName='stats' />
   )
 }

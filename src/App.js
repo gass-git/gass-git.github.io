@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './globalStyles.css'
 import Navbar from './components/navbar/navbar'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import Latest from './pages/latest'
 import Projects from './pages/projects'
 import Stats from './pages/stats'
 import Writings from './pages/writings'
+import fetchArticles from './APIs/articles'
 
 function App() {
   const [selected, setSelected] = useState('latest')
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [articles, setArticles] = useState()
+
+  useEffect(() => {
+    /**
+     * Always coordinate the menu with the current location pathname
+     */
+    if (selected !== location.pathname) navigate(selected)
+
+    fetchArticles({ setArticles })
+  }, [])
 
   return (
     <div className='app-container'>
@@ -22,7 +35,7 @@ function App() {
           <Route path='/' element={<Latest />} />
           <Route path='/latest' element={<Latest />} />
           <Route path='/projects' element={<Projects />} />
-          <Route path='/writings' element={<Writings />} />
+          <Route path='/writings' element={<Writings articles={articles} />} />
           <Route path='/stats' element={<Stats />} />
         </Routes>
       </div>
