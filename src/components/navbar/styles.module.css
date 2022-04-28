@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+:root {
+  --light-green: rgb(62, 184, 62);
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 10px;
+  min-width: 240px;
+  max-width: 780px;
+  transition: 500ms;
+  /*border: 1px solid white;*/
+}
+
+.main_container {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  height: 55px;
+  max-width: 780px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.items_container {
+  max-width: 660px;
+  display: flex;
+  justify-content: left;
+  overflow-x: hidden;
+}
+
+.movable_container {
+  width: auto;
+  display: flex;
+  transition: 300ms;
+}
+
+.movable_container>div {
+  position: relative;
+  overflow: hidden;
+  height: 38px;
+  padding-top: 17px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  width: 164px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.movable_container>div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1 !important;
+}
+
+.selected {
+  opacity: 1;
+  color: var(--light-green) !important;
+}
+
+.left_box {
+  height: 55px;
+  min-width: 41px;
+  line-height: 60px;
+  padding-right: 11px;
+  padding-top: 2px;
+  text-align: right;
+  opacity: 0.3;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.right_box {
+  height: 58px;
+  min-width: 50px;
+  line-height: 60px;
+  text-align: center;
+  padding-top: 2px;
+  opacity: 0.3;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.active {
+  opacity: 0.75 !important;
+  cursor: pointer !important;
+}
+
+.ripple {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: ripple;
+  animation-duration: 500ms;
+}
+
+.green {
+  color: var(--light-green);
+}
+
+.white {
+  color: white;
+}
+
+.railway_container {
+  margin-top: -2px;
+  height: 2px;
+  position: relative;
+  width: 780px;
+}
+
+.movable_line {
+  position: absolute;
+  z-index: 1;
+  width: 164px;
+  height: 2px;
+  background: var(--light-green);
+  transition: 300ms;
+}
+
+.pos1 {
+  transform: translateX(61px);
+}
+
+.pos2 {
+  transform: translateX(225px);
+}
+
+.pos3 {
+  transform: translateX(389px);
+}
+
+.pos4 {
+  transform: translateX(553px);
+}
+
+@keyframes ripple {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 822px) {
+  .railway_container {
+    display: none !important;
+  }
+
+  .movable_container>div:hover {
+    background-color: transparent !important;
+  }
+}
+
+@media (min-width:700px) and (max-width: 822px) {
+  .left_box {
+    display: none !important;
+  }
+
+  .right_box {
+    display: none !important;
+  }
+}
+
+@media (min-width:600px) and (max-width:699px) {
+  .wrapper {
+    max-width: 635px;
+  }
+
+  .movable_container>div {
+    width: 140px !important;
+  }
+
+  .left_box {
+    display: none !important;
+  }
+
+  .right_box {
+    display: none !important;
+  }
+}
+
+@media (min-width:530px) and (max-width:599px) {
+  .wrapper {
+    max-width: 510px;
+  }
+
+  .movable_container>div {
+    width: 133px !important;
+  }
+}
+
+@media (min-width:465px) and (max-width:529px) {
+  .wrapper {
+    max-width: 450px;
+  }
+
+  .movable_container>div {
+    width: 113px !important;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .wrapper {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+}
+
+@media (min-width:410px) and (max-width:464px) {
+  .wrapper {
+    max-width: 400px;
+  }
+
+  .movable_container>div {
+    width: 140px !important;
+  }
+}
+
+@media (min-width:350px) and (max-width:409px) {
+  .wrapper {
+    max-width: 350px;
+  }
+
+  .movable_container>div {
+    width: 119px !important;
+  }
+}
+
+@media (min-width:300px) and (max-width:349px) {
+  .movable_container>div {
+    width: 200px !important;
+  }
+}
+
+@media (min-width:275px) and (max-width:299px) {
+  .movable_container>div {
+    width: 160px !important;
+  }
+}
+
+@media (min-width:260px) and (max-width:275px) {
+  .movable_container>div {
+    width: 145px !important;
+  }
+}
+
+@media screen and (max-width:259px) {
+  .wrapper {
+    min-width: 220px;
+  }
+
+  .movable_container>div {
+    width: 130px !important;
+  }
+}
