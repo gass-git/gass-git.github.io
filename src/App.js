@@ -5,7 +5,7 @@ import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-
 import Latest from './pages/latest'
 import Projects from './pages/projects'
 import Stats from './pages/stats'
-import Writings from './pages/writings'
+import Writings from './pages/writings/writings'
 import fetchArticles from './APIs/articles'
 
 function App() {

@@ -1,0 +1,54 @@
+.article_card {
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  /*border: 1px solid white;*/
+}
+
+.article_card:hover {
+  box-shadow: inset 0 0 2px white;
+  cursor: pointer;
+}
+
+.article_card:hover .cover {
+  opacity: 1 !important;
+}
+
+.article_card>div {
+  display: flex;
+}
+
+.cover {
+  min-width: 250px;
+  max-width: 200px;
+  height: 145px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  opacity: 0.8;
+  /*border: 1px solid white;*/
+}
+
+.cover img {
+  width: 350px;
+}
+
+.details_box {
+  margin-left: 20px;
+  /*border: 1px solid white;*/
+}
+
+.title {
+  color: #eee;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.description {
+  margin-top: 10px;
+  color: lightblue;
+  opacity: 0.7;
+}
