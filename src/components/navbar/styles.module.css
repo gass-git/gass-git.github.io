@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
 
 :root {
-  --light-green: rgb(62, 184, 62);
+  --light-green: rgb(70, 201, 70);
 }
 
 .wrapper {
@@ -46,7 +46,7 @@
   font-weight: 600;
   text-transform: uppercase;
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   cursor: pointer;
   width: 164px;
   -webkit-tap-highlight-color: transparent;
@@ -126,19 +126,19 @@
 }
 
 .pos1 {
-  transform: translateX(61px);
+  transform: translateX(63px);
 }
 
 .pos2 {
-  transform: translateX(225px);
+  transform: translateX(227px);
 }
 
 .pos3 {
-  transform: translateX(389px);
+  transform: translateX(391px);
 }
 
 .pos4 {
-  transform: translateX(553px);
+  transform: translateX(555px);
 }
 
 @keyframes ripple {

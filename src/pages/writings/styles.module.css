@@ -1,8 +1,10 @@
 .article_card {
+  display: flex;
   margin-top: 30px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 20px;
+  padding: 15px 20px 15px 20px;
+  text-decoration: none !important;
   /*border: 1px solid white;*/
 }
 

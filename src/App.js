@@ -3,16 +3,18 @@ import './globalStyles.css'
 import Navbar from './components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import Latest from './pages/latest'
-import Projects from './pages/projects'
+import Projects from './pages/projects/projects'
 import Stats from './pages/stats'
 import Writings from './pages/writings/writings'
 import fetchArticles from './APIs/articles'
+import fetchRepos from './APIs/repos'
 
 function App() {
   const [selected, setSelected] = useState('latest')
   const location = useLocation()
   const navigate = useNavigate()
   const [articles, setArticles] = useState()
+  const [repos, setRepos] = useState()
 
   useEffect(() => {
     /**
@@ -21,6 +23,7 @@ function App() {
     if (selected !== location.pathname) navigate(selected)
 
     fetchArticles({ setArticles })
+    fetchRepos({ setRepos })
   }, [])
 
   return (
@@ -34,7 +37,7 @@ function App() {
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/' element={<Latest />} />
           <Route path='/latest' element={<Latest />} />
-          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
           <Route path='/stats' element={<Stats />} />
         </Routes>
