@@ -1,0 +1,52 @@
+.flex_wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.stat_card {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 100px;
+  max-width: 278px;
+  padding: 25px 30px 35px 30px;
+  flex: 50%;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.card_title {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.big_number {
+  margin-top: 7px;
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+}
+
+.flex_box1 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  /*border: 1px solid white;*/
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flex_box1>div:first-child {
+  margin-right: 50px;
+}
+
+.flex_box2 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  /*border: 1px solid white;*/
+  font-size: 25px;
+}

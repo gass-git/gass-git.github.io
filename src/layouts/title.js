@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Title({ pageName }) {
+export default function Title({ title }) {
   return (
     <div style={{ textAlign: 'center', marginBottom: '30px' }}>
       <div className='title-1'>
-        {pageName}
+        {title}
       </div>
     </div>
   )

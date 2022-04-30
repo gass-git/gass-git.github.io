@@ -4,10 +4,11 @@ import Navbar from './components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import Latest from './pages/latest'
 import Projects from './pages/projects/projects'
-import Stats from './pages/stats'
+import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
 import fetchArticles from './APIs/articles'
 import fetchRepos from './APIs/repos'
+import fetchStats from './APIs/stats'
 
 function App() {
   const [selected, setSelected] = useState('latest')
@@ -15,6 +16,7 @@ function App() {
   const navigate = useNavigate()
   const [articles, setArticles] = useState()
   const [repos, setRepos] = useState()
+  const [stats, setStats] = useState()
 
   useEffect(() => {
     /**
@@ -24,6 +26,7 @@ function App() {
 
     fetchArticles({ setArticles })
     fetchRepos({ setRepos })
+    fetchStats({ setStats })
   }, [])
 
   return (
@@ -39,11 +42,11 @@ function App() {
           <Route path='/latest' element={<Latest />} />
           <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
-          <Route path='/stats' element={<Stats />} />
+          <Route path='/stats' element={<Stats stats={stats} />} />
         </Routes>
       </div>
 
-    </div>
+    </div >
   )
 }
 

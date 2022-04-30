@@ -1,69 +1,39 @@
 import React from 'react'
 import s from './styles.module.css'
-import { ReactComponent as Folder } from '../../assets/SVGs/folder.svg'
-import { ReactComponent as Github } from '../../assets/SVGs/github.svg'
-import { ReactComponent as Link } from '../../assets/SVGs/link.svg'
+import { ProjectCard } from './children/projectCard'
+import tools from '../../assets/images/tools.png'
 
 export default function Projects({ repos }) {
+  if (!repos) return <p>Loading..</p>
 
-  function ProjectCard({ repo, i }) {
-    return (
-      <div className={s.project_card} style={i % 2 !== 0 ? { marginLeft: '20px' } : null}>
-
-        <div className={s.header}>
-          <div className={s.left_box}>
-            <Folder style={{ color: 'aqua', width: '42px' }} />
-          </div>
-          <div className={s.middle_box}>
-            <div
-              className={s.movable_text}
-              onClick={() => { window.open(repo.project_url, '_blank') }}
-            >
-              See Live
-            </div>
-          </div>
-          <div className={s.right_box}>
-            <Link
-              style={{ marginRight: '20px' }}
-              onClick={() => { window.open(repo.project_url, '_blank') }}
-            />
-            <Github onClick={() => { window.open(repo.repo_url, '_blank') }} />
-          </div>
-        </div>
-
-        <div className={s.name}>
-          {repo.name}
-        </div>
-
-        <div className={s.about}>
-          {repo.about}
-        </div>
-
-        <div className={s.tags_wrapper}>
-          {
-            repo.topics.map((topic) => {
-              return (
-                <span className={s.tag}>
-                  {topic}
-                </span>
-              )
-            })
-          }
-        </div>
-
+  return (
+    <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: '10px'
+        }}
+      >
+        <img
+          src={tools}
+          style={{ width: '100px', marginRight: '20px' }}
+        />
+        <span
+          style={{
+            fontSize: '35px',
+            fontWeight: '700',
+            color: 'white',
+            opacity: '0.8'
+          }}
+        >
+          Projects
+        </span>
       </div>
-    )
-  }
-
-  if (repos === undefined) {
-    return <div>LOADING....</div>
-  }
-  else if (repos) {
-    return (
       <div className={s.flex_wrapper}>
-        {repos.map((repo, i) => <ProjectCard repo={repo} i={i} />)}
+        {repos.map((repo, i) => <ProjectCard repo={repo} i={i} s={s} />)}
       </div>
-    )
-  }
-
+    </>
+  )
 }

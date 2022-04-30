@@ -8,9 +8,11 @@ export default function fetchStats({ setStats }) {
       let userData = resp.data.items[0]
       setStats({
         SO_badges: userData.badge_counts,
-        SO_reputation: userData.reputation,
-        SO_reputation_change_month: userData.reputation_change_month,
-        SO_reputation_change_year: userData.reputation_change_year
+        SO_reputation: {
+          total: userData.reputation,
+          month_change: userData.reputation_change_month,
+          year_change: userData.reputation_change_year
+        }
       })
     })
     .catch((error) => console.log(error))
