@@ -8,7 +8,7 @@ import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
 import fetchArticles from './APIs/articles'
 import fetchRepos from './APIs/repos'
-import fetchStats from './APIs/stats'
+import { fetchReputation, fetchTopTech } from './APIs/stats'
 
 function App() {
   const [selected, setSelected] = useState('latest')
@@ -16,7 +16,8 @@ function App() {
   const navigate = useNavigate()
   const [articles, setArticles] = useState()
   const [repos, setRepos] = useState()
-  const [stats, setStats] = useState()
+  const [SO_reputation, setSO_reputation] = useState()
+  const [SO_topTech, setSO_topTech] = useState()
 
   useEffect(() => {
     /**
@@ -26,7 +27,8 @@ function App() {
 
     fetchArticles({ setArticles })
     fetchRepos({ setRepos })
-    fetchStats({ setStats })
+    fetchReputation({ setSO_reputation })
+    fetchTopTech({ setSO_topTech })
   }, [])
 
   return (
@@ -42,7 +44,7 @@ function App() {
           <Route path='/latest' element={<Latest />} />
           <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
-          <Route path='/stats' element={<Stats stats={stats} />} />
+          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} />} />
         </Routes>
       </div>
 

@@ -6,10 +6,31 @@
   justify-content: flex-start;
 }
 
+.flex_wrapper .right_box {
+  width: 370px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.flex_wrapper .left_box {
+  width: 370px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
 .stat_card {
   font-family: 'Barlow Semi Condensed', sans-serif;
   height: 100px;
-  max-width: 278px;
+  max-width: 300px;
+  padding: 25px 30px 35px 30px;
+  flex: 50%;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.tech_card {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 250px;
+  max-width: 300px;
   padding: 25px 30px 35px 30px;
   flex: 50%;
   margin-top: 20px;
