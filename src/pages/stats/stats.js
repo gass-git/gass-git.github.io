@@ -3,7 +3,7 @@ import s from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
-import sword from '../../assets/images/wood_sword.png'
+import { ReactComponent as Chart } from '../../assets/SVGs/chart.svg'
 
 export default function Stats({ stats }) {
   if (!stats) return <div>loading..</div>
@@ -20,27 +20,25 @@ export default function Stats({ stats }) {
     <>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: '10px'
+          display: 'flex'
         }}
       >
-        <img
-          src={sword}
-          style={{ width: '100px', marginRight: '10px' }}
-        />
-        <span
-          style={{
-            fontSize: '35px',
-            fontWeight: '700',
-            color: 'white',
-            opacity: '0.8'
-          }}
-        >
-          Stats
-        </span>
+        <div>
+          <Chart />
+        </div>
+        <div style={{ marginTop: '15px' }}>
+          <h1 style={{ color: 'rgb(70, 201, 70)' }}>Fun Stats</h1>
+          <div style={{ color: '#ddd', marginRight: '20px' }}>
+            I didn't know if I should keep this section or remove it.
+            Mainly because sometimes it feels a little braggy. But
+            to be honest I'm making it just for fun and give my personal
+            site some gamification. It is also useful to have a single
+            page with all stats, to see everything at once.
+          </div>
+        </div>
       </div>
+
+
       <div style={{ border: '1px solid white', marginTop: '30px' }}>
         <h2 style={{ color: 'white' }}>Stack Overflow</h2>
         <div className={s.flex_wrapper}>

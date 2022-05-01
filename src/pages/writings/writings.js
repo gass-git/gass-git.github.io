@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './styles.module.css'
 import ArticleCard from './children/articleCard'
-import tome from '../../assets/images/scroll.png'
+import { ReactComponent as Thinking } from '../../assets/SVGs/thinking.svg'
 
 export default function Writings({ articles }) {
   if (articles === undefined) {
@@ -12,25 +12,23 @@ export default function Writings({ articles }) {
       <>
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
+            display: 'flex'
           }}
         >
-          <img
-            src={tome}
-            style={{ width: '120px', marginRight: '0px' }}
-          />
-          <span
-            style={{
-              fontSize: '35px',
-              fontWeight: '700',
-              color: 'white',
-              opacity: '0.8'
-            }}
-          >
-            Writings
-          </span>
+          <div>
+            <Thinking />
+          </div>
+          <div style={{ marginTop: '15px' }}>
+            <h1 style={{ color: 'rgb(70, 201, 70)' }}>Writings</h1>
+            <div style={{ color: '#ddd', marginRight: '20px' }}>
+              From time to time when I'm not to focused on a project
+              I like publishing articles and technical content on dev.to.
+              I usually have fun coding and I try to spread it
+              with others. I write begginer friendly and also more advanced
+              stuff. Check them out!
+
+            </div>
+          </div>
         </div>
         {articles.map((article) => <ArticleCard s={s} article={article} />)}
       </>
