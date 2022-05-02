@@ -1,4 +1,48 @@
-.flex_wrapper {
+.header {
+  display: flex;
+}
+
+.header .left_box {
+  display: block;
+}
+
+.header .right_box {
+  margin-top: 15px;
+}
+
+.header .page_title {
+  color: rgb(70, 201, 70);
+}
+
+.header .page_about {
+  color: #ddd;
+  margin-right: 20px;
+}
+
+#stack_overflow {
+  margin-top: 30px;
+}
+
+#stack_overflow .header {
+  display: flex;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#stack_overflow .icon {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+#stack_overflow .title {
+  padding-top: 15px;
+  margin-left: 15px;
+  font-size: 23px;
+}
+
+#stack_overflow .body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 10px;
   display: flex;
@@ -6,17 +50,17 @@
   justify-content: flex-start;
 }
 
-.flex_wrapper .right_box {
+#stack_overflow .body .right_box {
   width: 370px;
   border: 1px solid rgba(255, 255, 255, 0.23);
 }
 
-.flex_wrapper .left_box {
+#stack_overflow .body .left_box {
   width: 370px;
   border: 1px solid rgba(255, 255, 255, 0.23);
 }
 
-.stat_card {
+#stack_overflow .stat_card {
   font-family: 'Barlow Semi Condensed', sans-serif;
   height: 100px;
   max-width: 300px;
@@ -70,4 +114,36 @@
   margin-top: 20px;
   /*border: 1px solid white;*/
   font-size: 25px;
+  color: white;
+}
+
+.flex_box2 .gold {
+  color: gold;
+  opacity: 0.7;
+}
+
+.flex_box2 .silver {
+  color: silver;
+  opacity: 0.7;
+}
+
+.flex_box2 .bronze {
+  color: orange;
+  opacity: 0.7;
+}
+
+#stack_overflow .tech_card .tag_box {
+  display: flex;
+}
+
+#stack_overflow .tech_card .name {
+  width: 50%;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#stack_overflow .score {
+  width: 50%;
+  text-align: right;
+  color: white;
 }
