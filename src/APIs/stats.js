@@ -25,7 +25,7 @@ function fetchTopTech({ setSO_topTech }) {
   axios.get(tech_api)
     .then((resp) => {
       let techArray = resp.data.items
-      let topTech = techArray.slice(0, 5)
+      let topTech = techArray.slice(0, 6)
 
       setSO_topTech(topTech)
     })

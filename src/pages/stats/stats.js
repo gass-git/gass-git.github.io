@@ -43,7 +43,7 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
   function Reputation() {
     return (
-      <div className={s.stat_card} style={{ marginRight: '20px' }}>
+      <div className={s.reputation_card}>
         <div className={s.card_title}>
           Reputation
         </div>
@@ -70,17 +70,17 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
   function Badges() {
     return (
-      <div className={s.stat_card}>
+      <div className={s.badges_card}>
         <div className={s.card_title}>
           Badges
         </div>
         <div className={s.flex_box2}>
-          <div style={{ marginRight: '50px' }}>
+          <div style={{ marginRight: '55px' }}>
             <FontAwesomeIcon icon={faTrophy} className={s.gold} />
             {' '}
             {badges.gold}
           </div>
-          <div style={{ marginRight: '50px' }}>
+          <div style={{ marginRight: '55px' }}>
             <FontAwesomeIcon icon={faTrophy} className={s.silver} />
             {' '}
             {badges.silver}
@@ -101,7 +101,7 @@ export default function Stats({ SO_topTech, SO_reputation }) {
         <div className={s.card_title}>
           Top Tech
         </div>
-        <div>
+        <div className={s.list}>
           {
             topTech.map((tech) => {
               return (
