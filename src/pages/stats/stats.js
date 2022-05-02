@@ -125,6 +125,34 @@ export default function Stats({ SO_topTech, SO_reputation }) {
     <>
       <Header />
 
+      {/* favorite tech */}
+      <div style={{
+        display: 'flex',
+        color: 'white',
+        borderBottom: '1px solid white',
+        marginTop: '40px',
+      }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '40px',
+            marginLeft: '20px'
+          }}
+        >
+          🖥️
+        </div>
+        <div style={{
+          paddingTop: '15px',
+          marginLeft: '15px',
+          fontSize: '23px'
+        }}
+        >
+          Favourite Tech
+        </div>
+      </div>
+
       {/* stack overflow stats */}
       <div id={s.stack_overflow}>
 
@@ -148,6 +176,8 @@ export default function Stats({ SO_topTech, SO_reputation }) {
         </div>
 
       </div>
+
+
 
       {/* github stats */}
       <div style={{

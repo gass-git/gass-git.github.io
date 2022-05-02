@@ -9,6 +9,7 @@ import Writings from './pages/writings/writings'
 import fetchArticles from './APIs/articles'
 import fetchRepos from './APIs/repos'
 import { fetchReputation, fetchTopTech } from './APIs/stats'
+import { fetchLatest } from './APIs/latest'
 
 function App() {
   const [selected, setSelected] = useState('latest')
@@ -18,6 +19,7 @@ function App() {
   const [repos, setRepos] = useState()
   const [SO_reputation, setSO_reputation] = useState()
   const [SO_topTech, setSO_topTech] = useState()
+  const [latest, setLatest] = useState([])
 
   useEffect(() => {
     /**
@@ -29,6 +31,7 @@ function App() {
     fetchRepos({ setRepos })
     fetchReputation({ setSO_reputation })
     fetchTopTech({ setSO_topTech })
+    fetchLatest({ setLatest })
   }, [])
 
   return (
@@ -41,7 +44,7 @@ function App() {
         <Routes>
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/' element={<Latest />} />
-          <Route path='/latest' element={<Latest />} />
+          <Route path='/latest' element={<Latest latest={latest} />} />
           <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
           <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} />} />
