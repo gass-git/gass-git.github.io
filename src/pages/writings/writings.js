@@ -19,7 +19,7 @@ export default function Writings({ articles }) {
             <Thinking />
           </div>
           <div style={{ marginTop: '15px' }}>
-            <h1 style={{ color: 'rgb(70, 201, 70)' }}>Writings</h1>
+            <h1 style={{ color: 'rgb(70, 201, 70)' }}>Writings 📚</h1>
             <div style={{ color: '#ddd', marginRight: '20px' }}>
               From time to time when I'm not to focused on a project
               I like publishing articles and technical content on dev.to.

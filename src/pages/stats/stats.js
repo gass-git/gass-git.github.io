@@ -27,7 +27,7 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
         <div className={s.right_box}>
           <h1 className={s.page_title}>
-            Fun Stats
+            Fun Stats 💹
           </h1>
           <div className={s.page_about}>
             I didn't know if I should keep this section or remove it.
