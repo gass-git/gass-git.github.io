@@ -29,8 +29,8 @@ async function fetchLatest({ setLatest }) {
           created_at: el.creation_date,
           id: el.answer_id,
           type: 'SO answer',
-          question_title: question_data.items[0].title,
-          answer_url: `https://stackoverflow.com/a/${el.answer_id}`
+          detail: question_data.items[0].title,
+          url: `https://stackoverflow.com/a/${el.answer_id}`
         })
 
         count++
@@ -54,9 +54,9 @@ async function fetchLatest({ setLatest }) {
           created_at: seconds,
           id: el.id,
           type: 'commit',
-          message: el.payload.commits[0].message,
+          detail: el.payload.commits[0].message,
           repo_name: el.repo.name,
-          repo_url: el.repo.url
+          url: el.repo.url
         })
       }
 
@@ -78,7 +78,7 @@ async function fetchLatest({ setLatest }) {
           created_at: seconds,
           id: el.id,
           type: 'article',
-          title: el.title,
+          detail: el.title,
           url: el.url
         })
       }
@@ -97,4 +97,5 @@ async function fetchLatest({ setLatest }) {
   })
 
 }
+
 export { fetchLatest }
