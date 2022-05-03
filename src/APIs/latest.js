@@ -56,7 +56,7 @@ async function fetchLatest({ setLatest }) {
           type: 'commit',
           detail: el.payload.commits[0].message,
           repo_name: el.repo.name,
-          url: el.repo.url
+          url: `https://github.com/${el.repo.name}`
         })
       }
 

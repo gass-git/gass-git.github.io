@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './styles.module.css'
 import { ReactComponent as Developer } from '../../assets/SVGs/developer.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
@@ -12,12 +13,12 @@ export default function Latest({ latest }) {
           <Developer />
         </div>
         <div style={{ marginTop: '15px' }}>
-          <h1 style={{ color: 'rgb(70, 201, 70)' }}>Hey there! 👋</h1>
+          <h1 style={{ color: 'rgb(70, 201, 70)' }}>Latest 📰</h1>
           <div style={{ color: '#ddd', marginRight: '20px' }}>
-            Welcome to my virtual space. I'm a programmer specializing in web development.
+            Hey there! welcome to my virtual cave. I'm a programmer specializing in web development.
             Here is where I share my latest activity online.
             I like to think about this section as the eye of a cyclone, the place
-            where all my activity online it's summarized in a single point.
+            where all my recent activity online it's summarized in a single point.
           </div>
         </div>
       </div>
@@ -46,40 +47,52 @@ export default function Latest({ latest }) {
     return convertedDate
   }
 
-  return (<>
-    <Header />
-    <div>
-      {
-        latest.map((el) => {
-          return (
-            <div
-              style={{
-                display: 'flex',
-                color: 'white',
-                marginTop: '20px'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '30px', minWidth: '70px' }}>
-                {icon(el.type)}
-              </div>
-              <div>
-                <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                  {getDate(el.created_at)}
-                  {' '}
-                  /
-                  {' '}
-                  {el.type}
-                  {el.repo_name ? ` / repo: ${el.repo_name.slice(9)}` : null}
+  function ContextData({ created_at, type, repo_name }) {
+    return (
+      <div className={s.context_box}>
+        {getDate(created_at)}
+        {' '}
+        /
+        {' '}
+        {type}
+        {repo_name ? ` / repo: ${repo_name.slice(9)}` : null}
+      </div>
+    )
+  }
+
+  if (!latest) return <div>Loading</div>
+
+  return (
+    <>
+      <Header />
+      <div className={s.main_wrapper}>
+        <div>
+          {
+            latest.map((el) => {
+              return (
+                <div
+                  className={s.event_container}
+                  onClick={() => window.open(el.url, '_blank')}
+                >
+                  <div className={s.icon_box}>
+                    {icon(el.type)}
+                  </div>
+                  <div>
+                    <ContextData
+                      created_at={el.created_at}
+                      type={el.type}
+                      repo_name={el.repo_name}
+                    />
+                    <div className={s.detail_box}>
+                      {el.detail}
+                    </div>
+                  </div>
                 </div>
-                <div style={{ fontSize: '17px' }}>
-                  {el.detail}
-                </div>
-              </div>
-            </div>
-          )
-        })
-      }
-    </div>
-  </>
+              )
+            })
+          }
+        </div>
+      </div>
+    </>
   )
 }
