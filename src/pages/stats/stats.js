@@ -3,8 +3,8 @@ import s from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
-import { ReactComponent as Chart } from '../../assets/SVGs/chart.svg'
-import Header from '../../layouts/header'
+import { ReactComponent as Chart } from '../../global/assets/SVGs/chart.svg'
+import Header from '../../global/layouts/header'
 
 export default function Stats({ SO_topTech, SO_reputation }) {
 

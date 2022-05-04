@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './styles.module.css'
 import ArticleCard from './children/articleCard'
-import { ReactComponent as Thinking } from '../../assets/SVGs/thinking.svg'
-import Header from '../../layouts/header'
+import { ReactComponent as Thinking } from '../../global/assets/SVGs/thinking.svg'
+import Header from '../../global/layouts/header'
 
 export default function Writings({ articles }) {
 
@@ -21,4 +21,3 @@ export default function Writings({ articles }) {
     </>
   )
 }
-

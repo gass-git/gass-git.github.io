@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import './globalStyles.css'
-import Navbar from './components/navbar/navbar'
+import './global/styles.css'
+import Navbar from './global/components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import Latest from './pages/latest/latest'
 import Projects from './pages/projects/projects'
 import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
-import fetchArticles from './APIs/articles'
-import fetchRepos from './APIs/repos'
-import { fetchReputation, fetchTopTech } from './APIs/stats'
-import { fetchLatest } from './APIs/latest'
+import fetchArticles from './global/APIs/articles'
+import fetchRepos from './global/APIs/repos'
+import { fetchReputation, fetchTopTech } from './global/APIs/stats'
+import { fetchLatest } from './global/APIs/latest'
 
 function App() {
   const [selected, setSelected] = useState('latest')

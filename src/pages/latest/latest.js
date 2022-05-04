@@ -1,12 +1,13 @@
 import React from 'react'
 import s from './styles.module.css'
-import { ReactComponent as Developer } from '../../assets/SVGs/developer.svg'
+import { ReactComponent as Developer } from '../../global/assets/SVGs/developer.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { faCodeCommit } from '@fortawesome/free-solid-svg-icons'
-import Header from '../../layouts/header'
+import Header from '../../global/layouts/header'
 
 export default function Latest({ latest }) {
+
   const about = `Hey there! welcome to my virtual cave. I'm a programmer
   specialized in web development. Here is where I share my latest activity 
   online. I like to think about this section as the eye of a cyclone, the place

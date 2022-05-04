@@ -1,7 +1,7 @@
 import Reac from 'react'
-import { ReactComponent as Folder } from '../../../assets/SVGs/folder.svg'
-import { ReactComponent as Github } from '../../../assets/SVGs/github.svg'
-import { ReactComponent as Link } from '../../../assets/SVGs/link.svg'
+import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
+import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
+import { ReactComponent as Link } from '../../../global/assets/SVGs/link.svg'
 
 export function ProjectCard({ s, repo, i }) {
   return (
