@@ -7,7 +7,7 @@ export default function fetchRepos({ setRepos }) {
   axios.get(repos_api)
     .then((resp) => {
       resp.data.forEach((repo) => {
-        if (repo.description !== null && repo.homepage !== '') {
+        if (repo.description !== null && repo.homepage !== '' && !repo.fork) {
           data.push({
             id: repo.id,
             name: repo.name,

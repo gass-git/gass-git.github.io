@@ -1,0 +1,24 @@
+#header {
+  display: flex;
+}
+
+.left_box {
+  width: auto;
+}
+
+.right_box {
+  margin: 25px 0px 0px 0px;
+}
+
+.right_box .title {
+  /*font-family: 'Barlow Semi Condensed', sans-serif;*/
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: rgb(70, 201, 70);
+}
+
+.right_box .about {
+  color: #ddd;
+  margin: 20px 20px 0px 0px;
+}

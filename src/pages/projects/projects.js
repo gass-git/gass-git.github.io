@@ -17,7 +17,7 @@ export default function Projects({ repos }) {
           <Innovation />
         </div>
         <div style={{ marginTop: '15px' }}>
-          <h1 style={{ color: 'rgb(70, 201, 70)' }}>Projects 🧪</h1>
+          <h1 style={{ color: 'rgb(70, 201, 70)' }}>Projects</h1>
           <div style={{ color: '#ddd', marginRight: '20px' }}>
             I like to think of programming as a catalyst for creating tool.
             To portray an idea into reality and be able to interact with it
