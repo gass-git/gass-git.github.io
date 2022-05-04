@@ -1,0 +1,19 @@
+#header {
+  display: flex;
+  margin-top: 30px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#header .icon {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+#header .title {
+  padding-top: 15px;
+  margin-left: 15px;
+  font-size: 23px;
+}

@@ -1,10 +1,13 @@
 import React from 'react'
 import s from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { ReactComponent as Chart } from '../../global/assets/SVGs/chart.svg'
 import Header from '../../global/layouts/header'
+import ReputationCard from './components/reputationCard'
+import BadgesCard from './components/badgesCard'
+import TopTechCard from './components/topTechCard'
+import SectionHeader from './layouts/sectionHeader'
 
 export default function Stats({ SO_topTech, SO_reputation }) {
 
@@ -16,210 +19,49 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
   if (!SO_topTech || !SO_reputation) return <div>loading..</div>
 
-  const points = SO_reputation.points
-  const badges = SO_reputation.badges
-  const topTech = SO_topTech
+  else {
+    const points = SO_reputation.points
+    const badges = SO_reputation.badges
+    const topTech = SO_topTech
 
-  function addThousandSeparator(number) {
-    let string = number.toString()
-    return string.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-  }
-
-  function Reputation() {
     return (
-      <div className={s.reputation_card}>
-        <div className={s.card_title}>
-          Reputation
-        </div>
-        <div className={s.big_number}>
-          {addThousandSeparator(points.total)}
-        </div>
-        <div className={s.flex_box1}>
-          <div>
-            month:{' '}
-            <FontAwesomeIcon icon={faArrowUp} style={{ color: 'green' }} />
-            {' '}
-            {addThousandSeparator(points.month_change)}
+      <>
+        <Header SVG={<Chart />} title='statistics' about={about} />
+
+        {/* stack overflow stats */}
+        <section id={s.stack_overflow}>
+          <SectionHeader
+            SVG={<FontAwesomeIcon icon={faStackOverflow} />}
+            title='stack overflow'
+          />
+          <div className={s.body}>
+            <div className={s.left_box}>
+              <ReputationCard s={s} points={points} />
+              <BadgesCard s={s} badges={badges} />
+            </div>
+            <div className={s.right_box}>
+              <TopTechCard s={s} topTech={topTech} />
+            </div>
           </div>
-          <div>
-            year: {' '}
-            <FontAwesomeIcon icon={faArrowUp} style={{ color: 'green' }} />
-            {' '}
-            {addThousandSeparator(points.year_change)}
-          </div>
-        </div>
-      </div>
+        </section>
+
+
+        {/* github stats */}
+        <section id={s.github}>
+          <SectionHeader
+            SVG={<FontAwesomeIcon icon={faGithub} />}
+            title='github'
+          />
+        </section>
+
+        {/* devto stats */}
+        <section id={s.github}>
+          <SectionHeader
+            SVG={<FontAwesomeIcon icon={faDev} />}
+            title='devto'
+          />
+        </section>
+      </>
     )
   }
-
-  function Badges() {
-    return (
-      <div className={s.badges_card}>
-        <div className={s.card_title}>
-          Badges
-        </div>
-        <div className={s.flex_box2}>
-          <div style={{ marginRight: '55px' }}>
-            <FontAwesomeIcon icon={faTrophy} className={s.gold} />
-            {' '}
-            {badges.gold}
-          </div>
-          <div style={{ marginRight: '55px' }}>
-            <FontAwesomeIcon icon={faTrophy} className={s.silver} />
-            {' '}
-            {badges.silver}
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faTrophy} className={s.bronze} />
-            {' '}
-            {badges.bronze}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  function TopTech() {
-    return (
-      <div className={s.tech_card}>
-        <div className={s.card_title}>
-          Top Tech
-        </div>
-        <div className={s.list}>
-          {
-            topTech.map((tech) => {
-              return (
-                <div className={s.tag_box}>
-                  <div className={s.name}>
-                    {tech.tag_name}
-                  </div>
-                  <div className={s.score}>
-                    {tech.answer_score}
-                  </div>
-                </div>
-              )
-            })
-          }
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <>
-      <Header SVG={<Chart />} title='statistics' about={about} />
-
-      {/* favorite tech */}
-      <div style={{
-        display: 'flex',
-        color: 'white',
-        borderBottom: '1px solid white',
-        marginTop: '40px',
-      }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '40px',
-            marginLeft: '20px'
-          }}
-        >
-          🖥️
-        </div>
-        <div style={{
-          paddingTop: '15px',
-          marginLeft: '15px',
-          fontSize: '23px'
-        }}
-        >
-          Favourite Tech
-        </div>
-      </div>
-
-      {/* stack overflow stats */}
-      <div id={s.stack_overflow}>
-
-        <div className={s.header}>
-          <div className={s.icon}>
-            <FontAwesomeIcon icon={faStackOverflow} />
-          </div>
-          <div className={s.title}>
-            Stack Overflow
-          </div>
-        </div>
-
-        <div className={s.body}>
-          <div className={s.left_box}>
-            <Reputation />
-            <Badges />
-          </div>
-          <div className={s.right_box}>
-            <TopTech />
-          </div>
-        </div>
-
-      </div>
-
-
-
-      {/* github stats */}
-      <div style={{
-        display: 'flex',
-        color: 'white',
-        borderBottom: '1px solid white',
-        marginTop: '40px'
-      }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '40px',
-            marginLeft: '20px'
-          }}
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </div>
-        <div style={{
-          paddingTop: '15px',
-          marginLeft: '15px',
-          fontSize: '23px'
-        }}
-        >
-          GitHub
-        </div>
-      </div>
-
-      {/* devto stats */}
-      <div style={{
-        display: 'flex',
-        color: 'white',
-        borderBottom: '1px solid white',
-        marginTop: '40px',
-      }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '40px',
-            marginLeft: '20px'
-          }}
-        >
-          <FontAwesomeIcon icon={faDev} />
-        </div>
-        <div style={{
-          paddingTop: '15px',
-          marginLeft: '15px',
-          fontSize: '23px'
-        }}
-        >
-          Dev.To
-        </div>
-      </div>
-
-
-    </>
-  )
 }

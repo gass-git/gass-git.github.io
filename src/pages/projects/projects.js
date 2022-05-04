@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './styles.module.css'
-import { ProjectCard } from './children/projectCard'
+import { ProjectCard } from './components/projectCard'
 import { ReactComponent as Innovation } from '../../global/assets/SVGs/innovation.svg'
 import Header from '../../global/layouts/header'
 
