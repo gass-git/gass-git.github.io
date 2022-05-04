@@ -4,8 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { ReactComponent as Chart } from '../../assets/SVGs/chart.svg'
+import Header from '../../layouts/header'
 
 export default function Stats({ SO_topTech, SO_reputation }) {
+
+  const about = `I didn't know if I should keep this section or remove it.
+  Mainly because sometimes it feels a little braggy. But to be honest
+  I'm making it just for fun and give my personal site some gamification.
+  It is also useful to have a single page with all stats, to see everything 
+  at once.`
 
   if (!SO_topTech || !SO_reputation) return <div>loading..</div>
 
@@ -16,29 +23,6 @@ export default function Stats({ SO_topTech, SO_reputation }) {
   function addThousandSeparator(number) {
     let string = number.toString()
     return string.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-  }
-
-  function Header() {
-    return (
-      <div className={s.header}>
-        <div className={s.left_box}>
-          <Chart />
-        </div>
-
-        <div className={s.right_box}>
-          <h1 className={s.page_title}>
-            Fun Stats 💹
-          </h1>
-          <div className={s.page_about}>
-            I didn't know if I should keep this section or remove it.
-            Mainly because sometimes it feels a little braggy. But
-            to be honest I'm making it just for fun and give my personal
-            site some gamification. It is also useful to have a single
-            page with all stats, to see everything at once.
-          </div>
-        </div>
-      </div>
-    )
   }
 
   function Reputation() {
@@ -123,7 +107,7 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
   return (
     <>
-      <Header />
+      <Header SVG={<Chart />} title='statistics' about={about} />
 
       {/* favorite tech */}
       <div style={{
