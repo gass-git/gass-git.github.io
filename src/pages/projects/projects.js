@@ -3,6 +3,7 @@ import s from './styles.module.css'
 import { ProjectCard } from './components/projectCard'
 import { ReactComponent as Innovation } from '../../global/assets/SVGs/innovation.svg'
 import Header from '../../global/layouts/header'
+import ShowCase from './components/showCase'
 
 export default function Projects({ repos }) {
 
@@ -17,6 +18,7 @@ export default function Projects({ repos }) {
   return (
     <>
       <Header SVG={<Innovation />} title='projects' about={about} />
+      <ShowCase />
       <div className={s.flex_wrapper}>
         {repos.map((repo, i) => <ProjectCard repo={repo} i={i} s={s} />)}
       </div>

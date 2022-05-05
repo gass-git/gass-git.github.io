@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './styles.module.css'
+import s from './writings.module.css'
 import ArticleCard from './components/articleCard'
 import { ReactComponent as Thinking } from '../../global/assets/SVGs/thinking.svg'
 import Header from '../../global/layouts/header'

@@ -2,11 +2,12 @@ import Reac from 'react'
 import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
 import { ReactComponent as Link } from '../../../global/assets/SVGs/link.svg'
+import s from './projectCard.module.css'
 
-export function ProjectCard({ s, repo, i }) {
+export function ProjectCard({ repo, i }) {
   return (
-    <div
-      className={s.project_card}
+    <section
+      id={s.project_card}
       style={i % 2 !== 0 ? { marginLeft: '20px' } : null}
     >
       {/* header */}
@@ -52,6 +53,6 @@ export function ProjectCard({ s, repo, i }) {
         }
       </div>
 
-    </div>
+    </section>
   )
 }

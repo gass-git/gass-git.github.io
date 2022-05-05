@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './styles.module.css'
+import s from './stats.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { ReactComponent as Chart } from '../../global/assets/SVGs/chart.svg'
