@@ -1,9 +1,13 @@
 import React from 'react'
-import s from './styles.module.css'
-import { ProjectCard } from './components/projectCard'
+import s from './projects.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWrench } from '@fortawesome/free-solid-svg-icons'
 import { ReactComponent as Innovation } from '../../global/assets/SVGs/innovation.svg'
+import devPlus from '../../global/assets/images/dev_plus.jpg'
+import tipMeDash from '../../global/assets/images/tip_me_dash.jpg'
+import minimis from '../../global/assets/images/minimis.png'
 import Header from '../../global/layouts/header'
-import ShowCase from './components/showCase'
+import SectionTitle from '../../global/layouts/sectionTitle'
 
 export default function Projects({ repos }) {
 
@@ -15,13 +19,30 @@ export default function Projects({ repos }) {
 
   if (!repos) return <p>Loading..</p>
 
-  return (
-    <>
-      <Header SVG={<Innovation />} title='projects' about={about} />
-      <ShowCase />
-      <div className={s.flex_wrapper}>
-        {repos.map((repo, i) => <ProjectCard repo={repo} i={i} s={s} />)}
+  return (<>
+    {/* add a close button to the headers */}
+    <Header SVG={<Innovation />} title={''} about={about} />
+    {/*<SectionTitle svg={<FontAwesomeIcon icon={faWrench} />} title={'Some Things I’ve Built'} />*/}
+    <center><h1 style={{ color: 'white', margin: '35px 0 35px 0' }}>Things I've Built 👇</h1></center>
+    <section id={s.gallery}>
+
+      <div className={s.first_row}>
+        <div className={s.image_wrapper}>
+          <img src={devPlus} />
+        </div>
       </div>
-    </>
+
+      <div className={s.second_row}>
+        <div className={s.left_image_wrapper}>
+          <img src={minimis} width='450' />
+        </div>
+        <div className={s.right_image_wrapper}>
+          <img src={tipMeDash} width='500' />
+        </div>
+      </div>
+
+    </section>
+
+  </>
   )
 }

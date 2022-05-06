@@ -1,0 +1,36 @@
+#section_title {
+  display: flex;
+  align-items: center;
+  margin: 0px 0 30px 33px;
+  /*border: 1px solid white;*/
+}
+
+.svg_box {
+  font-size: 25px;
+  color: #eee;
+}
+
+.title {
+  font-style: italic;
+  font-size: 19px;
+  text-transform: capitalize;
+  color: #eee;
+}
+
+.short_middle_line {
+  width: 20px;
+  height: 1px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-bottom: 1px solid #eee;
+  opacity: 0.35;
+}
+
+.middle_line {
+  flex: 1;
+  height: 1px;
+  margin-left: 15px;
+  margin-right: 38px;
+  border-bottom: 1px solid #eee;
+  opacity: 0.35;
+}
