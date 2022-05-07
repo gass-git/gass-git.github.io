@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 10px;
   min-width: 240px;
-  max-width: 780px;
+  max-width: 880px;
   transition: 500ms;
   /*border: 1px solid white;*/
 }
@@ -17,9 +17,10 @@
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  height: 65px;
-  max-width: 780px;
-  background-color: #1e214a;
+  height: 75px;
+  max-width: 880px;
+  background-image: linear-gradient(#242755, #1e214a);
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
 
 .items_container {
@@ -38,8 +39,8 @@
 .movable_container>div {
   position: relative;
   overflow: hidden;
-  height: 43px;
-  padding-top: 22px;
+  height: 47px;
+  padding-top: 28px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
@@ -98,7 +99,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation-name: ripple;
-  animation-duration: 500ms;
+  animation-duration: 300ms;
 }
 
 .green {
@@ -113,7 +114,7 @@
   margin-top: -2px;
   height: 2px;
   position: relative;
-  width: 780px;
+  width: 880px;
 }
 
 .movable_line {
@@ -122,35 +123,35 @@
   width: 164px;
   height: 2px;
   background: var(--light-green);
-  transition: 300ms;
+  transition: 200ms;
 }
 
 .pos1 {
-  transform: translateX(63px);
+  transform: translateX(113px);
 }
 
 .pos2 {
-  transform: translateX(227px);
+  transform: translateX(277px);
 }
 
 .pos3 {
-  transform: translateX(391px);
+  transform: translateX(441px);
 }
 
 .pos4 {
-  transform: translateX(555px);
+  transform: translateX(605px);
 }
 
 @keyframes ripple {
   0% {
     width: 0px;
     height: 0px;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   100% {
-    width: 70px;
-    height: 70px;
+    width: 200px;
+    height: 200px;
     opacity: 0;
   }
 }

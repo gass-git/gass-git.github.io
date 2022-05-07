@@ -47,7 +47,7 @@ function handleArrowsState({ windowWidth, setShowArrows, setIsActive }) {
 
 function movableLineClass({ selected }) {
   switch (selected) {
-    case 'latest': return `${s.movable_line} ${s.pos1}`
+    case 'home': return `${s.movable_line} ${s.pos1}`
     case 'projects': return `${s.movable_line} ${s.pos2}`
     case 'writings': return `${s.movable_line} ${s.pos3}`
     case 'stats': return `${s.movable_line} ${s.pos4}`
