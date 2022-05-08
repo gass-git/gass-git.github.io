@@ -1,47 +1,50 @@
-.article_card {
-  display: flex;
-  margin-top: 30px;
-  /*background-color: rgba(0, 0, 0, 0.2);*/
-  border-radius: 5px;
-  padding: 15px 20px 15px 20px;
-  text-decoration: none !important;
-  border: 5px solid rgba(255, 255, 255, 0.2);
+#list {
+  margin-top: 20px;
 }
 
+.row_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.article_card {
+  width: calc(50% - 3% - 10px);
+  margin-top: 20px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: 200ms;
+}
 
 .article_card:hover {
-  /*box-shadow: inset 0 0 2px white;*/
-  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  border: 5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
 }
 
 .article_card:hover .cover {
   opacity: 1 !important;
 }
 
-.article_card>div {
-  display: flex;
-}
-
 .cover {
-  min-width: 250px;
-  max-width: 200px;
-  height: 145px;
+  min-width: 100%;
+  max-width: 100%;
+  height: 245px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
-  opacity: 0.8;
+  border-radius: 5px 5px 0px 0px;
+  opacity: 0.9;
   /*border: 1px solid white;*/
 }
 
 .cover img {
-  width: 350px;
+  width: 600px;
 }
 
 .details_box {
-  margin-left: 20px;
+  margin: 30px 20px 20px 20px;
   /*border: 1px solid white;*/
 }
 
@@ -55,44 +58,4 @@
   margin-top: 10px;
   color: lightblue;
   opacity: 0.7;
-}
-
-.topics_wrapper {
-  display: flex;
-  width: 95%;
-  margin: 0 auto;
-  padding: 0px 0px 20px 0px;
-  /*border: 1px solid white;*/
-  flex-wrap: wrap;
-}
-
-.topic_label {
-  flex: 1 0 130px;
-  max-width: 130px;
-  margin: 10px;
-  padding: 12px 0px 12px 0px;
-  /*width: 120px;*/
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: 100ms;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.topic_label:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-#archives {
-  margin: 0 auto;
-  width: 95%;
-  /*border: 1px solid white;*/
-}
-
-#list {
-  margin: 30px 0px 0px 0px;
 }

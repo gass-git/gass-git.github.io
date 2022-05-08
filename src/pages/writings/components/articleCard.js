@@ -1,8 +1,13 @@
 import React from 'react'
 
-export default function ArticleCard({ s, article }) {
+export default function ArticleCard({ i, s, article }) {
   return (
-    <a href={article.url} className={s.article_card} target='_blank'>
+    <a
+      href={article.url}
+      className={s.article_card}
+      target='_blank'
+      style={i % 2 !== 0 ? { marginLeft: '6%' } : null}
+    >
       <div>
 
         <div className={s.cover}>
