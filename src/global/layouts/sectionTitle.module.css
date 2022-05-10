@@ -5,12 +5,13 @@
 
 .wrapper {
   display: flex;
-  width: 50%;
+  flex-wrap: wrap;
   margin: 0 0 25px 20px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .text_style_one {
+  text-transform: capitalize;
   color: #eee;
   font-family: roboto;
   font-size: 40px;

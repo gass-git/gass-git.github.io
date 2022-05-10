@@ -4,52 +4,37 @@
   min-height: 310px;
   max-height: 310px;
   border: 5px solid rgba(255, 255, 255, 0.2);
-  /*background-color: rgba(255, 255, 255, 0.2);*/
   border-radius: 11px;
   font-family: roboto;
 }
 
-.header .left_box {
+.left_box {
   flex-grow: 1;
 }
 
-.header .right_box {
+.right_box {
   background-color: rgba(255, 255, 255, 0.07);
   padding: 10px 30px 30px 30px;
   transition: 200ms;
-  /*border: 2px solid rgba(255, 255, 255, 0.2);*/
   border-radius: 5px;
-  /*background-color: rgba(255, 255, 255, 0.08);*/
 }
 
-.header .right_box .title_wrapper {
+.right_box .title_wrapper {
   margin: 0px 0px 0px 0px;
 }
 
-.header .label {
-  width: 80px;
-  margin: 23px 0px 0px 0px;
-  padding: 3px 0px 3px 0px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 18px;
-  font-weight: 300;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.header .right_box .article_title {
+.right_box .article_title {
   margin: 18px 0px 0px 0px;
   color: #eee;
   font-size: 30px;
   font-weight: 700;
 }
 
-.header .right_box .about {
-  margin: 20px 0px 0px 0px;
+.right_box .about {
+  margin: 30px 0px 0px 0px;
   color: rgba(255, 255, 255, 0.7);
   text-align: left;
-  line-height: 22px;
+  line-height: 23px;
   font-size: 17px;
   font-weight: 400;
 }
