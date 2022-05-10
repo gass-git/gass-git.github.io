@@ -1,0 +1,29 @@
+#subtitle {
+  margin: 20px auto 0px auto;
+  width: 95%;
+}
+
+.title_wrapper {
+  display: flex;
+  width: 50%;
+  margin: 0 0 25px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.title_wrapper .text_style_one {
+  color: #eee;
+  font-family: roboto;
+  font-size: 40px;
+  margin: 50px 0 0 9px;
+  font-weight: 700;
+}
+
+.title_wrapper .text_style_two {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 19px;
+  line-height: 20px;
+  margin: 70px 0 0 10px;
+  font-weight: 400;
+  font-style: italic;
+}

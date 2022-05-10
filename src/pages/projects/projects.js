@@ -1,48 +1,93 @@
 import React from 'react'
 import s from './projects.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWrench } from '@fortawesome/free-solid-svg-icons'
-import { ReactComponent as Innovation } from '../../global/assets/SVGs/innovation.svg'
-import devPlus from '../../global/assets/images/dev_plus.jpg'
-import tipMeDash from '../../global/assets/images/tip_me_dash.jpg'
-import minimis from '../../global/assets/images/minimis.png'
-import Header from '../../global/layouts/header'
-import SectionTitle from '../../global/layouts/sectionTitle'
+import { faFolder } from '@fortawesome/free-regular-svg-icons'
+import devPlus from '../../global/assets/images/dev_plus.png'
+import tipMeDash from '../../global/assets/images/TMD.png'
+import Header from './components/header'
+import Subtitle from './components/subtitle'
 
 export default function Projects({ repos }) {
 
-  const about = `I like to think of programming as a catalyst for 
-  creating tool. To portray an idea into reality and be able to interact
-  with it anywhere on the world I find it to be fascinating. I'm constantly
-  building things and the persue for building the future inspires me
-  to keep grinding.`
+  const about = `For me programming is a catalyst for creation. 
+  To portray an idea into reality and be able to interact 
+  with it anywhere on the world I find it to be fascinating, 
+  it is the reason I got hooked at age 15 with my first project. 
+  This feeling is something I always try to tap into when I'm 
+  developing projects.`
 
   if (!repos) return <p>Loading..</p>
 
-  return (<>
-    {/* add a close button to the headers */}
-    <Header SVG={<Innovation />} title={''} about={about} />
-    {/*<SectionTitle svg={<FontAwesomeIcon icon={faWrench} />} title={'Some Things I’ve Built'} />*/}
-    <center><h1 style={{ color: 'white', margin: '35px 0 35px 0' }}>Things I've Built 👇</h1></center>
-    <section id={s.gallery}>
+  return (
+    <>
+      <Header /> {/* add a close button to the headers */}
+      <Subtitle />
+      <section id={s.pinned}>
 
-      <div className={s.first_row}>
-        <div className={s.image_wrapper}>
+        <div className={s.image_box}>
           <img src={devPlus} />
         </div>
-      </div>
 
-      <div className={s.second_row}>
-        <div className={s.left_image_wrapper}>
-          <img src={minimis} width='450' />
+        <div className={s.details_box}>
+
+
+          {/* name */}
+          <div className={s.name_box}>
+            <div className={s.folder_icon}>
+              <FontAwesomeIcon icon={faFolder} />
+            </div>
+            <div className={s.name}>dev-plus</div>
+          </div>
+
+
+          {/* about */}
+          <div className={s.about}>
+            Fun web application with multiple components
+            that display information about a developer
+            in real time, with a gamification aspect
+            to it. Inspired by RPG game profiles.
+          </div>
+
+          {/* tech */}
+          <div className={s.tags_wrapper}></div>
+
         </div>
-        <div className={s.right_image_wrapper}>
-          <img src={tipMeDash} width='500' />
+
+      </section>
+
+      <section id={s.pinned}>
+
+        <div className={s.details_box}>
+
+
+          {/* name */}
+          <div className={s.name_box}>
+            <div className={s.folder_icon}>
+              <FontAwesomeIcon icon={faFolder} />
+            </div>
+            <div className={s.name}>dev-plus</div>
+          </div>
+
+
+          {/* about */}
+          <div className={s.about}>
+            Fun web application with multiple components
+            that display information about a developer
+            in real time, with a gamification aspect
+            to it. Inspired by RPG game profiles.
+          </div>
+
+          {/* tech */}
+          <div className={s.tags_wrapper}></div>
+
         </div>
-      </div>
 
-    </section>
+        <div className={s.image_box}>
+          <img src={tipMeDash} />
+        </div>
 
-  </>
+      </section>
+
+    </>
   )
 }

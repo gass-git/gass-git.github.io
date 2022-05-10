@@ -1,12 +1,13 @@
 import React from 'react'
+import s from './articleCard.module.css'
 
-export default function ArticleCard({ i, s, article }) {
+export default function ArticleCard({ i, article }) {
   return (
-    <a
-      href={article.url}
+    <div
       className={s.article_card}
       target='_blank'
       style={i % 2 !== 0 ? { marginLeft: '6%' } : null}
+      onClick={() => window.open(article.url, '_blank')}
     >
       <div>
 
@@ -27,6 +28,6 @@ export default function ArticleCard({ i, s, article }) {
         </div>
 
       </div>
-    </a>
+    </div>
   )
 }

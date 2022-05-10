@@ -14,7 +14,7 @@ export default function Writings({ articles }) {
       <FilterByTopic />
       <section id={s.list}>
         <div className={s.row_wrap}>
-          {articles.map((article, i) => <ArticleCard i={i} s={s} article={article} />)}
+          {articles.map((article, i) => <ArticleCard i={i} article={article} />)}
         </div>
       </section>
     </>
