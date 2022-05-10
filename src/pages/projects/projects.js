@@ -5,7 +5,7 @@ import { faFolder } from '@fortawesome/free-regular-svg-icons'
 import devPlus from '../../global/assets/images/dev_plus.png'
 import tipMeDash from '../../global/assets/images/TMD.png'
 import Header from './components/header'
-import Subtitle from './components/subtitle'
+import SectionTitle from '../../global/layouts/sectionTitle'
 
 export default function Projects({ repos }) {
 
@@ -21,7 +21,7 @@ export default function Projects({ repos }) {
   return (
     <>
       <Header /> {/* add a close button to the headers */}
-      <Subtitle />
+      <SectionTitle txt1={`Pinned`} txt2={`projects I've built`} />
       <section id={s.pinned}>
 
         <div className={s.image_box}>
@@ -30,7 +30,6 @@ export default function Projects({ repos }) {
 
         <div className={s.details_box}>
 
-
           {/* name */}
           <div className={s.name_box}>
             <div className={s.folder_icon}>
@@ -38,7 +37,6 @@ export default function Projects({ repos }) {
             </div>
             <div className={s.name}>dev-plus</div>
           </div>
-
 
           {/* about */}
           <div className={s.about}>

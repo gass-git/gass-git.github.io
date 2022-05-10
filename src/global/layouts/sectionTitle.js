@@ -1,17 +1,18 @@
 import React from 'react'
 import s from './sectionTitle.module.css'
 
-export default function SectionTitle({ svg, title }) {
+export default function SectionTitle({ txt1, txt2 }) {
   return (
     <section id={s.section_title}>
-      <div className={s.svg_box}>
-        {svg}
+      <div className={s.wrapper}>
+        <div className={s.text_style_one}>
+          {txt1}
+        </div>
+
+        <div className={s.text_style_two}>
+          {txt2}
+        </div>
       </div>
-      <div className={s.short_middle_line} />
-      <div className={s.title}>
-        {title}
-      </div>
-      <div className={s.middle_line} />
     </section>
   )
 }
