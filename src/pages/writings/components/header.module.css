@@ -1,55 +1,48 @@
 .header {
   display: flex;
-  padding: 20px 20px 20px 0;
-  min-height: 310px;
-  max-height: 310px;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  /*background-color: rgba(255, 255, 255, 0.2);*/
-  border-radius: 11px;
   font-family: roboto;
+  height: 310px;
+  padding: 20px 20px 20px 0;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 11px;
 }
 
-.header .left_box {
+.left_box {
   flex-grow: 1;
 }
 
-.header .right_box {
+.right_box {
   padding: 10px 30px 30px 30px;
   cursor: pointer;
   transition: 200ms;
-  /*border: 2px solid rgba(255, 255, 255, 0.2);*/
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.07);
 }
 
-.header .right_box .title_wrapper {
-  margin: 0px 0px 0px 0px;
-}
-
-.header .right_box:hover {
+.right_box:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.header .latest_label {
+.label {
   width: 80px;
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
   margin: 23px 0px 0px 0px;
   padding: 3px 0px 3px 0px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  font-weight: 300;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.header .right_box .article_title {
+.right_box .title {
   margin: 18px 0px 0px 0px;
   color: rgba(142, 230, 249, 0.8);
   font-size: 30px;
   font-weight: 700;
 }
 
-.header .right_box .opening_sentence {
+.right_box .sentence {
   margin: 15px 0px 0px 0px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 17px;

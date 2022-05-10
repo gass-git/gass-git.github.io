@@ -13,13 +13,13 @@ export default function Header({ latestArticle }) {
           className={s.right_box}
           onClick={() => window.open(latestArticle.url, '_blank')}
         >
-          <div className={s.latest_label}>
+          <div className={s.label}>
             Latest
           </div>
-          <div className={s.article_title}>
+          <div className={s.title}>
             {latestArticle.title}
           </div>
-          <div className={s.opening_sentence}>
+          <div className={s.sentence}>
             {latestArticle.description}
           </div>
         </div>
