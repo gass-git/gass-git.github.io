@@ -35,7 +35,7 @@
   margin: 23px 0px 0px 0px;
   padding: 3px 0px 3px 0px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 300;
   border-radius: 5px;
@@ -44,14 +44,14 @@
 
 .header .right_box .article_title {
   margin: 18px 0px 0px 0px;
-  color: #eee;
+  color: rgba(142, 230, 249, 0.8);
   font-size: 30px;
   font-weight: 700;
 }
 
 .header .right_box .opening_sentence {
   margin: 15px 0px 0px 0px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 17px;
   font-weight: 400;
 }
