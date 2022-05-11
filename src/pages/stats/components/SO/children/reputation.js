@@ -1,36 +1,36 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import s from './reputation.module.css'
+import thousandSeparator from '../../../../../global/functions/thousandSeparator'
 
-export default function ReputationCard({ s, points }) {
-
-  function addThousandSeparator(number) {
-    let string = number.toString()
-    return string.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-  }
-
+export default function Reputation({ points }) {
   return (
-    <div className={s.reputation_card}>
-      <div className={s.card_title}>
+    <section id={s.reputation}>
+
+      <div className={s.title}>
         Reputation
       </div>
+
       <div className={s.big_number}>
-        {addThousandSeparator(points.total)}
+        {thousandSeparator(points.total)}
       </div>
-      <div className={s.flex_box1}>
+
+      <div className={s.bottom_wrapper}>
         <div>
           month:{' '}
           <FontAwesomeIcon icon={faArrowUp} style={{ color: 'green' }} />
           {' '}
-          {addThousandSeparator(points.month_change)}
+          {thousandSeparator(points.month_change)}
         </div>
         <div>
           year: {' '}
           <FontAwesomeIcon icon={faArrowUp} style={{ color: 'green' }} />
           {' '}
-          {addThousandSeparator(points.year_change)}
+          {thousandSeparator(points.year_change)}
         </div>
       </div>
-    </div>
+
+    </section>
   )
 }

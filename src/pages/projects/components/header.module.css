@@ -6,6 +6,7 @@
   border: 5px solid rgba(255, 255, 255, 0.2);
   border-radius: 11px;
   font-family: roboto;
+  background-position: center;
 }
 
 .left_box {
@@ -13,7 +14,9 @@
 }
 
 .right_box {
-  background-color: rgba(255, 255, 255, 0.07);
+  min-width: 45%;
+  max-width: 45%;
+  background-color: rgba(21, 21, 21, 0.77);
   padding: 10px 30px 30px 30px;
   transition: 200ms;
   border-radius: 5px;

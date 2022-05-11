@@ -1,0 +1,37 @@
+#tech {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 244px;
+  max-width: 315px;
+  margin: 10px 0 0 5px;
+  padding: 25px 30px 35px 30px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.list {
+  margin-top: 17px;
+}
+
+.tag_box {
+  display: flex;
+}
+
+.name {
+  width: 50%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.score {
+  width: 50%;
+  font-size: 20px;
+  text-align: right;
+  color: white;
+}

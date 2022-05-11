@@ -1,0 +1,27 @@
+.main {
+  width: 780px;
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.left_box {
+  width: 384px;
+}
+
+.right_box {
+  width: 390px;
+}
+
+.flex_box1 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flex_box1>div:first-child {
+  margin-right: 50px;
+}

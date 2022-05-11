@@ -1,10 +1,10 @@
 import React from 'react'
+import s from './topTech.module.css'
 
-
-export default function TopTechCard({ s, topTech }) {
+export default function TopTech({ topTech }) {
   return (
-    <div className={s.tech_card}>
-      <div className={s.card_title}>
+    <section id={s.tech}>
+      <div className={s.title}>
         Top Tech
       </div>
       <div className={s.list}>
@@ -23,6 +23,6 @@ export default function TopTechCard({ s, topTech }) {
           })
         }
       </div>
-    </div>
+    </section>
   )
 }

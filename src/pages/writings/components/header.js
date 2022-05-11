@@ -1,13 +1,17 @@
 import React from 'react'
-import { ReactComponent as Thinking } from '../../../global/assets/SVGs/thinking.svg'
 import s from './header.module.css'
+import cyberpunk from '../../../global/assets/images/cyberpunk_2.gif'
 
 export default function Header({ latestArticle }) {
   return (
     <>
-      <div className={s.header}>
+      <div className={s.header}
+        style={{
+          backgroundImage: `url(${cyberpunk})`
+        }}
+      >
         <div className={s.left_box}>
-          <Thinking />
+
         </div>
         <div
           className={s.right_box}

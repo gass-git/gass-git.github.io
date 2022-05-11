@@ -1,14 +1,15 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+import s from './wins.module.css'
 
-export default function BadgesCard({ s, badges }) {
+export default function Wins({ badges }) {
   return (
-    <div className={s.badges_card}>
-      <div className={s.card_title}>
-        Badges
+    <section id={s.wins}>
+      <div className={s.title}>
+        Wins
       </div>
-      <div className={s.flex_box2}>
+      <div className={s.container}>
         <div style={{ marginRight: '55px' }}>
           <FontAwesomeIcon icon={faTrophy} className={s.gold} />
           {' '}
@@ -25,6 +26,6 @@ export default function BadgesCard({ s, badges }) {
           {badges.bronze}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
