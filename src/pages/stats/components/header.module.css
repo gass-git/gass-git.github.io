@@ -1,66 +1,38 @@
-.header {
-  display: flex;
+#header {
   /*padding: 20px 20px 20px 0;*/
-  min-height: 310px;
-  max-height: 310px;
+  position: relative;
+  min-height: 320px;
+  max-height: 320px;
   border: 5px solid #3d4c61;
   border-radius: 11px;
   font-family: roboto;
   background-size: cover;
   background-position: center;
+  background-image: url('../../../global/assets/images/cyberpunk_7.gif');
+  overflow: hidden;
 }
 
-.left_box {
-  flex-grow: 1;
-}
-
-.right_box {
-  min-width: 35%;
-  max-width: 35%;
-  padding: 10px 30px 30px 30px;
+.bottom_box {
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0px;
   cursor: pointer;
   transition: 200ms;
   background-color: rgba(21, 21, 21, 0.77);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.right_box .title_wrapper {
-  margin: 0px 0px 0px 0px;
-}
-
-.right_box .article_title {
-  margin: 18px 0px 0px 0px;
-  color: #eee;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.right_box .about {
-  margin: 18px 0px 0px 0px;
-  color: rgba(142, 230, 249, 0.8);
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.label {
-  width: 100px;
-  font-size: 17px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 23px 0px 0px 0px;
-  padding: 3px 0px 3px 0px;
-  text-align: center;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .icons_wrapper {
-  margin-top: 20px;
   display: flex;
 }
 
 .icons_wrapper>div {
-  font-size: 60px;
+  font-size: 50px;
+  color: white;
+  opacity: 0.7;
   padding: 5px 15px 5px 15px;
   margin: 10px;
   cursor: pointer;
