@@ -1,9 +1,9 @@
 .header {
   display: flex;
-  padding: 20px 20px 20px 0;
+  /*padding: 20px 20px 20px 0;*/
   min-height: 310px;
   max-height: 310px;
-  border: 5px solid rgba(255, 255, 255, 0.2);
+  border: 5px solid #3d4c61;
   border-radius: 11px;
   font-family: roboto;
   background-size: cover;
@@ -15,12 +15,13 @@
 }
 
 .right_box {
-  min-width: 45%;
-  max-width: 45%;
-  background-color: rgba(21, 21, 21, 0.77);
+  min-width: 35%;
+  max-width: 35%;
   padding: 10px 30px 30px 30px;
+  cursor: pointer;
   transition: 200ms;
-  border-radius: 6px;
+  background-color: rgba(21, 21, 21, 0.77);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .right_box .title_wrapper {

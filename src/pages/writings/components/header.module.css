@@ -2,8 +2,8 @@
   display: flex;
   font-family: roboto;
   height: 310px;
-  padding: 20px 20px 20px 0;
-  border: 5px solid rgba(255, 255, 255, 0.2);
+  /* padding: 20px 20px 20px 0;*/
+  border: 5px solid #3d4c61;
   border-radius: 11px;
   background-size: cover;
   background-position: center;
@@ -19,14 +19,14 @@
   padding: 10px 30px 30px 30px;
   cursor: pointer;
   transition: 200ms;
-  border-radius: 6px;
-  background-color: rgba(21, 21, 21, 0.87);
+  background-color: rgba(21, 21, 21, 0.77);
 }
 
+/*
 .right_box:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
-
+*/
 .label {
   width: 80px;
   font-size: 17px;
@@ -48,7 +48,7 @@
 
 .right_box .sentence {
   margin: 15px 0px 0px 0px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1);
   font-size: 17px;
   font-weight: 400;
 }

@@ -1,18 +1,20 @@
 import React from 'react'
-import mario from '../../global/assets/images/cyberpunk_1.webp'
 import s from './home.module.css'
+import Latest from './components/latest'
+import SectionTitle from '../../global/layouts/sectionTitle'
+import Header from './components/header'
 
-export default function Latest({ latest }) {
+export default function Home({ latest }) {
 
   if (!latest) return <div>Loading</div>
 
   return (
     <section id={s.home}>
-      <div className={s.image_wrapper}
-        style={{ backgroundImage: `url(${mario})` }}
-      >
+      <Header />
 
-      </div>
+      <SectionTitle txt1={'Latest'} txt2={'activity online'} />
+
+      <Latest latest={latest} />
     </section>
   )
 }

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { faCodeCommit } from '@fortawesome/free-solid-svg-icons'
 
-export default function latest() {
+export default function latest({ latest }) {
   function icon(type) {
     switch (type) {
       case 'commit': return <FontAwesomeIcon icon={faCodeCommit} />
