@@ -1,43 +1,62 @@
-.header {
+#header {
   display: flex;
-  /*padding: 20px 20px 20px 0;*/
-  min-height: 310px;
-  max-height: 310px;
+  justify-content: flex-end;
+  min-height: 320px;
+  max-height: 320px;
   border: 5px solid #3d4c61;
   border-radius: 11px;
-  font-family: roboto;
+  background-image: url('../../../global/assets/images/cyberpunk_3.gif');
   background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
-.left_box {
-  flex-grow: 1;
+.movable_box {
+  display: flex;
+  width: 300px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 500ms;
+  border-right: 1px solid rgb(61, 76, 97, 0.5);
 }
 
-.right_box {
-  min-width: 40%;
-  max-width: 40%;
-  background-color: rgba(21, 21, 21, 0.77);
-  padding: 10px 30px 30px 30px;
-  transition: 200ms;
-  /*border: 1px solid rgba(255, 255, 255, 0.8);*/
+.content_wrapper {
+  width: 215px;
+  height: 300px;
+  color: white;
+  font-size: 14px;
+  border-right: 1px solid rgb(61, 76, 97, 0.5);
+  padding: 10px 20px 10px 20px;
 }
 
-.right_box .title_wrapper {
-  margin: 0px 0px 0px 0px;
+.arrow_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  font-size: 60px;
+  height: 310px;
+  transition: 500ms;
+  animation-name: waver;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
 }
 
-.right_box .article_title {
-  margin: 18px 0px 0px 0px;
-  color: #eee;
-  font-size: 30px;
-  font-weight: 700;
+.arrow_wrapper>* {
+  cursor: pointer;
 }
 
-.right_box .about {
-  margin: 30px 0px 0px 0px;
-  color: rgba(255, 255, 255, 1);
-  text-align: left;
-  line-height: 23px;
-  font-size: 17px;
-  font-weight: 400;
+@keyframes waver {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
 }

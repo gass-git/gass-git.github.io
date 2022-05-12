@@ -1,32 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './header.module.css'
-import cyberpunk from '../../../global/assets/images/cyberpunk_3.gif'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
-  return (
-    <>
-      <div className={s.header}
-        style={{
-          backgroundImage: `url(${cyberpunk})`
-        }}
-      >
-        <div className={s.left_box}>
+  const ini = { pixels: '220px', degrees: '0deg' }
+  const [pixels, setPixels] = useState(ini.pixels)
+  const [degrees, setDegrees] = useState(ini.degrees)
 
+  function expand() {
+    if (pixels !== ini.pixels) {
+      setPixels(ini.pixels)
+      setDegrees(ini.degrees)
+    }
+    else {
+      setPixels('0px')
+      setDegrees('180deg')
+    }
+  }
+
+  return (
+    <section id={s.header}>
+      <div
+        className={s.movable_box}
+        style={{ transform: `translateX(${pixels})` }}
+      >
+        <div
+          className={s.arrow_wrapper}
+          style={{ transform: `rotate(${degrees})` }}
+        >
+          <FontAwesomeIcon
+            icon={faAngleLeft}
+            onClick={() => expand()}
+          />
         </div>
         <div
-          className={s.right_box}
+          className={s.content_wrapper}
         >
-          <div className={s.about}>
-            For me programming is a catalyst for creation.
-            To portray an idea into reality and be able to interact
-            with it anywhere on the world I find it to be fascinating.
-            It is the reason I got hooked at age 15 with my first project.
-            <br /><br />
+          <p>
             I'm constantly building projects related to web development.
+          </p>
+          <p>
             Feel free to have a look around and check them out!
-          </div>
+          </p>
         </div>
       </div>
-    </>
+    </section>
   )
 }
+
+
+

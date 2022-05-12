@@ -36,7 +36,8 @@ export default function Header() {
             If you don't know me I'll tell you a bit about myself...
           </p>
           <p>
-            I started building things on the internet since my teens. I've
+            I started playing around with code since my teens. Mainly related
+            to web development. I've
             always been fascinated by been able to portray an idea into reality
             and share it with the world. There are
             probably many developers that share this same feeling.

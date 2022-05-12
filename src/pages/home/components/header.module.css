@@ -1,7 +1,7 @@
 #header {
   flex: 1;
-  min-height: 310px;
-  max-height: 310px;
+  min-height: 320px;
+  max-height: 320px;
   border: 5px solid #3d4c61;
   border-radius: 11px;
   background-image: url('../../../global/assets/images/cyberpunk_1.webp');
@@ -13,18 +13,18 @@
 .movable_box {
   display: flex;
   width: 650px;
-  height: 310px;
+  height: 320px;
   background-color: rgba(0, 0, 0, 0.8);
   transition: 500ms;
-  border-right: 1px solid rgb(61, 76, 97, 0.5);
+  /*border-right: 1px solid rgb(61, 76, 97, 0.5);*/
 }
 
 .content_wrapper {
   width: 550px;
-  height: 290px;
+  height: 300px;
   color: white;
   font-size: 14px;
-  border-right: 1px solid rgb(61, 76, 97, 0.5);
+  /*border-right: 1px solid rgb(61, 76, 97, 0.5);*/
   padding: 10px 20px 10px 20px;
 }
 
