@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
-  const ini = { pixels: '-570px', degrees: '0deg' }
+  const ini = { pixels: '-580px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
 
@@ -48,15 +48,25 @@ export default function Header() {
             By the way, I don't smoke...
           </p>
         </div>
-        <div
-          className={s.arrow_wrapper}
-          style={{ transform: `rotate(${degrees})` }}
-        >
+
+        <div className={s.tab}>
+          <p
+            className={s.vertical_text}
+            onClick={() => expand()}
+          >
+            ABOUT
+          </p>
           <FontAwesomeIcon
+            style={{
+              fontSize: '60px',
+              transition: '500ms',
+              transform: `rotate(${degrees})`
+            }}
             icon={faAngleRight}
             onClick={() => expand()}
           />
         </div>
+
       </div>
     </section>
   )

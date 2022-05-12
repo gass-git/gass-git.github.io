@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
-  const ini = { pixels: '220px', degrees: '0deg' }
+  const ini = { pixels: '240px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
 
@@ -25,15 +25,27 @@ export default function Header() {
         className={s.movable_box}
         style={{ transform: `translateX(${pixels})` }}
       >
-        <div
-          className={s.arrow_wrapper}
-          style={{ transform: `rotate(${degrees})` }}
-        >
+
+        <div className={s.tab}>
+          <p
+            className={s.vertical_text}
+            onClick={() => expand()}
+          >
+            ABOUT
+          </p>
           <FontAwesomeIcon
+            style={{
+              fontSize: '60px',
+              transition: '500ms',
+              transform: `rotate(${degrees})`
+            }}
             icon={faAngleLeft}
             onClick={() => expand()}
           />
         </div>
+
+
+
         <div
           className={s.content_wrapper}
         >
