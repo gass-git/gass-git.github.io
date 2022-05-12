@@ -1,52 +1,84 @@
-.header {
+#header {
   display: flex;
-  font-family: roboto;
-  height: 310px;
-  /* padding: 20px 20px 20px 0;*/
+  justify-content: flex-end;
+  min-height: 320px;
+  max-height: 320px;
   border: 5px solid #3d4c61;
   border-radius: 11px;
-  background-size: cover;
+  background-image: url('../../../global/assets/images/cyberpunk_2.gif');
   background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
-.left_box {
-  flex-grow: 1;
+.movable_box {
+  display: flex;
+  width: 500px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 500ms;
+  border-right: 1px solid rgb(61, 76, 97, 0.5);
 }
 
-.right_box {
-  min-width: 45%;
-  max-width: 45%;
-  padding: 10px 30px 30px 30px;
+.content_wrapper {
+  width: 415px;
+  height: 300px;
+  color: white;
+  font-size: 14px;
+  border-right: 1px solid rgb(61, 76, 97, 0.5);
+  padding: 10px 20px 10px 20px;
   cursor: pointer;
-  transition: 200ms;
-  background-color: rgba(21, 21, 21, 0.77);
 }
 
-/*
-.right_box:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.content_wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
-*/
-.label {
-  width: 80px;
-  font-size: 17px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 23px 0px 0px 0px;
-  padding: 3px 0px 3px 0px;
+
+.vertical_text {
+  width: 20px;
+  margin: 20px auto 20px auto;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: white !important;
+}
+
+.tab {
   text-align: center;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.3);
+  width: 75px;
+  height: 310px;
+  transition: 500ms;
+  animation-name: waver;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
 }
 
-.right_box .title {
+.tab>* {
+  cursor: pointer;
+}
+
+@keyframes waver {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.title {
   margin: 18px 0px 0px 0px;
   color: rgba(142, 230, 249, 0.8);
   font-size: 30px;
   font-weight: 700;
 }
 
-.right_box .sentence {
+.sentence {
   margin: 15px 0px 0px 0px;
   color: rgba(255, 255, 255, 1);
   font-size: 17px;
