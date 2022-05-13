@@ -1,36 +1,38 @@
 #header {
-  /*padding: 20px 20px 20px 0;*/
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
   min-height: 320px;
   max-height: 320px;
   border: 5px solid #3d4c61;
   border-radius: 11px;
-  font-family: roboto;
-  background-size: cover;
-  background-position: center;
   background-image: url('../../../global/assets/images/cyberpunk_7.gif');
-  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
-.bottom_box {
-  width: 100%;
-  height: 90px;
-  position: absolute;
+.movable_box {
   display: flex;
-  justify-content: center;
-  bottom: 0px;
-  cursor: pointer;
-  transition: 200ms;
-  background-color: rgba(21, 21, 21, 0.77);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  width: 210px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 500ms;
+  border-right: 1px solid rgb(61, 76, 97, 0.5);
 }
 
 .icons_wrapper {
-  display: flex;
+  width: 170px;
+  height: 300px;
+  color: white;
+  font-size: 50px;
+  padding: 10px 20px 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .icons_wrapper>div {
   font-size: 50px;
+  width: 60px;
+  text-align: center;
   color: white;
   opacity: 0.7;
   padding: 5px 15px 5px 15px;
@@ -41,4 +43,36 @@
 .selected {
   border-radius: 3px;
   border: 1px solid rgb(70, 201, 70);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 75px;
+  height: 310px;
+  transition: 500ms;
+  animation-name: waver;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+.tab>* {
+  cursor: pointer;
+}
+
+@keyframes waver {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
 }

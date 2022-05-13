@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header({ latestArticle }) {
-  const ini = { pixels: '440px', degrees: '0deg' }
+  const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
 
@@ -14,8 +14,8 @@ export default function Header({ latestArticle }) {
       setDegrees(ini.degrees)
     }
     else {
-      setPixels('0px')
-      setDegrees('180deg')
+      setPixels('440px')
+      setDegrees('0deg')
     }
   }
 
