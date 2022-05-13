@@ -1,16 +1,16 @@
 .title {
-  color: white;
+  color: var(--white);
   font-size: 30px;
   text-align: center;
 }
 
 .main_wrapper {
-  margin-top: 45px;
+  margin: 45px 0px 100px 0px;
   padding: 35px 30px 35px 30px;
-  color: white;
+  color: var(--white);
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--white-transparent-one);
+  background-color: var(--dark-transparent-two);
 }
 
 .event_container {
@@ -18,12 +18,12 @@
   width: 700px;
   padding-top: 30px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--white-transparent-two);
   cursor: pointer;
 }
 
 .event_container:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--white-transparent-one);
 }
 
 .event_container .icon_box {

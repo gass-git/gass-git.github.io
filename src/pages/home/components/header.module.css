@@ -1,8 +1,6 @@
 #header {
-  flex: 1;
-  min-height: 320px;
-  max-height: 320px;
-  border: 5px solid #3d4c61;
+  height: 320px;
+  border: 5px solid var(--slate);
   border-radius: 11px;
   background-image: url('../../../global/assets/images/cyberpunk_1.webp');
   background-position: center;
@@ -12,41 +10,62 @@
 
 .movable_box {
   display: flex;
-  width: 650px;
-  height: 320px;
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: 500ms;
-}
-
-.content_wrapper {
   width: 550px;
-  height: 300px;
-  color: white;
-  font-size: 14px;
-  padding: 10px 20px 10px 20px;
+  height: 100%;
+  background-color: var(--dark-transparent-one);
+  transition: var(--slide-transition);
 }
 
-.vertical_text {
+.content {
+  text-align: justify;
+  margin: auto;
+  width: 450px;
+  height: auto;
+  color: var(--white);
+  font-size: 14px;
+  padding: 0 20px 0 20px;
+}
+
+.green {
+  color: var(--light-green);
+}
+
+.Vtxt_off {
+  opacity: 0.55;
   width: 20px;
   margin: 20px auto 20px auto;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  color: white !important;
+  color: var(--white);
+  cursor: default;
+  text-shadow: 0 0 12px yellow;
+}
+
+.Vtxt_on {
+  opacity: 1;
+  width: 20px;
+  margin: 20px auto 20px auto;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: var(--white);
+  cursor: default;
+  text-shadow: 0 0 12px yellow;
 }
 
 .tab {
   text-align: center;
   width: 75px;
   height: 310px;
-  transition: 500ms;
-  animation-name: waver;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  color: white;
+  color: var(--white);
 }
 
-.tab>* {
+.arrow {
+  font-size: 60px;
+  transition: var(--slide-transition);
   cursor: pointer;
+  animation-name: waver;
+  animation-duration: var(--waver-duration);
+  animation-iteration-count: infinite;
 }
 
 @keyframes waver {
@@ -55,7 +74,7 @@
   }
 
   50% {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   100% {
