@@ -1,4 +1,4 @@
-import s from './styles.module.css'
+import s from './navbar.module.css'
 
 function handleTranslationStates({ windowWidth, setHiddenItems, setTranslationWidth }) {
   if (windowWidth < 599 && windowWidth >= 530) {

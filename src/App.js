@@ -35,11 +35,13 @@ function App() {
   }, [])
 
   return (
-    <div className='app-container'>
+    <div id='app-container'>
 
-      <Navbar selected={selected} setSelected={setSelected} />
+      <section id='top'>
+        <Navbar selected={selected} setSelected={setSelected} />
+      </section>
 
-      <div className='content-box'>
+      <section id='page'>
         <Routes>
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/' element={<Home />} />
@@ -48,9 +50,9 @@ function App() {
           <Route path='/writings' element={<Writings articles={articles} />} />
           <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} />} />
         </Routes>
-      </div>
+      </section>
 
-    </div >
+    </div>
   )
 }
 

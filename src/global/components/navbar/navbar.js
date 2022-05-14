@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import s from './styles.module.css'
+import s from './navbar.module.css'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import LeftBox from './children/leftBox'
 import RightBox from './children/rightBox'
@@ -53,8 +53,8 @@ export default function Navbar({ selected, setSelected }) {
   }
 
   return (
-    <div className={s.wrapper}>
-      <div className={s.main_container}>
+    <section id={s.navbar}>
+      <div className={s.wrapper}>
         <LeftBox
           showArrows={showArrows}
           moveLeft={moveLeft}
@@ -77,6 +77,6 @@ export default function Navbar({ selected, setSelected }) {
       <div className={s.railway_container}>
         <div className={movableLineClass({ selected })} />
       </div>
-    </div>
+    </section>
   )
 }

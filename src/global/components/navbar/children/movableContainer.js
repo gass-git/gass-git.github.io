@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import selectionSound from '../../../assets/sounds/selection.wav'
-import s from '../styles.module.css'
+import s from '../navbar.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function MovableContainer({ links, translatedX, selected, setSelected }) {

@@ -14,6 +14,11 @@
   --waver-duration: 2s;
   --header-height: 320px;
   --border-radius-one: 11px;
+
+  /* margins */
+  --top-section-margin: 20px 0 0 0;
+  --page-section-margin: 20px 0 0 0;
+  --section-title-margin: 30px auto 50px auto;
 }
 
 body {
@@ -24,16 +29,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app-container {
-  margin: 10px auto;
+#app-container {
+  margin: 0 auto;
   max-width: 900px;
   height: 100vh;
   /* border: 1px solid white;*/
 }
 
-.content-box {
-  margin-top: 20px;
-  padding: 10px;
+#top {
+  margin: var(--top-section-margin);
+  /*border: 1px solid white;*/
+}
+
+#page {
+  margin: var(--page-section-margin);
+  padding: 0 10px 0 10px;
+  /*border: 1px solid white;*/
 }
 
 code {

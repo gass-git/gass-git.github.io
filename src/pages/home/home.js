@@ -1,5 +1,5 @@
 import React from 'react'
-import Latest from './components/latest'
+import Latest from './components/latest/latest'
 import SectionTitle from '../../global/layouts/sectionTitle'
 import Header from './components/header'
 

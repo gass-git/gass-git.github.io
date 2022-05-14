@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import tickSound from '../../../assets/sounds/tick.wav'
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import s from '../styles.module.css'
+import s from '../navbar.module.css'
 
 export default function RightBox({ showArrows, isActive, moveRight }) {
   const [playSound] = useSound(tickSound, { volume: 0.6 })
