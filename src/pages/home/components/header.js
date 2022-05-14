@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../../../global/styles.css'
 import s from './header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
@@ -65,7 +66,7 @@ export default function Header() {
 
           <FontAwesomeIcon
             icon={faAngleRight}
-            className={s.arrow}
+            className='animated-arrow'
             style={{ transform: `rotate(${degrees})` }}
             onClick={() => expand()}
           />

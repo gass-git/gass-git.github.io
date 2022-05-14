@@ -1,7 +1,7 @@
 #header {
-  height: 320px;
+  height: var(--header-height);
   border: 5px solid var(--slate);
-  border-radius: 11px;
+  border-radius: var(--border-radius-one);
   background-image: url('../../../global/assets/images/cyberpunk_1.webp');
   background-position: center;
   background-size: cover;
@@ -57,27 +57,4 @@
   width: 75px;
   height: 310px;
   color: var(--white);
-}
-
-.arrow {
-  font-size: 60px;
-  transition: var(--slide-transition);
-  cursor: pointer;
-  animation-name: waver;
-  animation-duration: var(--waver-duration);
-  animation-iteration-count: infinite;
-}
-
-@keyframes waver {
-  0% {
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 0.9;
-  }
-
-  100% {
-    opacity: 0.3;
-  }
 }
