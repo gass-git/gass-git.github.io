@@ -3,22 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
+  /* margins */
+  --top-section-margin: 20px 0 0 0;
+  --page-section-margin: 40px 0 0 0;
+  --section-title-margin: 40px auto 50px auto;
+
+  /* colors */
   --light-green: rgba(70, 201, 70);
   --slate: #3d4c61;
   --dark-transparent-one: rgba(0, 0, 0, 0.8);
   --dark-transparent-two: rgba(0, 0, 0, 0.3);
   --white-transparent-one: rgba(255, 255, 255, 0.1);
   --white-transparent-two: rgba(255, 255, 255, 0.1);
-  --slide-transition: 500ms;
   --white: #f0f7ff;
-  --waver-duration: 2s;
+
+  /* global styles */
   --header-height: 320px;
   --border-radius-one: 11px;
 
-  /* margins */
-  --top-section-margin: 20px 0 0 0;
-  --page-section-margin: 20px 0 0 0;
-  --section-title-margin: 30px auto 50px auto;
+  /* animation related */
+  --slide-transition: 500ms;
+  --waver-duration: 2s;
 }
 
 body {
