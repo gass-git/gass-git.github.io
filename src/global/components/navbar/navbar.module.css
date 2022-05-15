@@ -4,13 +4,13 @@
   max-width: 880px;
   height: 75px;
   transition: 500ms;
-  background-color: #273346;
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: var(--border-radius-one);
   border-left: 8px solid #4f6b7e;
   border-right: 8px solid #4f6b7e;
   border-top: 4px solid #3c5262;
   border-bottom: 4px solid #3c5262;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
 }
 

@@ -1,18 +1,19 @@
 #latest_events {
   margin: 0 auto;
-  max-width: 880px;
+  padding-top: 20px;
+  max-width: 896px;
   color: var(--white);
   border-radius: 5px;
-  border: 1px solid var(--white-transparent-one);
-  background-color: var(--dark-transparent-two);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .event_wrapper {
+  margin: 0 auto;
   display: flex;
-  width: 90%;
+  width: 80%;
+  border: 1px solid var(--white-transparent-two);
   padding-top: 30px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--white-transparent-two);
   cursor: pointer;
 }
 
