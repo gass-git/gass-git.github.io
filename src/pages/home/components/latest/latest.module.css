@@ -1,9 +1,10 @@
 #latest_events {
   margin: 0 auto;
   padding-top: 20px;
-  max-width: 896px;
+  max-width: 888px;
   color: var(--white);
-  border-radius: 5px;
+  border-radius: 2px;
+  border-left: 8px solid #3c5262;
   background-color: rgba(0, 0, 0, 0.4);
 }
 

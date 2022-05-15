@@ -1,6 +1,6 @@
 #section_title {
   margin: var(--section-title-margin);
-  max-width: 880px;
+  max-width: 888px;
   width: 90%;
   /*border: 1px solid white;*/
 }
@@ -9,7 +9,8 @@
   display: flex;
   width: 55%;
   min-width: 450px;
-  margin: 0 0 0px 20px;
+  margin: 0 0 0 20px;
+  border-bottom: 2px solid #3c5262;
   /*border-bottom: 2px solid rgba(255, 255, 255, 0.2);*/
 }
 
@@ -18,7 +19,7 @@
   color: #eee;
   font-family: roboto;
   font-size: 40px;
-  margin: 10px 0 0 9px;
+  margin: 10px 0 0 29px;
   font-weight: 700;
 }
 
