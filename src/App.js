@@ -35,11 +35,11 @@ function App() {
   }, [])
 
   return (
-    <div id='app-container'>
+    <div className='app-container'>
 
-      <section id='top'>
+      <div className='top'>
         <Navbar selected={selected} setSelected={setSelected} />
-      </section>
+      </div>
 
       <section id='page'>
         <Routes>

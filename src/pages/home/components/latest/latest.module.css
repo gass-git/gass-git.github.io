@@ -1,6 +1,6 @@
 #latest_events {
-  margin: 0px 0px 100px 0px;
-  padding: 35px 30px 35px 30px;
+  margin: 0 auto;
+  max-width: 880px;
   color: var(--white);
   border-radius: 5px;
   border: 1px solid var(--white-transparent-one);
@@ -9,7 +9,7 @@
 
 .event_wrapper {
   display: flex;
-  width: 700px;
+  width: 90%;
   padding-top: 30px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--white-transparent-two);

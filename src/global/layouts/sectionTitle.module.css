@@ -1,6 +1,7 @@
 #section_title {
   margin: var(--section-title-margin);
-  width: 95%;
+  max-width: 880px;
+  width: 85%;
   /*border: 1px solid white;*/
 }
 
