@@ -12,7 +12,6 @@ export default function Header({ latestArticle }) {
   const [playSound] = useSound(clickStereo, { volume: 0.9 })
 
   function expand() {
-
     playSound()
 
     if (pixels !== ini.pixels) {

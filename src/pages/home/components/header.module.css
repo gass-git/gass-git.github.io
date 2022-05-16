@@ -1,14 +1,14 @@
 #header {
   margin: 0 auto;
   height: var(--header-height);
-  max-width: 876px;
+  max-width: var(--header-max-width);
   background-image: url('../../../global/assets/images/cyberpunk_1.webp');
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
-  border: 2px solid rgb(0, 237, 250, 0.3);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: var(--header-border);
+  box-shadow: var(--box-shadow-two);
 }
 
 .movable_box {

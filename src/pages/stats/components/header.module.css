@@ -1,16 +1,16 @@
 #header {
   margin: 0 auto;
   display: flex;
-  max-width: 880px;
   justify-content: flex-end;
   height: var(--header-height);
+  max-width: var(--header-max-width);
   background-image: url('../../../global/assets/images/cyberpunk_7.gif');
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
-  border: 2px solid rgb(0, 237, 250, 0.3);
   border-radius: var(--border-radius-one);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: var(--header-border);
+  box-shadow: var(--box-shadow-two);
 }
 
 .movable_box {

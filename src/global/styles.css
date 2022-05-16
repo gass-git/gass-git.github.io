@@ -28,9 +28,15 @@
   --white-transparent-two: rgba(255, 255, 255, 0.1);
   --white: #f0f7ff;
 
-  /* global styles */
+  /* header styles */
+  --header-max-width: 876px;
   --header-height: 310px;
+  --header-border: 2px solid rgb(0, 237, 250, 0.3);
+
+  /* global styles */
   --border-radius-one: 3px;
+  --box-shadow-one: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --box-shadow-two: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   /* animation related */
   --slide-transition: 500ms;
