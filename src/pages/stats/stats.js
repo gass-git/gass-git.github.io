@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Header from './components/header'
 import SO from './components/SO/SO'
+import SectionTitle from '../../global/layouts/sectionTitle'
+import ContentWrapper from '../../global/layouts/contentWrapper'
 
 export default function Stats({ SO_topTech, SO_reputation }) {
-  const [current, setCurrent] = useState('SO')
+  const [current, setCurrent] = useState('Stack Overflow')
 
   if (!SO_topTech || !SO_reputation) return <div>loading..</div>
 
@@ -15,7 +17,11 @@ export default function Stats({ SO_topTech, SO_reputation }) {
     return (
       <>
         <Header current={current} setCurrent={setCurrent} />
-        <SO points={points} badges={badges} topTech={topTech} />
+        <SectionTitle txt1={'statistics'} txt2={current} />
+
+        <ContentWrapper
+          element={<SO points={points} badges={badges} topTech={topTech} />}
+        />
       </>
     )
   }

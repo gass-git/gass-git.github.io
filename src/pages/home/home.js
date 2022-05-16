@@ -3,6 +3,7 @@ import Latest from './components/latest/latest'
 import SectionTitle from '../../global/layouts/sectionTitle'
 import Header from './components/header'
 import FilterByEvent from './components/filterByEvent'
+import ContentWrapper from '../../global/layouts/contentWrapper'
 
 export default function Home({ latest }) {
   if (!latest) {
@@ -15,7 +16,7 @@ export default function Home({ latest }) {
         <Header />
         <SectionTitle txt1={'Latest'} txt2={'activity online'} />
         <FilterByEvent />
-        <Latest latest={latest} />
+        <ContentWrapper element={<Latest latest={latest} />} />
       </section>
     )
   }

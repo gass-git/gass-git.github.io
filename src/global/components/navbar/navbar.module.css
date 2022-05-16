@@ -4,8 +4,8 @@
   max-width: 880px;
   height: 75px;
   transition: 500ms;
-  background-color: rgba(20, 20, 20, 0.6);
-  border-radius: var(--border-radius-one);
+  background-color: var(--dark-transparent-two);
+  border-radius: var(--border-radius-two);
   box-shadow: var(--box-shadow-one);
   /*border: 1px solid rgba(255, 255, 255, 0.15);*/
 }

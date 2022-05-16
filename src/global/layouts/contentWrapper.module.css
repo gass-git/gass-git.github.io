@@ -1,0 +1,10 @@
+#content_wrapper {
+  margin: 0 auto;
+  padding: var(--content-padding);
+  max-width: var(--content-max-width);
+  color: var(--white);
+  border-radius: var(--content-border-radius);
+  border: var(--content-border);
+  background-color: var(--content-bg-color);
+  box-shadow: var(--content-shadow);
+}

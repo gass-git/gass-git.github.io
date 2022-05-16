@@ -23,8 +23,9 @@
   --bright-slate: #00edfa;
   --light-green: rgba(70, 201, 70);
   --slate: #3d4c61;
-  --dark-transparent-one: rgba(0, 0, 0, 0.8);
-  --dark-transparent-two: rgba(0, 0, 0, 0.3);
+  --dark-transparent-one: rgba(0, 0, 0, 0.7);
+  --dark-transparent-two: rgba(0, 0, 0, 0.6);
+  --dark-transparent-three: rgba(0, 0, 0, 0.3);
   --white-transparent-one: rgba(255, 255, 255, 0.1);
   --white-transparent-two: rgba(255, 255, 255, 0.1);
   --white: #f0f7ff;
@@ -33,18 +34,21 @@
   --header-max-width: 876px;
   --header-height: 310px;
   --header-border: 2px solid rgb(0, 237, 250, 0.3);
+  --border-radius-one: 5px;
+
+  /* navbar */
+  --border-radius-two: 3px;
 
   /* global styles */
-  --border-radius-one: 3px;
   --box-shadow-one: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --box-shadow-two: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   /* content wrapper styles */
   --content-padding: 20px 0 0 0;
   --content-max-width: 878px;
-  --content-border-radius: 2px;
+  --content-border-radius: 3px;
   --content-border: 1px solid rgba(255, 255, 255, 0.15);
-  --content-bg-color: rgba(20, 20, 20, 0.4);
+  --content-bg-color: var(--dark-transparent-two);
   --content-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   /* animation related */

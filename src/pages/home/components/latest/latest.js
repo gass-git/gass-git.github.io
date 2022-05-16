@@ -17,7 +17,7 @@ export default function Latest({ latest }) {
   }
 
   return (
-    <section id={s.latest_events}>
+    <>
       {
         latest.map((el) => {
           return (
@@ -42,6 +42,6 @@ export default function Latest({ latest }) {
           )
         })
       }
-    </section>
+    </>
   )
 }

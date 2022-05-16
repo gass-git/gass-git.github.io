@@ -1,14 +1,3 @@
-#list {
-  margin: 0 auto;
-  padding: var(--content-padding);
-  max-width: var(--content-max-width);
-  color: var(--white);
-  border-radius: var(--content-border-radius);
-  border: var(--content-border);
-  background-color: var(--content-bg-color);
-  box-shadow: var(--content-shadow);
-}
-
 .card {
   flex: 1;
   margin: 40px 20px 40px 20px;

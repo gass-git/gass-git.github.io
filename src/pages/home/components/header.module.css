@@ -8,7 +8,7 @@
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
   border: var(--header-border);
-  box-shadow: var(--box-shadow-two);
+  box-shadow: var(--box-shadow-one);
 }
 
 .movable_box {

@@ -24,7 +24,7 @@ export default function ArticlesList({ articles }) {
   }
 
   return (
-    <section id={s.list}>
+    <section>
       {articles.map((data) => <Card data={data} />)}
     </section>
   )
