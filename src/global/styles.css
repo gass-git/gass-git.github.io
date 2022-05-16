@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
+  /* global background color */
+  --global-bg-color: rgb(45, 67, 110);
+  /* colors:  
+    rgb(39, 66, 100)
+    #1e3e6a
+    #284d82
+    rgb(45, 67, 110)
+  */
+
+
   /* margins */
   --app-container-margin: 0 auto;
   --top-section-margin: 20px 0 0 0;
@@ -28,7 +38,10 @@
 }
 
 body {
-  background-color: #1f4170;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23384363' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23414d6f' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2349567b' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23526087' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%235A6993' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: var(--global-bg-color);
   margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +72,23 @@ code {
     monospace;
 }
 
-/* -- class used for Headers -- */
+.green {
+  color: var(--light-green);
+}
+
+/* 
+-- classes and animations used for Headers -- 
+*/
+
+.vertical_text {
+  text-transform: uppercase;
+  width: 20px;
+  margin: 20px auto 20px auto;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: white !important;
+}
+
 .animated-arrow {
   font-size: 45px;
   transition: var(--slide-transition);
@@ -69,9 +98,20 @@ code {
   animation-iteration-count: infinite;
 }
 
-/* 
--- Global animations --
-*/
+.tab {
+  text-align: center;
+  width: 63px;
+  height: 100%;
+  transition: 500ms;
+  animation-name: waver;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+.tab>* {
+  cursor: pointer;
+}
 
 @keyframes waver {
   0% {
@@ -79,10 +119,12 @@ code {
   }
 
   50% {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   100% {
     opacity: 0.3;
   }
 }
+
+/* ------------------- */

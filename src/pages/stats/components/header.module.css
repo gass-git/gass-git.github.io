@@ -8,29 +8,26 @@
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
+  border: 2px solid rgb(0, 237, 250, 0.3);
   border-radius: var(--border-radius-one);
-  border-left: 8px solid #4f6b7e;
-  border-right: 8px solid #4f6b7e;
-  border-top: 4px solid #3c5262;
-  border-bottom: 4px solid #3c5262;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .movable_box {
   display: flex;
   width: 210px;
-  height: 320px;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.8);
   transition: 500ms;
   border-right: 1px solid rgb(61, 76, 97, 0.5);
 }
 
 .icons_wrapper {
-  width: 170px;
+  width: auto;
   height: 300px;
   color: white;
   font-size: 50px;
-  padding: 10px 20px 10px 20px;
+  padding: 0px 20px 0px 20px;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -48,36 +45,4 @@
 .selected {
   border-radius: 3px;
   border: 1px solid rgb(70, 201, 70);
-}
-
-.tab {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 75px;
-  height: 310px;
-  transition: 500ms;
-  animation-name: waver;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  color: white;
-}
-
-.tab>* {
-  cursor: pointer;
-}
-
-@keyframes waver {
-  0% {
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  100% {
-    opacity: 0.3;
-  }
 }

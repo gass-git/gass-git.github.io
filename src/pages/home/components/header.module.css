@@ -28,36 +28,3 @@
   font-size: 14px;
   padding: 0 20px 0 20px;
 }
-
-.green {
-  color: var(--light-green);
-}
-
-.Vtxt_off {
-  opacity: 0.55;
-  width: 20px;
-  margin: 20px auto 20px auto;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  color: var(--white);
-  cursor: default;
-  text-shadow: 0 0 12px yellow;
-}
-
-.Vtxt_on {
-  opacity: 1;
-  width: 20px;
-  margin: 20px auto 20px auto;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  color: #00edfa;
-  cursor: default;
-}
-
-.tab {
-  text-align: center;
-  width: 75px;
-  height: 100%;
-  background-color: rgba(16, 26, 39, 0.8);
-  color: #00edfa;
-}

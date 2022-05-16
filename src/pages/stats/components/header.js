@@ -33,13 +33,16 @@ export default function Header() {
         style={{ transform: `translateX(${pixels})` }}
       >
 
-        <div className={s.tab}>
+        <div className='tab'>
+          <p
+            className='vertical_text'
+            onClick={() => expand()}
+          >
+            select
+          </p>
           <FontAwesomeIcon
-            style={{
-              fontSize: '60px',
-              transition: '500ms',
-              transform: `rotate(${degrees})`
-            }}
+            className='animated-arrow'
+            style={{ transform: `rotate(${degrees})` }}
             icon={faAngleLeft}
             onClick={() => expand()}
           />

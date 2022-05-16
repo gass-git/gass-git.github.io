@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../../../global/styles.css'
 import s from './header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
@@ -7,22 +6,19 @@ import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import useSound from 'use-sound'
 
 export default function Header() {
-  const ini = { pixels: '-480px', degrees: '0deg' }
+  const ini = { pixels: '-490px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [on, setOn] = useState(false)
   const [playSound] = useSound(clickStereo, { volume: 0.9 })
 
   function expand() {
     playSound()
 
     if (pixels !== ini.pixels) {
-      setOn(false)
       setPixels(ini.pixels)
       setDegrees(ini.degrees)
     }
     else {
-      setOn(true)
       setPixels('0px')
       setDegrees('180deg')
     }
@@ -36,7 +32,7 @@ export default function Header() {
           projects I've developed and other stuff.
         </p>
         <p>
-          <span className={s.green}>A bit about me:</span> I started playing around with code since my teens. Mainly related
+          <span className='green'>A bit about me:</span> I started playing around with code since my teens. Mainly related
           to web development. I've always been fascinated by portraying an idea into reality
           and sharing it with the world. There are
           probably many developers that share this same feeling.
@@ -59,8 +55,11 @@ export default function Header() {
           <AboutMe />
         </div>
 
-        <div className={s.tab}>
-          <p className={on ? s.Vtxt_on : s.Vtxt_off}>
+        <div className='tab'>
+          <p
+            className='vertical_text'
+            onClick={() => expand()}
+          >
             ABOUT
           </p>
 

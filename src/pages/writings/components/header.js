@@ -32,19 +32,16 @@ export default function Header({ latestArticle }) {
         style={{ transform: `translateX(${pixels})` }}
       >
 
-        <div className={s.tab}>
+        <div className='tab'>
           <p
-            className={s.vertical_text}
+            className='vertical_text'
             onClick={() => expand()}
           >
             LATEST
           </p>
           <FontAwesomeIcon
-            style={{
-              fontSize: '60px',
-              transition: '500ms',
-              transform: `rotate(${degrees})`
-            }}
+            className='animated-arrow'
+            style={{ transform: `rotate(${degrees})` }}
             icon={faAngleLeft}
             onClick={() => expand()}
           />

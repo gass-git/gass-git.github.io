@@ -32,16 +32,16 @@ export default function Header() {
         style={{ transform: `translateX(${pixels})` }}
       >
 
-        <div className={s.tab}>
+        <div className='tab'>
           <p
-            className={s.vertical_text}
+            className='vertical_text'
             onClick={() => expand()}
           >
             ABOUT
           </p>
           <FontAwesomeIcon
             style={{
-              fontSize: '60px',
+              fontSize: '45px',
               transition: '500ms',
               transform: `rotate(${degrees})`
             }}
