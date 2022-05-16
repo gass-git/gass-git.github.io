@@ -6,7 +6,7 @@ import { faDev, faStackOverflow, faGithub } from '@fortawesome/free-brands-svg-i
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import useSound from 'use-sound'
 
-export default function Header() {
+export default function Header({ current, setCurrent }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -49,13 +49,22 @@ export default function Header() {
         </div>
 
         <div className={s.icons_wrapper}>
-          <div className={s.selected}>
+          <div
+            className={current === 'SO' ? s.selected : s.transparent_border}
+            onClick={() => setCurrent('SO')}
+          >
             <FontAwesomeIcon icon={faStackOverflow} />
           </div>
-          <div>
+          <div
+            className={current === 'dev' ? s.selected : s.transparent_border}
+            onClick={() => setCurrent('dev')}
+          >
             <FontAwesomeIcon icon={faDev} />
           </div>
-          <div>
+          <div
+            className={current === 'github' ? s.selected : s.transparent_border}
+            onClick={() => setCurrent('github')}
+          >
             <FontAwesomeIcon icon={faGithub} />
           </div>
         </div>

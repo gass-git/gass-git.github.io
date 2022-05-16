@@ -20,6 +20,7 @@
   --section-title-margin: 50px auto 15px auto;
 
   /* colors */
+  --bright-slate: #00edfa;
   --light-green: rgba(70, 201, 70);
   --slate: #3d4c61;
   --dark-transparent-one: rgba(0, 0, 0, 0.8);

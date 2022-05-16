@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/header'
 import SO from './components/SO/SO'
 
 export default function Stats({ SO_topTech, SO_reputation }) {
+  const [current, setCurrent] = useState('SO')
 
   if (!SO_topTech || !SO_reputation) return <div>loading..</div>
 
@@ -13,7 +14,7 @@ export default function Stats({ SO_topTech, SO_reputation }) {
 
     return (
       <>
-        <Header />
+        <Header current={current} setCurrent={setCurrent} />
         <SO points={points} badges={badges} topTech={topTech} />
       </>
     )
