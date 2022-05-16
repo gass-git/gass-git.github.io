@@ -1,12 +1,12 @@
 #latest_events {
   margin: 0 auto;
-  padding-top: 20px;
-  max-width: 878px;
+  padding: var(--content-padding);
+  max-width: var(--content-max-width);
   color: var(--white);
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(20, 20, 20, 0.4);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: var(--content-border-radius);
+  border: var(--content-border);
+  background-color: var(--content-bg-color);
+  box-shadow: var(--content-shadow);
 }
 
 .event_wrapper {

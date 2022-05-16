@@ -39,6 +39,14 @@
   --box-shadow-one: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --box-shadow-two: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+  /* content wrapper styles */
+  --content-padding: 20px 0 0 0;
+  --content-max-width: 878px;
+  --content-border-radius: 2px;
+  --content-border: 1px solid rgba(255, 255, 255, 0.15);
+  --content-bg-color: rgba(20, 20, 20, 0.4);
+  --content-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   /* animation related */
   --slide-transition: 500ms;
   --waver-duration: 2s;
@@ -87,6 +95,21 @@ code {
 -- classes and animations used for Headers -- 
 */
 
+.tab {
+  text-align: center;
+  width: 63px;
+  height: 100%;
+  transition: 500ms;
+  animation-name: waver;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+.tab>* {
+  cursor: pointer;
+}
+
 .vertical_text {
   text-transform: uppercase;
   width: 20px;
@@ -103,21 +126,6 @@ code {
   animation-name: waver;
   animation-duration: var(--waver-duration);
   animation-iteration-count: infinite;
-}
-
-.tab {
-  text-align: center;
-  width: 63px;
-  height: 100%;
-  transition: 500ms;
-  animation-name: waver;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  color: white;
-}
-
-.tab>* {
-  cursor: pointer;
 }
 
 @keyframes waver {

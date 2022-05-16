@@ -2,20 +2,20 @@
   display: flex;
   margin: 20px auto 0px auto;
   padding: 0px 0px 20px 0px;
-  width: 95%;
+  width: 90%;
   flex-wrap: wrap;
 }
 
 #filterByTopic>div {
   flex: 1 0 130px;
   max-width: 130px;
-  margin: 10px;
+  margin: 20px;
   padding: 12px 0px 12px 0px;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 14px;
-  border-radius: 9999px;
+  border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.3);
   transition: 100ms;
   cursor: pointer;
