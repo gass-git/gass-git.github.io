@@ -1,18 +1,14 @@
 #header {
   margin: 0 auto;
   height: var(--header-height);
-  max-width: 880px;
+  max-width: 876px;
   background-image: url('../../../global/assets/images/cyberpunk_1.webp');
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
-  border-left: 8px solid #4f6b7e;
-  border-right: 8px solid #4f6b7e;
-  border-top: 4px solid #3c5262;
-  border-bottom: 4px solid #3c5262;
-  /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 2px solid rgb(0, 237, 250, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .movable_box {
@@ -54,14 +50,14 @@
   margin: 20px auto 20px auto;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  color: var(--white);
+  color: #00edfa;
   cursor: default;
-  text-shadow: 0 0 12px yellow;
 }
 
 .tab {
   text-align: center;
   width: 75px;
-  height: 310px;
-  color: var(--white);
+  height: 100%;
+  background-color: rgba(16, 26, 39, 0.8);
+  color: #00edfa;
 }

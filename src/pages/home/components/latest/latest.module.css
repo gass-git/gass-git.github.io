@@ -4,8 +4,9 @@
   max-width: 888px;
   color: var(--white);
   border-radius: 2px;
-  border-left: 8px solid #3c5262;
-  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(20, 20, 20, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .event_wrapper {

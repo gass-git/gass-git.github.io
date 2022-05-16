@@ -4,14 +4,10 @@
   max-width: 880px;
   height: 75px;
   transition: 500ms;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--border-radius-one);
-  border-left: 8px solid #4f6b7e;
-  border-right: 8px solid #4f6b7e;
-  border-top: 4px solid #3c5262;
-  border-bottom: 4px solid #3c5262;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
 }
 
 .wrapper {
@@ -58,7 +54,7 @@
 .selected {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.07);
-  color: var(--light-green) !important;
+  color: #00edfa !important;
 }
 
 .left_box {
@@ -109,7 +105,7 @@
 }
 
 .railway_container {
-  margin-top: 0px;
+  margin-top: -2px;
   height: 5px;
   position: relative;
   width: 880px;
@@ -119,9 +115,9 @@
   position: absolute;
   z-index: 1;
   width: 164px;
-  height: 4px;
-  opacity: 0.6;
-  background: var(--light-green);
+  height: 2px;
+  opacity: 0.8;
+  background: #00edfa;
   transition: 200ms;
 }
 

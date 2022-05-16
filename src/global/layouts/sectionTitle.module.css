@@ -1,7 +1,7 @@
 #section_title {
   margin: var(--section-title-margin);
   max-width: 888px;
-  width: 90%;
+  width: 100%;
   /*border: 1px solid white;*/
 }
 
@@ -9,8 +9,8 @@
   display: flex;
   width: 55%;
   min-width: 450px;
-  margin: 0 0 0 20px;
-  border-bottom: 2px solid #3c5262;
+  margin: 0 0 0 0px;
+  /*border-bottom: 1px solid rgb(0, 237, 250, 0.7);*/
   /*border-bottom: 2px solid rgba(255, 255, 255, 0.2);*/
 }
 

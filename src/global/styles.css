@@ -6,8 +6,8 @@
   /* margins */
   --app-container-margin: 0 auto;
   --top-section-margin: 20px 0 0 0;
-  --page-section-margin: 40px 0 0 0;
-  --section-title-margin: 50px auto 35px auto;
+  --page-section-margin: 30px 0 0 0;
+  --section-title-margin: 50px auto 15px auto;
 
   /* colors */
   --light-green: rgba(70, 201, 70);
@@ -19,7 +19,7 @@
   --white: #f0f7ff;
 
   /* global styles */
-  --header-height: 320px;
+  --header-height: 310px;
   --border-radius-one: 3px;
 
   /* animation related */
@@ -28,7 +28,7 @@
 }
 
 body {
-  background-color: #0d1f3a;
+  background-color: #1f4170;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +61,7 @@ code {
 
 /* -- class used for Headers -- */
 .animated-arrow {
-  font-size: 60px;
+  font-size: 45px;
   transition: var(--slide-transition);
   cursor: pointer;
   animation-name: waver;
