@@ -4,8 +4,12 @@ import SectionTitle from '../../global/layouts/sectionTitle'
 import Header from './components/header'
 import FilterByEvent from './components/filterByEvent'
 import ContentWrapper from '../../global/layouts/contentWrapper'
+import useSound from 'use-sound'
+import tickSound from '../../global/assets/sounds/tick.wav'
 
 export default function Home({ latest }) {
+  const [playSound] = useSound(tickSound)
+
   const [filters, setFilters] = useState({
     commit: false,
     SO_answer: false,
@@ -13,6 +17,8 @@ export default function Home({ latest }) {
   })
 
   function handleFilters(filter) {
+    playSound()
+
     switch (filter) {
       case 'commit':
         return setFilters({

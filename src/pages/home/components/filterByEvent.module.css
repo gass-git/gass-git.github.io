@@ -24,7 +24,7 @@
 }
 
 #filterByEvent>div:hover {
-  background-color: rgb(130, 47, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .icon {
