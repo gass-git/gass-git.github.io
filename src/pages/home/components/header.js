@@ -47,30 +47,34 @@ export default function Header() {
 
   return (
     <section id={s.header}>
-      <div
-        className={s.movable_box}
-        style={{ transform: `translateX(${pixels})` }}
-      >
-        <div className={s.content}>
-          <AboutMe />
-        </div>
-
-        <div className='tab'>
-          <p
-            className='vertical_text'
-            onClick={() => expand()}
+      <div className={s.wrapper}>
+        <div className={s.glass}>
+          <div
+            className={s.movable_box}
+            style={{ transform: `translateX(${pixels})` }}
           >
-            ABOUT
-          </p>
+            <div className={s.content}>
+              <AboutMe />
+            </div>
 
-          <FontAwesomeIcon
-            icon={faAngleRight}
-            className='animated-arrow'
-            style={{ transform: `rotate(${degrees})` }}
-            onClick={() => expand()}
-          />
+            <div className='tab'>
+              <p
+                className='vertical_text'
+                onClick={() => expand()}
+              >
+                ABOUT
+              </p>
+
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className='animated-arrow'
+                style={{ transform: `rotate(${degrees})` }}
+                onClick={() => expand()}
+              />
+            </div>
+
+          </div>
         </div>
-
       </div>
     </section>
   )

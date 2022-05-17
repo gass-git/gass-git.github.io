@@ -1,13 +1,13 @@
 #navbar {
   margin: 0 auto;
   min-width: 240px;
-  max-width: 880px;
+  max-width: 874px;
   height: 75px;
   transition: 500ms;
   background-color: var(--dark-transparent-two);
   border-radius: var(--border-radius-two);
-  box-shadow: var(--box-shadow-one);
-  /*border: 1px solid rgba(255, 255, 255, 0.15);*/
+  /*box-shadow: var(--box-shadow-one);*/
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .wrapper {
@@ -122,19 +122,19 @@
 }
 
 .pos1 {
-  transform: translateX(113px);
+  transform: translateX(110px);
 }
 
 .pos2 {
-  transform: translateX(277px);
+  transform: translateX(274px);
 }
 
 .pos3 {
-  transform: translateX(441px);
+  transform: translateX(438px);
 }
 
 .pos4 {
-  transform: translateX(605px);
+  transform: translateX(602px);
 }
 
 @keyframes ripple {

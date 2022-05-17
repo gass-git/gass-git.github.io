@@ -1,14 +1,40 @@
 #header {
   margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  max-width: var(--header-max-width);
+  border-radius: var(--border-radius-one);
+}
+
+.wrapper {
+  position: relative;
+  z-index: 0;
   height: var(--header-height);
   max-width: var(--header-max-width);
-  background-image: url('../../../global/assets/images/cyberpunk_1.webp');
+  background-image: url('../../../global/assets/images/cyberpunk_2.gif');
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
-  border: var(--header-border);
-  box-shadow: var(--box-shadow-one);
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  /*box-shadow: var(--box-shadow-one);*/
+  box-shadow: inset -4px 4px 12px rgb(0, 0, 0, 1);
+}
+
+.glass {
+  position: relative;
+  z-index: 1;
+  border-right: 1px solid white;
+  border-image:
+    linear-gradient(to bottom,
+      rgb(255, 255, 255, 0.22),
+      rgb(255, 255, 255, 0.10)) 1 100%;
+  position: relative;
+  background:
+    linear-gradient(8deg,
+      rgba(255, 255, 255, 0.12) 45%,
+      rgba(255, 255, 255, 0.23) 65%);
+  width: calc(100% - 1px);
+  height: 100%;
 }
 
 .movable_box {
