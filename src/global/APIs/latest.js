@@ -28,7 +28,7 @@ async function fetchLatest({ setLatest }) {
         array.push({
           created_at: el.creation_date,
           id: el.answer_id,
-          type: 'SO answer',
+          type: 'SO_answer',
           detail: question_data.items[0].title,
           url: `https://stackoverflow.com/a/${el.answer_id}`
         })
