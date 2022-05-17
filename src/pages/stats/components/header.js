@@ -28,47 +28,51 @@ export default function Header({ current, setCurrent }) {
 
   return (
     <section id={s.header}>
-      <div
-        className={s.movable_box}
-        style={{ transform: `translateX(${pixels})` }}
-      >
+      <div className={s.wrapper}>
+        <div className={s.glass}>
+          <div
+            className={s.movable_box}
+            style={{ transform: `translateX(${pixels})` }}
+          >
 
-        <div className='tab'>
-          <p
-            className='vertical_text'
-            onClick={() => expand()}
-          >
-            select
-          </p>
-          <FontAwesomeIcon
-            className='animated-arrow'
-            style={{ transform: `rotate(${degrees})` }}
-            icon={faAngleLeft}
-            onClick={() => expand()}
-          />
-        </div>
+            <div className='tab'>
+              <p
+                className='vertical_text'
+                onClick={() => expand()}
+              >
+                select
+              </p>
+              <FontAwesomeIcon
+                className='animated-arrow'
+                style={{ transform: `rotate(${degrees})` }}
+                icon={faAngleLeft}
+                onClick={() => expand()}
+              />
+            </div>
 
-        <div className={s.icons_wrapper}>
-          <div
-            className={current === 'Stack Overflow' ? s.selected : s.transparent_border}
-            onClick={() => setCurrent('Stack Overflow')}
-          >
-            <FontAwesomeIcon icon={faStackOverflow} />
-          </div>
-          <div
-            className={current === 'DevTo' ? s.selected : s.transparent_border}
-            onClick={() => setCurrent('DevTo')}
-          >
-            <FontAwesomeIcon icon={faDev} />
-          </div>
-          <div
-            className={current === 'GitHub' ? s.selected : s.transparent_border}
-            onClick={() => setCurrent('GitHub')}
-          >
-            <FontAwesomeIcon icon={faGithub} />
+            <div className={s.icons_wrapper}>
+              <div
+                className={current === 'Stack Overflow' ? s.selected : s.transparent_border}
+                onClick={() => setCurrent('Stack Overflow')}
+              >
+                <FontAwesomeIcon icon={faStackOverflow} />
+              </div>
+              <div
+                className={current === 'DevTo' ? s.selected : s.transparent_border}
+                onClick={() => setCurrent('DevTo')}
+              >
+                <FontAwesomeIcon icon={faDev} />
+              </div>
+              <div
+                className={current === 'GitHub' ? s.selected : s.transparent_border}
+                onClick={() => setCurrent('GitHub')}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section >
+    </section>
   )
 }

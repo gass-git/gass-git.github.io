@@ -27,40 +27,41 @@ export default function Header() {
 
   return (
     <section id={s.header}>
-      <div
-        className={s.movable_box}
-        style={{ transform: `translateX(${pixels})` }}
-      >
-
-        <div className='tab'>
-          <p
-            className='vertical_text'
-            onClick={() => expand()}
+      <div className={s.wrapper}>
+        <div className={s.glass}>
+          <div
+            className={s.movable_box}
+            style={{ transform: `translateX(${pixels})` }}
           >
-            ABOUT
-          </p>
-          <FontAwesomeIcon
-            style={{
-              fontSize: '45px',
-              transition: '500ms',
-              transform: `rotate(${degrees})`
-            }}
-            icon={faAngleLeft}
-            onClick={() => expand()}
-          />
-        </div>
 
+            <div className='tab'>
+              <p
+                className='vertical_text'
+                onClick={() => expand()}
+              >
+                ABOUT
+              </p>
+              <FontAwesomeIcon
+                style={{
+                  fontSize: '45px',
+                  transition: '500ms',
+                  transform: `rotate(${degrees})`
+                }}
+                icon={faAngleLeft}
+                onClick={() => expand()}
+              />
+            </div>
 
+            <div className={s.content_wrapper}>
+              <p>
+                I'm constantly building projects related to web development.
+              </p>
+              <p>
+                Feel free to have a look around and check them out!
+              </p>
+            </div>
+          </div>
 
-        <div
-          className={s.content_wrapper}
-        >
-          <p>
-            I'm constantly building projects related to web development.
-          </p>
-          <p>
-            Feel free to have a look around and check them out!
-          </p>
         </div>
       </div>
     </section>

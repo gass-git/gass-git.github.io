@@ -26,34 +26,38 @@ export default function Header({ latestArticle }) {
 
   return (
     <section id={s.header}>
-      <div
-        className={s.movable_box}
-        style={{ transform: `translateX(${pixels})` }}
-      >
-
-        <div className='tab'>
-          <p
-            className='vertical_text'
-            onClick={() => expand()}
+      <div className={s.wrapper}>
+        <div className={s.glass}>
+          <div
+            className={s.movable_box}
+            style={{ transform: `translateX(${pixels})` }}
           >
-            LATEST
-          </p>
-          <FontAwesomeIcon
-            className='animated-arrow'
-            style={{ transform: `rotate(${degrees})` }}
-            icon={faAngleLeft}
-            onClick={() => expand()}
-          />
-        </div>
-        <div
-          className={s.content_wrapper}
-          onClick={() => window.open(latestArticle.url, '_blank')}
-        >
-          <div className={s.title}>
-            {latestArticle.title}
-          </div>
-          <div className={s.sentence}>
-            {latestArticle.description}
+
+            <div className='tab'>
+              <p
+                className='vertical_text'
+                onClick={() => expand()}
+              >
+                LATEST
+              </p>
+              <FontAwesomeIcon
+                className='animated-arrow'
+                style={{ transform: `rotate(${degrees})` }}
+                icon={faAngleLeft}
+                onClick={() => expand()}
+              />
+            </div>
+            <div
+              className={s.content_wrapper}
+              onClick={() => window.open(latestArticle.url, '_blank')}
+            >
+              <div className={s.title}>
+                {latestArticle.title}
+              </div>
+              <div className={s.sentence}>
+                {latestArticle.description}
+              </div>
+            </div>
           </div>
         </div>
       </div>
