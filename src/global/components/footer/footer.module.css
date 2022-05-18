@@ -1,9 +1,11 @@
 #footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  text-align: center;
   width: 880px;
   height: 200px;
-  background-color: var(--wrapper-bg-color);
-  border-radius: var(--wrapper-border-radius);
-  border: var(--wrapper-border);
-  box-shadow: var(--wrapper-inner-shadow);
+  color: rgba(255, 255, 255, 0.6);
 }
