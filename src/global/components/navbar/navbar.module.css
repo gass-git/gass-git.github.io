@@ -53,8 +53,8 @@
 
 .selected {
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.07);
-  color: var(--bright-slate) !important;
+  background-color: var(--selected-bg-color);
+  color: var(--selected-font-color);
 }
 
 .left_box {

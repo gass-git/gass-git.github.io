@@ -13,18 +13,20 @@
   padding: 12px 0px 12px 0px;
   text-align: center;
   align-items: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
   font-size: 14px;
-  border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: 100ms;
+  border-radius: var(--border-radius-two);
+  background-color: var(--wrapper-bg-color);
+  border: var(--wrapper-border);
+  box-shadow: var(--wrapper-inner-shadow);
+  transition: 300ms;
   cursor: pointer;
   text-transform: uppercase;
 }
 
 #filterByEvent>div:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .icon {
@@ -33,5 +35,30 @@
 }
 
 .selected {
-  background-color: rgb(130, 47, 255, 0.7) !important;
+  color: var(--selected-font-color) !important;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 1),
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 15px rgba(0, 237, 250, 0.5),
+      0 0 20px rgba(0, 237, 250, 0.5),
+      0 0 25px rgba(0, 237, 250, 0.5),
+      0 0 30px rgba(0, 237, 250, 0.5),
+      0 0 35px rgba(0, 237, 250, 0.5);
+  }
+
+  to {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 15px rgba(0, 237, 250, 0.6),
+      0 0 20px rgba(0, 237, 250, 0.6),
+      0 0 25px rgba(0, 237, 250, 0.6),
+      0 0 30px rgba(0, 237, 250, 0.6),
+      0 0 35px rgba(0, 237, 250, 0.6),
+      0 0 40px rgba(0, 237, 250, 0.6);
+  }
 }
