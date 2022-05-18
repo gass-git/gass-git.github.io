@@ -1,7 +1,7 @@
-#content_wrapper {
+#footer {
   margin: 0 auto;
-  padding: var(--content-padding);
-  max-width: var(--content-max-width);
+  width: 880px;
+  height: 200px;
   background-color: var(--wrapper-bg-color);
   border-radius: var(--wrapper-border-radius);
   border: var(--wrapper-border);

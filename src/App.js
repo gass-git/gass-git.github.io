@@ -10,6 +10,7 @@ import fetchArticles from './global/APIs/articles'
 import fetchRepos from './global/APIs/repos'
 import { fetchReputation, fetchTopTech } from './global/APIs/stats'
 import { fetchLatest } from './global/APIs/latest'
+import Footer from './global/components/footer/footer'
 
 function App() {
   const [selected, setSelected] = useState('home')
@@ -37,11 +38,11 @@ function App() {
   return (
     <div className='app-container'>
 
-      <div className='top'>
+      <section id='top'>
         <Navbar selected={selected} setSelected={setSelected} />
-      </div>
+      </section>
 
-      <section id='page'>
+      <section id='content'>
         <Routes>
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/' element={<Home />} />
@@ -50,6 +51,10 @@ function App() {
           <Route path='/writings' element={<Writings articles={articles} />} />
           <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} />} />
         </Routes>
+      </section>
+
+      <section id='bottom'>
+        <Footer />
       </section>
 
     </div>

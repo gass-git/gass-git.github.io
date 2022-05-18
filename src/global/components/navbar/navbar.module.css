@@ -4,10 +4,10 @@
   max-width: 874px;
   height: 75px;
   transition: 500ms;
-  background-color: var(--dark-transparent-two);
-  border-radius: var(--border-radius-two);
-  /*box-shadow: var(--box-shadow-one);*/
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: var(--wrapper-bg-color);
+  border-radius: var(--wrapper-border-radius);
+  border: var(--wrapper-border);
+  box-shadow: var(--wrapper-inner-shadow);
 }
 
 .wrapper {
