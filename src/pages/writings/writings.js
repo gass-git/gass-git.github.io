@@ -4,13 +4,18 @@ import Header from './components/header'
 import FilterByTopic from './components/filterByTopics'
 import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
+import useSound from 'use-sound'
+import tickSound from '../../global/assets/sounds/yake.wav'
 
 export default function Writings({ articles }) {
   const [tags, setTags] = useState([])
   const [selectedTags, setSelectedTags] = useState([])
   const [filteredArticles, setFilteredArticles] = useState(articles)
+  const [playSound] = useSound(tickSound, { volume: 0.6 })
 
   function handleSelectedTags(tag) {
+    playSound()
+
     // if tag is not in selectedTags array, add it
     if (!selectedTags.includes(tag)) {
       setSelectedTags([...selectedTags, tag])

@@ -5,10 +5,10 @@ import Header from './components/header'
 import FilterByEvent from './components/filterByEvent'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import useSound from 'use-sound'
-import tickSound from '../../global/assets/sounds/tick.wav'
+import tickSound from '../../global/assets/sounds/yake.wav'
 
 export default function Home({ latest }) {
-  const [playSound] = useSound(tickSound)
+  const [playSound] = useSound(tickSound, { volume: 0.6 })
   const [selectedTypes, setSelectedTypes] = useState({
     commit: false,
     SO_answer: false,

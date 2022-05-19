@@ -1,7 +1,6 @@
 import React from 'react'
 import s from './filterByTopics.module.css'
 
-
 export default function FilterByTopics({ tags, handleSelectedTags, selectedTags }) {
   return (
     <section id={s.filterByTopic}>
