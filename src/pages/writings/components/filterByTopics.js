@@ -1,14 +1,16 @@
 import React from 'react'
 import s from './filterByTopics.module.css'
 
-export default function FilterByTopics() {
-  const topics = ['javascript', 'html', 'setinterval', 'laravel', 'react', 'challenge', 'css']
-
+export default function FilterByTopics({ tags, handleSelectedTags }) {
   return (
     <section id={s.filterByTopic}>
       {
-        topics.map((topic) => {
-          return <div>{topic}</div>
+        tags.map((tag) => {
+          return (
+            <div onClick={() => handleSelectedTags(tag)}>
+              {tag}
+            </div>
+          )
         })
       }
     </section>

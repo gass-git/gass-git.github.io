@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeCommit } from '@fortawesome/free-solid-svg-icons'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 
-export default function FilterByTopics({ filters, handleFilters }) {
+export default function FilterByTopics({ selectedTypes, handleFilters }) {
   const events = ['commits', 'SO answers', 'articles']  // for buttons
   const eventTypes = ['commit', 'SO_answer', 'article'] // for filtering data
   const icons = [faCodeCommit, faStackOverflow, faDev]
@@ -15,7 +15,7 @@ export default function FilterByTopics({ filters, handleFilters }) {
         eventTypes.map((type, i) => {
           return (
             <div
-              className={filters[type] ? s.selected : null}
+              className={selectedTypes[type] ? s.selected : null}
               onClick={() => handleFilters(type)}
             >
               <FontAwesomeIcon icon={icons[i]} className={s.icon} />

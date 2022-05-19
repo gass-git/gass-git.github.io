@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import s from './articlesList.module.css'
 
-export default function ArticlesList({ articles }) {
+export default function ArticlesList({ selectedTags, articles }) {
+  const [filteredArticles, setFilteredArticles] = useState(articles)
+
+  function filter() {
+    if (selectedTags.length > 0) {
+      let filtered = articles.filter((article) => {
+        article['tags'].forEach((tag) => {
+          if (selectedTags.includes(tag)) return true
+          else return false
+        })
+      })
+      setFilteredArticles(filtered)
+    }
+  }
 
   const Card = ({ data }) => {
     return (
@@ -23,9 +36,13 @@ export default function ArticlesList({ articles }) {
     )
   }
 
+  useEffect(() => {
+    filter()
+  })
+
   return (
     <section>
-      {articles.map((data) => <Card data={data} />)}
+      {filteredArticles.map((data) => <Card data={data} />)}
     </section>
   )
 }

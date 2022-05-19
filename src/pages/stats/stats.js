@@ -19,9 +19,9 @@ export default function Stats({ SO_topTech, SO_reputation }) {
         <Header current={current} setCurrent={setCurrent} />
         <SectionTitle txt1={'statistics'} txt2={current} />
 
-        <ContentWrapper
-          element={<SO points={points} badges={badges} topTech={topTech} />}
-        />
+        <ContentWrapper>
+          <SO points={points} badges={badges} topTech={topTech} />
+        </ContentWrapper>
       </>
     )
   }

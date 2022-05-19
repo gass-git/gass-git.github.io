@@ -5,8 +5,8 @@ import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 import { faCodeCommit } from '@fortawesome/free-solid-svg-icons'
 import ContextData from './children/contextData'
 
-export default function Latest({ latest, filters }) {
-  const [filtered, setFiltered] = useState(latest)
+export default function Latest({ filteredData }) {
+
 
   function icon(type) {
     switch (type) {
@@ -17,24 +17,10 @@ export default function Latest({ latest, filters }) {
     }
   }
 
-  function filter() {
-    // if user has not selected filters show all
-    if (!filters.commit && !filters.SO_answer && !filters.article) {
-      return setFiltered(latest)
-    }
-    else {
-      return setFiltered(latest.filter((el) => filters[el.type]))
-    }
-  }
-
-  useEffect(() => {
-    filter()
-  })
-
   return (
     <>
       {
-        filtered.map((el) => {
+        filteredData.map((el) => {
           return (
             <div
               className={s.event_wrapper}
