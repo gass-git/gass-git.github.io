@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ArticlesList from './components/articlesList'
 import Header from './components/header'
 import FilterByTopic from './components/filterByTopics'
@@ -8,39 +8,65 @@ import ContentWrapper from '../../global/layouts/contentWrapper'
 export default function Writings({ articles }) {
   const [tags, setTags] = useState([])
   const [selectedTags, setSelectedTags] = useState([])
+  const [filteredArticles, setFilteredArticles] = useState(articles)
+
+  function handleSelectedTags(tag) {
+    // if tag is not in selectedTags array, add it
+    if (!selectedTags.includes(tag)) {
+      setSelectedTags([...selectedTags, tag])
+    }
+
+    // if tag is in selectedTags array remove it
+    else {
+      let filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag)
+      setSelectedTags(filteredTags)
+    }
+  }
+
+  function filter() {
+    if (selectedTags.length > 0) {
+
+      let filtered = articles.filter((article) => {
+        let bool = article['tags'].some((tag) => selectedTags.includes(tag))
+        return bool
+      })
+      setFilteredArticles(filtered)
+    }
+    else setFilteredArticles(articles)
+  }
+
+  // retrieve all tags from the articles array
+  useEffect(() => {
+    // if the data is ready and the tags array is empty continue
+    if (articles && tags.length === 0) {
+      let arr = []
+      articles.forEach((article) => {
+        article['tags'].forEach((tag) => {
+          if (!tags.includes(tag) && !arr.includes(tag)) arr.push(tag)
+        })
+      })
+      setTags(arr)
+    }
+  })
+
+  useEffect(() => {
+    filter()
+  }, [selectedTags])
 
   if (!articles) return <span>LOADING...</span>
 
-  else {
-    // retrieve all tags from the articles array
-    articles.forEach((article) => {
-      article['tags'].forEach((tag) => {
-        if (!tags.includes(tag)) setTags([...tags, tag])
-      })
-    })
-
-    function handleSelectedTags(tag) {
-      // if tag is not in selectedTags array, add it
-      if (!selectedTags.includes(tag)) {
-        setSelectedTags([...selectedTags, tag])
-      }
-
-      // if tag is in selectedTags array remove it
-      else {
-        let filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag)
-        setSelectedTags(filteredTags)
-      }
-    }
-
-    return (
-      <>
-        <Header latestArticle={articles[0]} />
-        <SectionTitle txt1='archives' txt2='filter by topic' />
-        <FilterByTopic tags={tags} handleSelectedTags={handleSelectedTags} />
-        <ContentWrapper>
-          <ArticlesList articles={articles} selectedTags={selectedTags} />
-        </ContentWrapper>
-      </>
-    )
-  }
+  else return (
+    <>
+      <Header latestArticle={articles[0]} />
+      <SectionTitle txt1='archives' txt2='filter by topic' />
+      <FilterByTopic
+        tags={tags}
+        handleSelectedTags={handleSelectedTags}
+        selectedTags={selectedTags}
+      />
+      <ContentWrapper>
+        <ArticlesList filteredArticles={filteredArticles} />
+      </ContentWrapper>
+    </>
+  )
 }
