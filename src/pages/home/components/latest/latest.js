@@ -7,7 +7,6 @@ import ContextData from './children/contextData'
 
 export default function Latest({ filteredData }) {
 
-
   function icon(type) {
     switch (type) {
       case 'commit': return <FontAwesomeIcon icon={faCodeCommit} />
@@ -16,6 +15,8 @@ export default function Latest({ filteredData }) {
       default: return null
     }
   }
+
+  if (!filteredData) return <div>Loading..</div>
 
   return (
     <>

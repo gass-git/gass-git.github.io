@@ -4,17 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { faDev, faStackOverflow, faGithub } from '@fortawesome/free-brands-svg-icons'
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
+import techSound from '../../../global/assets/sounds/unfa_select.flac'
 import useSound from 'use-sound'
 
 export default function Header({ current, setCurrent }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [playSound] = useSound(clickStereo, { volume: 0.9 })
+  const [expandSound] = useSound(clickStereo, { volume: 0.9 })
+  const [switchSound] = useSound(techSound, { volume: 0.5 })
 
   function expand() {
-
-    playSound()
+    expandSound()
 
     if (pixels !== ini.pixels) {
       setPixels(ini.pixels)
@@ -24,6 +25,11 @@ export default function Header({ current, setCurrent }) {
       setPixels('150px')
       setDegrees('0deg')
     }
+  }
+
+  function updateCurrent(selected) {
+    switchSound()
+    setCurrent(selected)
   }
 
   return (
@@ -53,19 +59,19 @@ export default function Header({ current, setCurrent }) {
             <div className={s.icons_wrapper}>
               <div
                 className={current === 'Stack Overflow' ? s.selected : s.transparent_border}
-                onClick={() => setCurrent('Stack Overflow')}
+                onClick={() => updateCurrent('Stack Overflow')}
               >
                 <FontAwesomeIcon icon={faStackOverflow} />
               </div>
               <div
                 className={current === 'DevTo' ? s.selected : s.transparent_border}
-                onClick={() => setCurrent('DevTo')}
+                onClick={() => updateCurrent('DevTo')}
               >
                 <FontAwesomeIcon icon={faDev} />
               </div>
               <div
                 className={current === 'GitHub' ? s.selected : s.transparent_border}
-                onClick={() => setCurrent('GitHub')}
+                onClick={() => updateCurrent('GitHub')}
               >
                 <FontAwesomeIcon icon={faGithub} />
               </div>
