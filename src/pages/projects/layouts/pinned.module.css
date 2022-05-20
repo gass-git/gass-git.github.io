@@ -3,7 +3,6 @@
   margin: 50px auto 100px auto;
   width: 90%;
   width: 700px;
-  /*border: 1px solid white;*/
 }
 
 .top {
@@ -18,6 +17,23 @@
   display: flex;
   flex: 1;
   margin-left: 10px;
+  /*border: 1px solid white;*/
+}
+
+.top .left .folder {
+  width: 33px;
+  color: rgb(0, 255, 255, 0.6);
+}
+
+
+.top .left .project_name {
+  margin: 26px 0px 0px 10px;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: capitalize;
+  flex-wrap: wrap;
+  height: fit-content;
+  color: rgb(0, 255, 255, 0.6);
   /*border: 1px solid white;*/
 }
 
@@ -49,16 +65,6 @@
   transform: translateX(80px) !important;
 }
 
-.top .left .project_name {
-  margin: 24px 0px 0px 8px;
-  font-size: 20px;
-  font-weight: 300;
-  flex-wrap: wrap;
-  height: fit-content;
-  color: rgb(0, 255, 255, 0.8);
-  /*border: 1px solid white;*/
-}
-
 .top .right {
   display: flex;
   margin-right: 15px;
@@ -83,13 +89,13 @@
   overflow: hidden;
   width: 100%;
   height: 390px;
-  border-radius: 6px;
+  border-radius: 2px;
   transition: 400ms;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  /*box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
 }
 
 .image_wrapper:hover {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /*box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;*/
 }
 
 .image_wrapper img {
@@ -101,8 +107,40 @@
 }
 
 .image_wrapper img:hover {
-  cursor: pointer;
   opacity: 1;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+}
+
+.about {
+  padding: 15px 10px 10px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.preview {
+  cursor: pointer;
+  transition: 400ms;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 3px;
+  color: rgb(0, 255, 255, 0.6);
+  /*border: 1px solid white;*/
+}
+
+.preview:hover {
+  color: rgb(0, 255, 255, 0.7);
+}
+
+.preview:hover .image_wrapper img {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+
+.button_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 }

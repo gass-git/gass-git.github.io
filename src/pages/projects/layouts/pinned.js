@@ -4,13 +4,14 @@ import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg
 import { ReactComponent as Link } from '../../../global/assets/SVGs/link.svg'
 import s from './pinned.module.css'
 
-export default function Pinned({ name, src }) {
+export default function Pinned({ name, src, about }) {
   return (
     <section id={s.pinned_project}>
+
       <div className={s.top}>
 
         <div className={s.left}>
-          <Folder style={{ color: 'aqua', width: '32px' }} />
+          <Folder className={s.folder} />
           <div className={s.project_name}>
             {name}
           </div>
@@ -31,8 +32,15 @@ export default function Pinned({ name, src }) {
 
       </div>
 
-      <div className={s.image_wrapper}>
-        <img src={src} />
+      <div className={s.preview}>
+        <div className={s.image_wrapper}>
+          <img src={src} />
+        </div>
+
+        <div className={s.about}>
+          {about}
+        </div>
+
       </div>
 
     </section>
