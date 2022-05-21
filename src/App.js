@@ -11,6 +11,7 @@ import fetchRepos from './global/APIs/repos'
 import { fetchReputation, fetchTopTech } from './global/APIs/stats'
 import { fetchLatest } from './global/APIs/latest'
 import Footer from './global/components/footer/footer'
+import Display from './global/components/display/display'
 
 function App() {
   const [selected, setSelected] = useState('home')
@@ -39,6 +40,7 @@ function App() {
     <div className='app-container'>
 
       <section id='top'>
+        <Display />
         <Navbar selected={selected} setSelected={setSelected} />
       </section>
 
