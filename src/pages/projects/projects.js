@@ -1,33 +1,64 @@
-import React from 'react'
-import devPlus from '../../global/assets/images/dev_plus.png'
-import tipMeDash from '../../global/assets/images/TMD.png'
+import React, { useEffect, useState } from 'react'
+import devPlus_SRC from '../../global/assets/images/dev_plus.png'
+import tipMeDash_SRC from '../../global/assets/images/TMD.png'
 import Header from './components/header'
 import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import Pinned from './layouts/pinned'
+import { ProjectCard } from './layouts/projectCard'
+import { withTheme } from '@emotion/react'
 
 export default function Projects({ repos }) {
-  const about_devPlus = `Fun web application with multiple components 
-  that display information about a developer in real time, with a 
-  gamification aspect to it. Inspired by RPG game profiles.`
+  const pinned = [425300173, 372308367] // ID of pinned repos
+  const [pinnedRepos, setPinnedRepos] = useState([])
+  const [unpinnedRepos, setUnpinnedRepos] = useState(repos)
 
-  const about_TMD = `Web application that allow users to accept 
-  support from fans in Dash cryptocurrency.`
-
-  if (!repos) {
-    return <p>Loading..</p>
+  function updatePinnedRepos() {
+    let filteredRepos = repos.filter((repo) => pinned.includes(repo.id))
+    setPinnedRepos(filteredRepos)
   }
 
-  else {
-    return (
-      <>
-        <Header />
-        <SectionTitle txt1={`featured`} txt2={`some things I’ve built`} />
-        <ContentWrapper>
-          <Pinned name='dev plus' src={devPlus} about={about_devPlus} />
-          <Pinned name='tip me dash' src={tipMeDash} about={about_TMD} />
-        </ContentWrapper>
-      </>
-    )
+  function updateUnpinnedRepos() {
+    let filteredRepos = repos.filter((repo) => !pinned.includes(repo.id))
+    setUnpinnedRepos(filteredRepos)
   }
+
+  useEffect(() => {
+    if (repos) {
+      updatePinnedRepos()
+      updateUnpinnedRepos()
+    }
+  }, [repos])
+
+  if (!repos) return <p>Loading..</p>
+  else return (
+    <>
+      <Header />
+
+      <SectionTitle txt1={`featured`} txt2={`some things I’ve built`} />
+      <ContentWrapper>
+        <Pinned src={devPlus_SRC} data={pinnedRepos[0]} />
+        <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} />
+      </ContentWrapper>
+
+      <SectionTitle txt1={`archives`} txt2={`other networthy projects`} />
+      <ContentWrapper>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            margin: '0 auto',
+            maxWidth: '800px'
+          }}
+        >
+          {
+            unpinnedRepos.map((repo, i) => {
+              return <ProjectCard repo={repo} i={i} />
+            })
+          }
+        </div>
+      </ContentWrapper>
+
+    </>
+  )
 }

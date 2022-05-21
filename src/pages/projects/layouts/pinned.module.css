@@ -113,7 +113,7 @@
 }
 
 .about {
-  padding: 15px 10px 10px 10px;
+  padding: 15px 3px 10px 3px;
   border-radius: 6px;
   font-size: 14px;
 }
@@ -123,7 +123,7 @@
   transition: 400ms;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.35);
-  padding: 3px;
+  padding: 10px;
   color: rgb(0, 255, 255, 0.6);
   /*border: 1px solid white;*/
 }
@@ -138,9 +138,21 @@
   filter: grayscale(0%);
 }
 
-
-.button_wrapper {
+.preview .tech {
+  padding: 0px 3px 0px 3px;
+  flex-wrap: wrap;
   display: flex;
-  justify-content: flex-end;
-  flex: 1;
+  width: 90%;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 1);
+}
+
+.preview .tech>div {
+  margin: 10px 10px 0px 0px;
+  padding: 4px 10px 4px 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  border: 1px solid rgb(0, 255, 255, 0.2);
 }
