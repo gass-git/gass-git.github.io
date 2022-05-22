@@ -18,9 +18,80 @@
 }
 
 .screen {
+  position: relative;
   width: 800px;
   height: 50px;
   /*border: 1px solid white;*/
+}
+
+.social {
+  display: flex;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  width: 270px;
+  height: 44px;
+  color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px 2px 2px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  background:
+    linear-gradient(0deg,
+      rgba(49, 116, 240, 0.12) 10%,
+      rgba(49, 116, 240, 0.14) 50%,
+      rgba(49, 116, 240, 0.17) 80%);
+}
+
+.button_box {
+  cursor: pointer;
+  width: 35px;
+  margin: 1px 1px 1px 1px;
+  height: 42px;
+  border-radius: 3px 3px 3px 3px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.icons_wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icons_wrapper>* {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.icons_wrapper>*:hover {
+  color: rgb(0, 255, 255, 0.6);
+}
+
+#arrow {
+  font-size: 30px;
+  margin: 6px 0px 0px 9px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#git {
+  height: 22px;
+  margin: 12px 10px 0px 17px;
+}
+
+#stack {
+  font-size: 24px;
+  margin: 11px 20px 0px 20px;
+}
+
+#twitter {
+  height: 22px;
+  margin: 13px 20px 0px 20px;
+}
+
+#codepen {
+  height: 23px;
+  margin: 13px 15px 0px 20px;
 }
 
 .msg_display {
