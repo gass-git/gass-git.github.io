@@ -57,6 +57,10 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.button_box:hover>* {
+  color: rgba(0, 255, 255, 0.6) !important;
+}
+
 .icons_wrapper {
   display: flex;
   justify-content: flex-start;
@@ -74,7 +78,8 @@
 #arrow {
   font-size: 28px;
   margin: 7px 0px 0px 9px;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgb(0, 255, 255, 0.4);
+  transition: 200ms;
 }
 
 #git {
