@@ -22,6 +22,9 @@ function App() {
   const [SO_reputation, setSO_reputation] = useState()
   const [SO_topTech, setSO_topTech] = useState()
   const [latest, setLatest] = useState([])
+  const [scrollOn, setScrollOn] = useState(true)
+  const [msgIndex, setMsgIndex] = useState(0)
+  const scrollMessages = 3
 
   useEffect(() => {
     /**
@@ -36,11 +39,30 @@ function App() {
     fetchLatest({ setLatest })
   }, [])
 
+  useEffect(() => {
+    let interval = setInterval(() => {
+      if (msgIndex < scrollMessages - 1) {
+        setMsgIndex(msgIndex + 1)
+      }
+      else {
+        setMsgIndex(0)
+      }
+
+      // reset isOn state
+      setScrollOn(false)
+      setTimeout(() => {
+        setScrollOn(true)
+      }, 500)
+    }, 20000)
+
+    return () => clearInterval(interval)
+  })
+
   return (
     <div className='app-container'>
 
       <section id='top'>
-        <Display />
+        <Display scrollOn={scrollOn} msgIndex={msgIndex} />
         <Navbar selected={selected} setSelected={setSelected} />
       </section>
 

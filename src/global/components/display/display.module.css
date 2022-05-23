@@ -114,12 +114,13 @@
 }
 
 .scroll_text {
-  margin-top: 15px;
+  margin-top: 18px;
   width: 1600px;
   height: 30px;
-  text-align: left;
+  display: flex;
+  justify-content: flex-start;
   font-family: "Press Start 2P", cursive;
-  font-size: 12px;
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
