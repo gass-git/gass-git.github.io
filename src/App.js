@@ -7,7 +7,7 @@ import Projects from './pages/projects/projects'
 import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
 import { fetchArticles, getLatestArticle } from './global/APIs/articles'
-import fetchRepos from './global/APIs/repos'
+import { fetchRepos, getLatestCommit } from './global/APIs/github'
 import { fetchReputation, fetchTopTech } from './global/APIs/SO'
 import { fetchLatest } from './global/APIs/latest'
 import Footer from './global/components/footer/footer'
@@ -30,6 +30,7 @@ function App() {
   const [visitorLocation, setVisitorLocation] = useState()
   const [latestAnswer, setLatestAnswer] = useState()
   const [latestArticle, setLatestArticle] = useState()
+  const [latestCommit, setLatestCommit] = useState({ comment: null, repo: null })
   const scrollMessages = 3
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
     getVisitorLocation({ setVisitorLocation })
     getLatestAnswer({ setLatestAnswer })
     getLatestArticle({ setLatestArticle })
+    getLatestCommit({ setLatestCommit })
   }, [])
 
   // interval for scroll display
