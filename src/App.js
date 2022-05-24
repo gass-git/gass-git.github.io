@@ -6,12 +6,14 @@ import Home from './pages/home/home'
 import Projects from './pages/projects/projects'
 import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
-import fetchArticles from './global/APIs/articles'
+import { fetchArticles, getLatestArticle } from './global/APIs/articles'
 import fetchRepos from './global/APIs/repos'
-import { fetchReputation, fetchTopTech } from './global/APIs/stats'
+import { fetchReputation, fetchTopTech } from './global/APIs/SO'
 import { fetchLatest } from './global/APIs/latest'
 import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
+import { uniqueVisits, getVisitorLocation } from './global/APIs/visits'
+import { getLatestAnswer } from './global/APIs/SO'
 
 function App() {
   const [selected, setSelected] = useState('home')
@@ -24,12 +26,14 @@ function App() {
   const [latest, setLatest] = useState([])
   const [scrollOn, setScrollOn] = useState(true)
   const [msgIndex, setMsgIndex] = useState(0)
+  const [visitsCount, setVisitsCount] = useState()
+  const [visitorLocation, setVisitorLocation] = useState()
+  const [latestAnswer, setLatestAnswer] = useState()
+  const [latestArticle, setLatestArticle] = useState()
   const scrollMessages = 3
 
   useEffect(() => {
-    /**
-     * Always coordinate the menu with the current location pathname
-     */
+    // always coordinate the menu with the current location pathname
     if (selected !== location.pathname) navigate(selected)
 
     fetchArticles({ setArticles })
@@ -37,24 +41,25 @@ function App() {
     fetchReputation({ setSO_reputation })
     fetchTopTech({ setSO_topTech })
     fetchLatest({ setLatest })
+    uniqueVisits({ setVisitsCount })
+    getVisitorLocation({ setVisitorLocation })
+    getLatestAnswer({ setLatestAnswer })
+    getLatestArticle({ setLatestArticle })
   }, [])
 
+  // interval for scroll display
   useEffect(() => {
     let interval = setInterval(() => {
-      if (msgIndex < scrollMessages - 1) {
-        setMsgIndex(msgIndex + 1)
-      }
-      else {
-        setMsgIndex(0)
-      }
+      if (msgIndex < scrollMessages - 1) setMsgIndex(msgIndex + 1)
+      else setMsgIndex(0)
 
-      // reset isOn state
+      // reset scroll
       setScrollOn(false)
       setTimeout(() => {
         setScrollOn(true)
       }, 500)
-    }, 20000)
 
+    }, 20000)
     return () => clearInterval(interval)
   })
 
