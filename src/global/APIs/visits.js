@@ -3,7 +3,7 @@ import axios from 'axios'
 function uniqueVisits({ setVisitsCount }) {
   axios.get('https://api.gass.dev/unique_visitors')
     .then((resp) => {
-      setVisitsCount(resp.data.count)
+      setVisitsCount(`000${resp.data.count}`)
     })
 }
 

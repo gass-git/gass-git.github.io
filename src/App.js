@@ -31,7 +31,7 @@ function App() {
   const [latestAnswer, setLatestAnswer] = useState()
   const [latestArticle, setLatestArticle] = useState()
   const [latestCommit, setLatestCommit] = useState({ comment: null, repo: null })
-  const scrollMessages = 3
+  const [scrollMessages, setScrollMessages] = useState()
 
   useEffect(() => {
     // always coordinate the menu with the current location pathname
@@ -69,7 +69,16 @@ function App() {
     <div className='app-container'>
 
       <section id='top'>
-        <Display scrollOn={scrollOn} msgIndex={msgIndex} />
+        <Display
+          scrollOn={scrollOn}
+          msgIndex={msgIndex}
+          setScrollMessages={setScrollMessages}
+          visitsCount={visitsCount}
+          visitorLocation={visitorLocation}
+          latestAnswer={latestAnswer}
+          latestArticle={latestArticle}
+          latestCommit={latestCommit}
+        />
         <Navbar selected={selected} setSelected={setSelected} />
       </section>
 

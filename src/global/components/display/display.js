@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import s from './display.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
@@ -9,10 +9,18 @@ import { ReactComponent as Twitter } from '../../../global/assets/SVGs/twitter.s
 import useSound from 'use-sound'
 import bounce from '../../../global/assets/sounds/bounce.wav'
 import unfa from '../../../global/assets/sounds/unfa_select.flac'
-import { useEffect } from 'react'
 
+export default function Display({
+  msgIndex,
+  scrollOn,
+  setScrollMessages,
+  visitsCount,
+  visitorLocation,
+  latestAnswer,
+  latestArticle,
+  latestCommit
+}) {
 
-export default function Display({ msgIndex, scrollOn }) {
   const ini = { pixels: '270px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -28,15 +36,28 @@ export default function Display({ msgIndex, scrollOn }) {
   }
   const messages = [
     <Fragment>
-      Welcome fellow visitor! I'm glad you came by, feel free to take a look around...
+      Welcome fellow visitor from {visitorLocation ? visitorLocation : 'unknown'}!
     </Fragment>,
     <Fragment>
-      Last Github commit - Made some changes to arrow_box styles
+      Unique visitors to date: {visitsCount} and counting...
     </Fragment>,
     <Fragment>
-      Last blog post - One of my favourite JS challenges on Stack Overflow
+      Last blog post on DevTo - {latestArticle}
+    </Fragment>,
+    <Fragment>
+      Latest on Stack Overflow - {latestAnswer}
+    </Fragment>,
+    <Fragment>
+      Latest GitHub commit - {latestCommit.comment} (repo: {latestCommit.repo})
+    </Fragment>,
+    <Fragment>
+      Credits: FontAwesome, SVG Backgrounds, Axios, useSound and the artists behind the cyberpunk gifs..
     </Fragment>
   ]
+
+  useEffect(() => {
+    setScrollMessages(messages.length)
+  }, [])
 
   function expand() {
     if (pixels !== ini.pixels) {
