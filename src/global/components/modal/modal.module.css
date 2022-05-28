@@ -1,8 +1,7 @@
-.back {
+.backdrop {
   position: absolute;
-  display: flex;
-  justify-content: center;
   z-index: 10;
+  right: 0;
   left: 0;
   top: 0;
   width: 100%;
@@ -11,12 +10,49 @@
 }
 
 .card {
-  padding: 10px;
   position: absolute;
+  border-radius: 5px;
   color: black;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
   top: 0;
   z-index: 11;
   width: 600px;
   height: auto;
   background-color: white;
+}
+
+.card .header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.card .header .title {
+  flex: 1;
+  padding-left: 10px;
+  height: 40px;
+  font-size: 25px;
+}
+
+.card .header .Xmark_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 40px;
+  font-size: 25px;
+  cursor: pointer;
+  /*border: 1px solid black;*/
+}
+
+.card .content {
+  padding: 10px;
+  margin-top: 20px;
 }
