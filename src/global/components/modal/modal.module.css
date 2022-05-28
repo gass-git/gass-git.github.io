@@ -1,0 +1,22 @@
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card {
+  padding: 10px;
+  position: absolute;
+  color: black;
+  top: 0;
+  z-index: 11;
+  width: 600px;
+  height: auto;
+  background-color: white;
+}

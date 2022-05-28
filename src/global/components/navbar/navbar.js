@@ -19,7 +19,6 @@ export default function Navbar({ selected, setSelected }) {
   useEffect(() => {
     // reset the translation on the X axis every time the window width changes
     setTranslatedX(0)
-
     handleArrowsState({ windowWidth, setShowArrows, setIsActive })
     handleTranslationStates({ windowWidth, setHiddenItems, setTranslationWidth })
   }, [windowWidth])
