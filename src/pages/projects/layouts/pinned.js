@@ -2,6 +2,8 @@ import React from 'react'
 import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
 import { ReactComponent as Link } from '../../../global/assets/SVGs/link.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImages } from '@fortawesome/free-regular-svg-icons'
 import s from './pinned.module.css'
 
 export default function Pinned({ src, data }) {
@@ -21,14 +23,17 @@ export default function Pinned({ src, data }) {
 
         <div className={s.middle}>
           <div className={s.movable_text}>
-            See Live
+            <div style={{ marginTop: '9px' }}>
+              See Live
+            </div>
+
           </div>
         </div>
 
         <div className={s.right}>
-          <Link
-            style={{ marginRight: '30px' }}
-            onClick={() => window.open(data.project_url, 'blank')}
+          <FontAwesomeIcon
+            icon={faImages}
+            style={{ fontSize: '30px', margin: '0px 20px 0px 7px' }}
           />
           <Github
             onClick={() => window.open(data.repo_url, 'blank')}

@@ -48,27 +48,30 @@
 }
 
 .movable_text {
-  width: 80px;
+  width: 75px;
+  height: 40px;
   padding-top: 2px;
   font-size: 14px;
-  transform: translateX(80px);
+  transform: translateX(75px);
   transition: 700ms;
   color: rgb(0, 255, 255, 0.6);
   cursor: pointer;
+  /*border: 1px solid white;*/
 }
 
 #pinned_project:hover .movable_text {
-  transform: translateX(15px);
+  transform: translateX(10px);
 }
 
 .top:hover .movable_text {
-  transform: translateX(80px) !important;
+  transform: translateX(75px) !important;
 }
 
 .top .right {
   display: flex;
   margin-right: 15px;
   justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   /*border: 1px solid white;*/
 }
