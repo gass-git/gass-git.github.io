@@ -58,20 +58,20 @@ export default function Header({ current, setCurrent }) {
 
             <div className={s.icons_wrapper}>
               <div
-                className={current === 'Stack Overflow' ? s.selected : s.transparent_border}
-                onClick={() => updateCurrent('Stack Overflow')}
+                className={current === 'stack overflow' ? s.selected : s.transparent_border}
+                onClick={() => updateCurrent('stack overflow')}
               >
                 <FontAwesomeIcon icon={faStackOverflow} />
               </div>
               <div
-                className={current === 'DevTo' ? s.selected : s.transparent_border}
-                onClick={() => updateCurrent('DevTo')}
+                className={current === 'devto' ? s.selected : s.transparent_border}
+                onClick={() => updateCurrent('devto')}
               >
                 <FontAwesomeIcon icon={faDev} />
               </div>
               <div
-                className={current === 'GitHub' ? s.selected : s.transparent_border}
-                onClick={() => updateCurrent('GitHub')}
+                className={current === 'github' ? s.selected : s.transparent_border}
+                onClick={() => updateCurrent('github')}
               >
                 <FontAwesomeIcon icon={faGithub} />
               </div>

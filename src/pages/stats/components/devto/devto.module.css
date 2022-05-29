@@ -1,0 +1,51 @@
+#main {
+  margin: 0 30px 0 30px;
+  display: flex;
+  /*border: 1px solid white;*/
+}
+
+.left_box {
+  width: 50%;
+  height: 100%;
+}
+
+.right_box {
+  flex: auto;
+  height: 100% !important;
+}
+
+.comments {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 110px;
+  margin: 10px 10px 0 10px;
+  flex: auto;
+  padding: 25px 0px 35px 30px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  font-size: 23px;
+}
+
+.big_number {
+  margin: 13px 0 0 5px;
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+}
+
+.bottom_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 14px 30px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bottom_wrapper #year_change {
+  margin-left: 30px;
+}

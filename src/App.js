@@ -89,7 +89,7 @@ function App() {
           <Route path='/home' element={<Home latest={latest} />} />
           <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
-          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} />} />
+          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} />} />
         </Routes>
       </section>
 
