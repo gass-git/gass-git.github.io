@@ -125,10 +125,100 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   transform: translateX(-100%);
-  animation: move-left 20s linear;
+  animation: move-left 20s linear, blinker 20s;
   animation-iteration-count: 1;
-  color: rgb(241, 190, 50, 0.8);
+  color: var(--light-blue-2);
   /*border: 1px solid orange;*/
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+
+  19% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  21% {
+    opacity: 1;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  23% {
+    opacity: 0.9;
+  }
+
+  36% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  41% {
+    opacity: 0;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  43% {
+    opacity: 0.5;
+  }
+
+  45% {
+    opacity: 0.2;
+  }
+
+  49% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  52% {
+    opacity: 0.2;
+  }
+
+  53% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  71% {
+    opacity: 0.8;
+  }
+
+  72% {
+    opacity: 1;
+  }
+
+  83% {
+    opacity: 0.7;
+  }
 }
 
 @keyframes move-left {

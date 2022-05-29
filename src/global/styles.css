@@ -30,6 +30,8 @@
   --white: #f0f7ff;
   --pink: #df24be;
   --pink-transparent: rgba(223, 36, 190, 0.7);
+  --light-blue: rgb(2, 179, 254);
+  --light-blue-2: rgb(2, 179, 254, 0.7);
 
   /* header styles */
   --header-max-width: 876px;

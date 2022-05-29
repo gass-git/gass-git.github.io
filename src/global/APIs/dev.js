@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from 'axios'
 
 const articles_api = 'https://dev.to/api/articles?username=gass'
 
@@ -13,9 +13,11 @@ function fetchArticles({ setArticles }) {
           title: article.title,
           description: article.description,
           url: article.url,
-          cover_url: article.cover_image,
           published_at: article.created_at,
-          tags: article.tag_list
+          tags: article.tag_list,
+          comments: article.comments_count,
+          reactions: article.public_reactions_count,
+          reading_time_minutes: article.reading_time_minutes
         })
       })
       setArticles(data)
