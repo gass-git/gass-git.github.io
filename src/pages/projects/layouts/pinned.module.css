@@ -27,13 +27,13 @@
 
 
 .top .left .project_name {
-  margin: 26px 0px 0px 10px;
-  font-size: 18px;
-  font-weight: 300;
+  margin: 26px 0px 0px 8px;
+  font-size: 16px;
+  font-weight: 400;
   text-transform: capitalize;
   flex-wrap: wrap;
   height: fit-content;
-  color: rgb(0, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   /*border: 1px solid white;*/
 }
 
@@ -48,23 +48,23 @@
 }
 
 .movable_text {
-  width: 75px;
+  width: 90px;
   height: 40px;
   padding-top: 2px;
   font-size: 14px;
-  transform: translateX(75px);
+  transform: translateX(130px);
   transition: 700ms;
-  color: rgb(0, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   /*border: 1px solid white;*/
 }
 
 #pinned_project:hover .movable_text {
-  transform: translateX(10px);
+  transform: translateX(0px);
 }
 
 .top:hover .movable_text {
-  transform: translateX(75px) !important;
+  transform: translateX(90px) !important;
 }
 
 .top .right {
@@ -159,3 +159,5 @@
   border-radius: 3px;
   border: 1px solid rgb(0, 255, 255, 0.2);
 }
+
+@keyframes glow {}

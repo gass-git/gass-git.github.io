@@ -47,8 +47,6 @@ export default function Projects({ repos }) {
       <ContentWrapper>
         <div
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
             margin: '0 auto',
             maxWidth: '800px'
           }}
