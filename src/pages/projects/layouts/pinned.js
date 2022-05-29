@@ -23,12 +23,13 @@ export default function Pinned({ src, data }) {
     <section id={s.pinned_project}>
 
       <Modal
+        title={data.name}
         showModal={showModal}
         setShowModal={setShowModal}
         scrollPos={scrollPos}
       >
-        <img src={devPlusOne} style={{ maxWidth: '600px' }} />
-        <img src={devPlusTwo} style={{ maxWidth: '600px' }} />
+        <img src={devPlusOne} style={{ maxWidth: '100%' }} />
+        <img src={devPlusTwo} style={{ maxWidth: '100%' }} />
       </Modal>
 
       <div className={s.top}>

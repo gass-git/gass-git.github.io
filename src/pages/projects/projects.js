@@ -7,7 +7,6 @@ import ContentWrapper from '../../global/layouts/contentWrapper'
 import Pinned from './layouts/pinned'
 import { ProjectCard } from './layouts/projectCard'
 import { withTheme } from '@emotion/react'
-import Modal from '../../global/components/modal/modal'
 
 export default function Projects({ repos }) {
   const pinned = [425300173, 372308367] // ID of pinned repos
@@ -34,7 +33,6 @@ export default function Projects({ repos }) {
   if (!repos) return <p>Loading..</p>
   else return (
     <>
-      <Modal />
       <Header />
 
       <SectionTitle txt1={`featured`} txt2={`some things I’ve built`} />
