@@ -43,6 +43,10 @@
   cursor: pointer;
 }
 
+.header .right_box #link_icon {
+  margin-right: 20px;
+}
+
 .folder {
   width: 40px;
   color: aqua;

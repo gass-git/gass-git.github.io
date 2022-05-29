@@ -13,7 +13,7 @@ export function ProjectCard({ repo }) {
         </div>
         <div className={s.right_box}>
           <Link
-            style={{ marginRight: '20px' }}
+            id={s.link_icon}
             onClick={() => window.open(repo.project_url, '_blank')}
           />
           <Github onClick={() => window.open(repo.repo_url, '_blank')} />
