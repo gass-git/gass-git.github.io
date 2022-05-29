@@ -1,8 +1,8 @@
 #reputation {
   font-family: 'Barlow Semi Condensed', sans-serif;
-  height: 100px;
-  margin: 10px 0 0 10px;
-  max-width: 330px;
+  height: 110px;
+  margin: 10px 10px 0 10px;
+  flex: auto;
   padding: 25px 0px 35px 30px;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -12,11 +12,11 @@
 .title {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 .big_number {
-  margin-top: 7px;
+  margin-top: 13px;
   font-size: 40px;
   color: white;
   font-weight: 700;
@@ -25,7 +25,11 @@
 .bottom_wrapper {
   display: flex;
   justify-content: flex-start;
-  margin-top: 10px;
-  font-size: 20px;
+  margin-top: 14px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.bottom_wrapper #year_change {
+  margin-left: 30px;
 }

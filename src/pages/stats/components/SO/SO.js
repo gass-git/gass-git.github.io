@@ -7,7 +7,7 @@ import TopTech from './children/topTech'
 export default function SO({ points, badges, topTech }) {
   return (
     <>
-      <div className={s.main}>
+      <section id={s.main}>
 
         <div className={s.left_box}>
           <Reputation points={points} />
@@ -18,7 +18,7 @@ export default function SO({ points, badges, topTech }) {
           <TopTech topTech={topTech} />
         </div>
 
-      </div>
+      </section>
     </>
   )
 }

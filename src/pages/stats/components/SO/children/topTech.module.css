@@ -1,7 +1,7 @@
 #tech {
   font-family: 'Barlow Semi Condensed', sans-serif;
-  height: 244px;
-  max-width: 315px;
+  height: 252px;
+  flex: 1;
   margin: 10px 0 0 5px;
   padding: 25px 30px 35px 30px;
   border-radius: 5px;
@@ -12,11 +12,11 @@
 .title {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 .list {
-  margin-top: 17px;
+  margin-top: 25px;
 }
 
 .tag_box {
@@ -26,7 +26,7 @@
 .name {
   width: 50%;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: rgba(255, 255, 255, 0.8);
 }
 
