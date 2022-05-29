@@ -6,7 +6,7 @@ import ContentWrapper from '../../global/layouts/contentWrapper'
 import Devto from './components/devto/devto'
 import Github from './components/github/github'
 
-export default function Stats({ SO_topTech, SO_reputation, articles }) {
+export default function Stats({ SO_topTech, SO_reputation, articles, githubStats }) {
   const [current, setCurrent] = useState('stack overflow')
 
   if (!SO_topTech || !SO_reputation) return <div>loading..</div>
@@ -33,7 +33,7 @@ export default function Stats({ SO_topTech, SO_reputation, articles }) {
           )
         case 'github':
           return (
-            <Github />
+            <Github githubStats={githubStats} />
           )
         default: return null
       }

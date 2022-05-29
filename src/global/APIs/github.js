@@ -1,7 +1,18 @@
 import axios from 'axios'
 
 const repos_api = 'https://api.github.com/users/gass-git/repos'
-let events_api = 'https://api.github.com/users/gass-git/events/public'
+const events_api = 'https://api.github.com/users/gass-git/events/public'
+const user_api = 'https://api.github.com/users/gass-git'
+
+function fetchGithubStats({ setGithubStats }) {
+  axios.get(user_api)
+    .then((resp) => {
+      setGithubStats({
+        public_repos: resp.data.public_repos,
+        followers: resp.data.followers
+      })
+    })
+}
 
 function fetchRepos({ setRepos }) {
   let data = []
@@ -38,4 +49,4 @@ function getLatestCommit({ setLatestCommit }) {
     })
 }
 
-export { fetchRepos, getLatestCommit }
+export { fetchRepos, getLatestCommit, fetchGithubStats }

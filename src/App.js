@@ -7,13 +7,14 @@ import Projects from './pages/projects/projects'
 import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
 import { fetchArticles, getLatestArticle } from './global/APIs/dev'
-import { fetchRepos, getLatestCommit } from './global/APIs/github'
+import { fetchGithubStats, fetchRepos, getLatestCommit } from './global/APIs/github'
 import { fetchReputation, fetchTopTech } from './global/APIs/SO'
 import { fetchLatest } from './global/APIs/latest'
 import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
 import { uniqueVisits, getVisitorLocation } from './global/APIs/visits'
 import { getLatestAnswer } from './global/APIs/SO'
+
 
 function App() {
   const [selected, setSelected] = useState('home')
@@ -32,11 +33,13 @@ function App() {
   const [latestArticle, setLatestArticle] = useState()
   const [latestCommit, setLatestCommit] = useState({ comment: null, repo: null })
   const [scrollMessages, setScrollMessages] = useState()
+  const [githubStats, setGithubStats] = useState()
 
   useEffect(() => {
     // always coordinate the menu with the current location pathname
     if (selected !== location.pathname) navigate(selected)
 
+    fetchGithubStats({ setGithubStats })
     fetchArticles({ setArticles })
     fetchRepos({ setRepos })
     fetchReputation({ setSO_reputation })
@@ -89,7 +92,7 @@ function App() {
           <Route path='/home' element={<Home latest={latest} />} />
           <Route path='/projects' element={<Projects repos={repos} />} />
           <Route path='/writings' element={<Writings articles={articles} />} />
-          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} />} />
+          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} githubStats={githubStats} />} />
         </Routes>
       </section>
 

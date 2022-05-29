@@ -22,6 +22,7 @@
 
 .text_style_two {
   color: var(--bright-slate);
+  text-transform: capitalize;
   font-family: 'Times New Roman', Times, serif;
   font-size: 19px;
   line-height: 20px;
