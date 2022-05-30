@@ -58,11 +58,6 @@ export default function Home() {
     filter()
   }, [selectedTypes, latest])
 
-
-
-
-
-
   return (
     <section id='home'>
       <Header />
@@ -73,6 +68,4 @@ export default function Home() {
       </ContentWrapper>
     </section>
   )
-
-
 }

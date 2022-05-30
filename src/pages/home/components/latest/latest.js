@@ -24,6 +24,7 @@ export default function Latest({ filteredData }) {
         filteredData.map((el) => {
           return (
             <div
+              key={el.id}
               className={s.event_wrapper}
               onClick={() => window.open(el.url, '_blank')}
             >

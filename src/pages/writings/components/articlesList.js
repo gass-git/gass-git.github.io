@@ -24,7 +24,7 @@ export default function ArticlesList({ filteredArticles }) {
 
   return (
     <section>
-      {filteredArticles.map((data) => <Card data={data} />)}
+      {filteredArticles.map((data) => <Card key={data.id} data={data} />)}
     </section>
   )
 }

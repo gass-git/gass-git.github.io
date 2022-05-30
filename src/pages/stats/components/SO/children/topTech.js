@@ -11,7 +11,7 @@ export default function TopTech({ topTech }) {
         {
           topTech.map((tech) => {
             return (
-              <div className={s.tag_box}>
+              <div key={tech.tag_name} className={s.tag_box}>
                 <div className={s.name}>
                   {tech.tag_name}
                 </div>

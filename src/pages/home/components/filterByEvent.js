@@ -14,7 +14,8 @@ export default function FilterByTopics({ selectedTypes, handleFilters }) {
       {
         eventTypes.map((type, i) => {
           return (
-            <div
+            <div 
+              key={type}
               className={selectedTypes[type] ? s.selected : null}
               onClick={() => handleFilters(type)}
             >

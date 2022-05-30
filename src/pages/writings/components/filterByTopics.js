@@ -8,6 +8,7 @@ export default function FilterByTopics({ tags, handleSelectedTags, selectedTags 
         tags.map((tag) => {
           return (
             <div
+              key={tag}
               className={selectedTags.includes(tag) ? s.selected : null}
               onClick={() => handleSelectedTags(tag)}>
               {tag}
