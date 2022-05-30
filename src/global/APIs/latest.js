@@ -1,12 +1,8 @@
-import { CatchingPokemonSharp, ConnectingAirportsOutlined } from "@mui/icons-material"
-import axios from "axios"
 
 async function fetchLatest({ dispatch }) {
   const git_events = 'https://api.github.com/users/gass-git/events/public'
   const dev_articles = 'https://dev.to/api/articles?username=gass'
   const SO_answers = 'https://api.stackexchange.com/2.3/users/14895985/answers?order=desc&sort=activity&site=stackoverflow&key=op*AZFz8o6Pqr3596Yc)Lw(('
-
-  let array = []
 
   async function fetchData() {
     let array = [], count = 0;
