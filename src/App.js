@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer, createContext } from 'react'
 import './global/styles.css'
 import Navbar from './global/components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
@@ -14,17 +14,20 @@ import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
 import { uniqueVisits, getVisitorLocation } from './global/APIs/visits'
 import { getLatestAnswer } from './global/APIs/SO'
+import { appReducer, initialState } from './stateCapsule'
 
+export const AppContext = createContext(null)
 
 function App() {
-  const [selected, setSelected] = useState('home')
+  const [state, dispatch] = useReducer(appReducer, initialState)
+  const { selected } = state
+
   const location = useLocation()
   const navigate = useNavigate()
   const [articles, setArticles] = useState()
   const [repos, setRepos] = useState()
   const [SO_reputation, setSO_reputation] = useState()
   const [SO_topTech, setSO_topTech] = useState()
-  const [latest, setLatest] = useState([])
   const [scrollOn, setScrollOn] = useState(true)
   const [msgIndex, setMsgIndex] = useState(0)
   const [visitsCount, setVisitsCount] = useState()
@@ -39,12 +42,12 @@ function App() {
     // always coordinate the menu with the current location pathname
     if (selected !== location.pathname) navigate(selected)
 
+    fetchLatest({ dispatch })
     fetchGithubStats({ setGithubStats })
     fetchArticles({ setArticles })
     fetchRepos({ setRepos })
     fetchReputation({ setSO_reputation })
     fetchTopTech({ setSO_topTech })
-    fetchLatest({ setLatest })
     uniqueVisits({ setVisitsCount })
     getVisitorLocation({ setVisitorLocation })
     getLatestAnswer({ setLatestAnswer })
@@ -69,38 +72,40 @@ function App() {
   })
 
   return (
-    <div className='app-container'>
+    <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
+      <div className='app-container'>
 
-      <section id='top'>
-        <Display
-          scrollOn={scrollOn}
-          msgIndex={msgIndex}
-          setScrollMessages={setScrollMessages}
-          visitsCount={visitsCount}
-          visitorLocation={visitorLocation}
-          latestAnswer={latestAnswer}
-          latestArticle={latestArticle}
-          latestCommit={latestCommit}
-        />
-        <Navbar selected={selected} setSelected={setSelected} />
-      </section>
+        <section id='top'>
+          <Display
+            scrollOn={scrollOn}
+            msgIndex={msgIndex}
+            setScrollMessages={setScrollMessages}
+            visitsCount={visitsCount}
+            visitorLocation={visitorLocation}
+            latestAnswer={latestAnswer}
+            latestArticle={latestArticle}
+            latestCommit={latestCommit}
+          />
+          <Navbar />
+        </section>
 
-      <section id='content'>
-        <Routes>
-          <Route path='*' element={<Navigate to='/' />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home latest={latest} />} />
-          <Route path='/projects' element={<Projects repos={repos} />} />
-          <Route path='/writings' element={<Writings articles={articles} />} />
-          <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} githubStats={githubStats} />} />
-        </Routes>
-      </section>
+        <section id='content'>
+          <Routes>
+            <Route path='*' element={<Navigate to='/' />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/projects' element={<Projects repos={repos} />} />
+            <Route path='/writings' element={<Writings articles={articles} />} />
+            <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} githubStats={githubStats} />} />
+          </Routes>
+        </section>
 
-      <section id='bottom'>
-        <Footer />
-      </section>
+        <section id='bottom'>
+          <Footer />
+        </section>
 
-    </div>
+      </div>
+    </AppContext.Provider>
   )
 }
 

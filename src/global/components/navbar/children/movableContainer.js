@@ -4,14 +4,18 @@ import selectionSound from '../../../assets/sounds/selection.wav'
 import s from '../navbar.module.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function MovableContainer({ links, translatedX, selected, setSelected }) {
+
+export default function MovableContainer({ links, translatedX, selected, dispatch }) {
   const [playSound] = useSound(selectionSound, { volume: 1 })
   const navigate = useNavigate()
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)
 
   function handleClick(link, event) {
-    setSelected(link)
+    dispatch({
+      type: 'update selected',
+      option: link
+    })
     playSound()
     setX(event.nativeEvent.offsetX)
     setY(event.nativeEvent.offsetY)

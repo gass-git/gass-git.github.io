@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useState } from 'react'
 import s from './navbar.module.css'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
@@ -6,8 +6,12 @@ import LeftBox from './children/leftBox'
 import RightBox from './children/rightBox'
 import MovableContainer from './children/movableContainer'
 import { handleTranslationStates, handleArrowsState, movableLineClass } from './functions'
+import { AppContext } from '../../../App'
 
-export default function Navbar({ selected, setSelected }) {
+export default function Navbar() {
+  const { state, dispatch } = useContext(AppContext)
+  const { selected } = state
+
   const { windowWidth } = useWindowDimensions()
   const [showArrows, setShowArrows] = useState(false)
   const [translatedX, setTranslatedX] = useState(0)
@@ -61,10 +65,10 @@ export default function Navbar({ selected, setSelected }) {
         />
         <div className={s.items_container}>
           <MovableContainer
+            dispatch={dispatch}
+            selected={selected}
             links={links}
             translatedX={translatedX}
-            selected={selected}
-            setSelected={setSelected}
           />
         </div>
         <RightBox
