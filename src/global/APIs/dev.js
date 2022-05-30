@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const articles_api = 'https://dev.to/api/articles?username=gass'
 
-function fetchArticles({ setArticles }) {
+function fetchArticles({ dispatch }) {
   let data = []
 
   axios.get(articles_api)
@@ -20,16 +20,16 @@ function fetchArticles({ setArticles }) {
           reading_time_minutes: article.reading_time_minutes
         })
       })
-      setArticles(data)
+      dispatch({ type: 'set articles', dataArray: data })
     })
     .catch((error) => console.log(error))
 }
 
-function getLatestArticle({ setLatestArticle }) {
+function getLatestArticle({ dispatch }) {
   axios.get(articles_api)
     .then((resp) => {
       let articles = resp.data
-      setLatestArticle(articles[0].title)
+      dispatch({ type: 'set latest article', latestArticle: articles[0].title })
     })
 }
 

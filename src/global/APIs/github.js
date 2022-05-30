@@ -4,17 +4,18 @@ const repos_api = 'https://api.github.com/users/gass-git/repos'
 const events_api = 'https://api.github.com/users/gass-git/events/public'
 const user_api = 'https://api.github.com/users/gass-git'
 
-function fetchGithubStats({ setGithubStats }) {
+function fetchGithubStats({ dispatch }) {
   axios.get(user_api)
     .then((resp) => {
-      setGithubStats({
+      let obj = {
         public_repos: resp.data.public_repos,
         followers: resp.data.followers
-      })
+      }
+      dispatch({ type: 'set github stats', dataObj: obj })
     })
 }
 
-function fetchRepos({ setRepos }) {
+function fetchRepos({ dispatch }) {
   let data = []
 
   axios.get(repos_api)
@@ -32,20 +33,21 @@ function fetchRepos({ setRepos }) {
           })
         }
       })
-      setRepos(data)
+      dispatch({ type: 'set repos', reposArray: data })
     })
     .catch((error) => console.log(error))
 }
 
-function getLatestCommit({ setLatestCommit }) {
+function getLatestCommit({ dispatch }) {
   axios.get(events_api)
     .then((resp) => {
       let gitEvents = resp.data
       let filteredEvents = gitEvents.filter((obj) => 'commits' in obj.payload)
-      setLatestCommit({
+      let obj = {
         comment: filteredEvents[0].payload.commits[0].message,
         repo: filteredEvents[0]['repo']['name'].slice(9)
-      })
+      }
+      dispatch({ type: 'set latest commit', dataObj: obj })
     })
 }
 

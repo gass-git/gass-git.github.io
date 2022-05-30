@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ArticlesList from './components/articlesList'
 import Header from './components/header'
 import FilterByTopic from './components/filterByTopics'
@@ -6,8 +6,11 @@ import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import useSound from 'use-sound'
 import tickSound from '../../global/assets/sounds/yake.wav'
+import { AppContext } from '../../App'
 
-export default function Writings({ articles }) {
+export default function Writings() {
+  const { state } = useContext(AppContext)
+  const { articles } = state
   const [tags, setTags] = useState([])
   const [selectedTags, setSelectedTags] = useState([])
   const [filteredArticles, setFilteredArticles] = useState(articles)

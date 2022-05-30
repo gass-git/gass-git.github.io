@@ -4,7 +4,7 @@ let answers_api = "https://api.stackexchange.com/2.3/users/14895985/answers?orde
 let user_data_api = "https://api.stackexchange.com/2.3/users/14895985?order=desc&sort=reputation&site=stackoverflow&key=op*AZFz8o6Pqr3596Yc)Lw(("
 let scores_api = "https://api.stackexchange.com/2.3/users/14895985/top-tags?site=stackoverflow&key=op*AZFz8o6Pqr3596Yc)Lw(("
 
-function getLatestAnswer({ setLatestAnswer }) {
+function getLatestAnswer({ dispatch }) {
   axios.get(answers_api).then((resp) => {
     let answers = resp.data.items
 
@@ -17,35 +17,42 @@ function getLatestAnswer({ setLatestAnswer }) {
     let questions_api = `https://api.stackexchange.com/2.3/questions/${id}?order=desc&sort=activity&site=stackoverflow&key=op*AZFz8o6Pqr3596Yc)Lw((`
 
     axios.get(questions_api).then((resp) => {
-      setLatestAnswer(resp.data.items[0].title)
+      dispatch({
+        type: 'set latest SO answer',
+        latestAnswer: resp.data.items[0].title
+      })
+
     })
   })
 }
 
-function fetchReputation({ setSO_reputation }) {
+function fetchReputation({ dispatch }) {
   axios.get(user_data_api)
     .then((resp) => {
       let userData = resp.data.items[0]
 
-      setSO_reputation({
+      let obj = {
         points: {
           total: userData.reputation,
           month_change: userData.reputation_change_month,
           year_change: userData.reputation_change_year
         },
         badges: userData.badge_counts
-      })
+      }
+
+      dispatch({ type: 'set SO reputation', dataObj: obj })
+
     })
     .catch((error) => console.log(error))
 }
 
-function fetchTopTech({ setSO_topTech }) {
+function fetchTopTech({ dispatch }) {
   axios.get(scores_api)
     .then((resp) => {
       let techArray = resp.data.items
       let topTech = techArray.slice(0, 6)
 
-      setSO_topTech(topTech)
+      dispatch({ type: 'set SO top tech', topTech: topTech })
     })
     .catch((error) => console.log(error))
 }

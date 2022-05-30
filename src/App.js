@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, createContext } from 'react'
+import React, { useEffect, useReducer, createContext } from 'react'
 import './global/styles.css'
 import Navbar from './global/components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
@@ -20,51 +20,39 @@ export const AppContext = createContext(null)
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, initialState)
-  const { selected } = state
+  const { selected, scrollerMsgIndex, scrollMessages } = state
 
   const location = useLocation()
   const navigate = useNavigate()
-  const [articles, setArticles] = useState()
-  const [repos, setRepos] = useState()
-  const [SO_reputation, setSO_reputation] = useState()
-  const [SO_topTech, setSO_topTech] = useState()
-  const [scrollOn, setScrollOn] = useState(true)
-  const [msgIndex, setMsgIndex] = useState(0)
-  const [visitsCount, setVisitsCount] = useState()
-  const [visitorLocation, setVisitorLocation] = useState()
-  const [latestAnswer, setLatestAnswer] = useState()
-  const [latestArticle, setLatestArticle] = useState()
-  const [latestCommit, setLatestCommit] = useState({ comment: null, repo: null })
-  const [scrollMessages, setScrollMessages] = useState()
-  const [githubStats, setGithubStats] = useState()
 
   useEffect(() => {
     // always coordinate the menu with the current location pathname
     if (selected !== location.pathname) navigate(selected)
 
     fetchLatest({ dispatch })
-    fetchGithubStats({ setGithubStats })
-    fetchArticles({ setArticles })
-    fetchRepos({ setRepos })
-    fetchReputation({ setSO_reputation })
-    fetchTopTech({ setSO_topTech })
-    uniqueVisits({ setVisitsCount })
-    getVisitorLocation({ setVisitorLocation })
-    getLatestAnswer({ setLatestAnswer })
-    getLatestArticle({ setLatestArticle })
-    getLatestCommit({ setLatestCommit })
+    fetchRepos({ dispatch })
+    fetchArticles({ dispatch })
+    fetchReputation({ dispatch })
+    fetchTopTech({ dispatch })
+    fetchGithubStats({ dispatch })
+    uniqueVisits({ dispatch })
+    getVisitorLocation({ dispatch })
+    getLatestArticle({ dispatch })
+    getLatestAnswer({ dispatch })
+    getLatestCommit({ dispatch })
   }, [])
 
   // interval for scroll display
   useEffect(() => {
     let interval = setInterval(() => {
-      if (msgIndex < scrollMessages - 1) setMsgIndex(msgIndex + 1)
-      else setMsgIndex(0)
+      if (scrollerMsgIndex < scrollMessages - 1) dispatch({ type: 'next scroller msg index' })
+      else dispatch({ type: 'reset scroller msg index' })
 
-      // reset scroll
-      setScrollOn(false)
+      // reset scroller
+      dispatch({ type: 'set scroller off' })
+
       setTimeout(() => {
-        setScrollOn(true)
+        dispatch({ type: 'set scroller on' })
       }, 500)
 
     }, 20000)
@@ -76,16 +64,7 @@ function App() {
       <div className='app-container'>
 
         <section id='top'>
-          <Display
-            scrollOn={scrollOn}
-            msgIndex={msgIndex}
-            setScrollMessages={setScrollMessages}
-            visitsCount={visitsCount}
-            visitorLocation={visitorLocation}
-            latestAnswer={latestAnswer}
-            latestArticle={latestArticle}
-            latestCommit={latestCommit}
-          />
+          <Display />
           <Navbar />
         </section>
 
@@ -94,9 +73,9 @@ function App() {
             <Route path='*' element={<Navigate to='/' />} />
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/projects' element={<Projects repos={repos} />} />
-            <Route path='/writings' element={<Writings articles={articles} />} />
-            <Route path='/stats' element={<Stats SO_topTech={SO_topTech} SO_reputation={SO_reputation} articles={articles} githubStats={githubStats} />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/writings' element={<Writings />} />
+            <Route path='/stats' element={<Stats />} />
           </Routes>
         </section>
 

@@ -1,16 +1,19 @@
 import axios from 'axios'
 
-function uniqueVisits({ setVisitsCount }) {
+function uniqueVisits({ dispatch }) {
   axios.get('https://api.gass.dev/unique_visitors')
     .then((resp) => {
-      setVisitsCount(`000${resp.data.count}`)
+      dispatch({ type: 'set visits count', count: `000${resp.data.count}` })
     })
 }
 
-function getVisitorLocation({ setVisitorLocation }) {
+function getVisitorLocation({ dispatch }) {
   axios.get('https://geolocation-db.com/json/')
     .then((resp) => {
-      setVisitorLocation(resp.data.country_name)
+      dispatch({
+        type: 'set guest location',
+        location: resp.data.country_name
+      })
     })
 }
 

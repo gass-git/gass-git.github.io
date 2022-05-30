@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, useContext } from 'react'
 import s from './display.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons'
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { ReactComponent as Codepen } from '../../../global/assets/SVGs/codepen.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
@@ -9,17 +9,19 @@ import { ReactComponent as Twitter } from '../../../global/assets/SVGs/twitter.s
 import useSound from 'use-sound'
 import bounce from '../../../global/assets/sounds/bounce.wav'
 import unfa from '../../../global/assets/sounds/unfa_select.flac'
+import { AppContext } from '../../../App'
 
-export default function Display({
-  msgIndex,
-  scrollOn,
-  setScrollMessages,
-  visitsCount,
-  visitorLocation,
-  latestAnswer,
-  latestArticle,
-  latestCommit
-}) {
+export default function Display() {
+  const { state, dispatch } = useContext(AppContext)
+  const {
+    uniqueVisits,
+    guestLocation,
+    scrollerSwitch,
+    scrollerMsgIndex,
+    latestArticle,
+    SO_latestAnswer,
+    latestCommit
+  } = state
 
   const ini = { pixels: '270px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
@@ -36,16 +38,16 @@ export default function Display({
   }
   const messages = [
     <Fragment>
-      Welcome fellow visitor from {visitorLocation ? visitorLocation : 'unknown'}!
+      Welcome fellow visitor from {guestLocation ? guestLocation : 'unknown'}!
     </Fragment>,
     <Fragment>
-      Unique visitors to date: {visitsCount} and counting...
+      Unique visitors to date: {uniqueVisits} and counting...
     </Fragment>,
     <Fragment>
       Last blog post on DevTo - {latestArticle}
     </Fragment>,
     <Fragment>
-      Latest on Stack Overflow - {latestAnswer}
+      Latest on Stack Overflow - {SO_latestAnswer}
     </Fragment>,
     <Fragment>
       Latest GitHub commit - {latestCommit.comment} (repo: {latestCommit.repo})
@@ -56,7 +58,10 @@ export default function Display({
   ]
 
   useEffect(() => {
-    setScrollMessages(messages.length)
+    dispatch({
+      type: 'set scroll messages count',
+      total: messages.length
+    })
   }, [])
 
   function expand() {
@@ -127,9 +132,9 @@ export default function Display({
 
         <div className={s.msg_display}>
           {
-            scrollOn ?
+            scrollerSwitch === 'on' ?
               <div className={s.scroll_text}>
-                {messages[msgIndex]}
+                {messages[scrollerMsgIndex]}
               </div>
               :
               null
