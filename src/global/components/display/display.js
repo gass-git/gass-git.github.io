@@ -62,7 +62,7 @@ export default function Display() {
       type: 'set scroll messages count',
       total: messages.length
     })
-  }, [])
+  }, [dispatch, messages.length])
 
   function expand() {
     if (pixels !== ini.pixels) {
