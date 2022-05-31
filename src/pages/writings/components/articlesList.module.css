@@ -1,6 +1,6 @@
-.card {
+#card {
   flex: 1;
-  margin: 40px 20px 40px 20px;
+  margin: 20px 20px 0px 20px;
   padding: 40px;
   border-radius: 5px;
   transition: 200ms;
@@ -8,23 +8,26 @@
   cursor: pointer;
 }
 
-.card:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+#card:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  color: rgba(19, 255, 255, 0.7);
-  font-size: 23px;
-  font-weight: 600;
+  font-size: 19px;
+  color: #eee;
+  text-transform: capitalize;
 }
 
 .details {
+  color: rgba(0, 255, 255, 0.6);
   margin-top: 5px;
-  color: #eee;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .description {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.6);
+  margin-top: 12px;
+  color: lightblue;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 300;
 }

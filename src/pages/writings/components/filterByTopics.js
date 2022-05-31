@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './filterByTopics.module.css'
 
-export default function FilterByTopics({ tags, handleSelectedTags, selectedTags }) {
+export default function FilterByTopics({ tags, handleSelected, selected }) {
   return (
     <section id={s.filterByTopic}>
       {
@@ -9,8 +9,8 @@ export default function FilterByTopics({ tags, handleSelectedTags, selectedTags 
           return (
             <div
               key={tag}
-              className={selectedTags.includes(tag) ? s.selected : null}
-              onClick={() => handleSelectedTags(tag)}>
+              className={selected.includes(tag) ? s.selected : null}
+              onClick={() => handleSelected(tag)}>
               {tag}
             </div>
           )

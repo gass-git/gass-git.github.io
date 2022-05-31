@@ -48,13 +48,13 @@
 }
 
 .movable_text {
-  width: 90px;
+  width: 65px;
   height: 40px;
   padding-top: 2px;
   font-size: 14px;
   transform: translateX(130px);
   transition: 700ms;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(0, 255, 255, 0.7);
   cursor: pointer;
   /*border: 1px solid white;*/
 }

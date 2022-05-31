@@ -12,41 +12,35 @@ export default function Writings() {
   const { state } = useContext(AppContext)
   const { articles } = state
   const [tags, setTags] = useState([])
-  const [selectedTags, setSelectedTags] = useState([])
-  const [filteredArticles, setFilteredArticles] = useState(articles)
+  const [selected, setSelected] = useState([])
+  const [filtered, setFiltered] = useState(articles)
   const [playSound] = useSound(tickSound, { volume: 0.6 })
 
-  function handleSelectedTags(tag) {
+  function handleSelected(tag) {
     playSound()
-
-    // if tag is not in selectedTags array, add it
-    if (!selectedTags.includes(tag)) {
-      setSelectedTags([...selectedTags, tag])
-    }
-
-    // if tag is in selectedTags array remove it
-    else {
-      let filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag)
-      setSelectedTags(filteredTags)
-    }
+    // if the tag is not in selected array, add it
+    if (!selected.includes(tag)) setSelected([...selected, tag])
+    // if the tag is in selected array remove it
+    else setSelected(selected.filter((selection) => selection !== tag))
   }
 
   function filter() {
-    if (selectedTags.length > 0) {
-
+    if (selected.length > 0) {
       let filtered = articles.filter((article) => {
-        let bool = article['tags'].some((tag) => selectedTags.includes(tag))
+        let bool = article['tags'].some((tag) => selected.includes(tag))
         return bool
       })
-      setFilteredArticles(filtered)
+      setFiltered(filtered)
     }
-    else setFilteredArticles(articles)
+    else setFiltered(articles)
   }
 
-  // retrieve all tags from the articles array
+  /**
+   * retrieve all tags from the articles array and add them to the
+   * tags array if it's empty.
+   */
   useEffect(() => {
-    // if the data is ready and the tags array is empty continue
-    if (articles && tags.length === 0) {
+    if (tags.length === 0) {
       let arr = []
       articles.forEach((article) => {
         article['tags'].forEach((tag) => {
@@ -57,23 +51,19 @@ export default function Writings() {
     }
   })
 
-  useEffect(() => {
-    filter()
-  }, [selectedTags])
+  useEffect(() => filter(), [selected])
 
-  if (!articles) return <span>LOADING...</span>
-
-  else return (
+  return (
     <>
       <Header latestArticle={articles[0]} />
       <SectionTitle txt1='archives' txt2='filter by topic' />
       <FilterByTopic
         tags={tags}
-        handleSelectedTags={handleSelectedTags}
-        selectedTags={selectedTags}
+        handleSelected={handleSelected}
+        selected={selected}
       />
       <ContentWrapper>
-        <ArticlesList filteredArticles={filteredArticles} />
+        <ArticlesList filtered={filtered} />
       </ContentWrapper>
     </>
   )

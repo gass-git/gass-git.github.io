@@ -45,7 +45,7 @@ export default function Pinned({ src, data }) {
         <div className={s.middle}>
           <div className={s.movable_text}>
             <div style={{ marginTop: '9px' }}>
-              Live Preview
+              See Live
             </div>
 
           </div>
