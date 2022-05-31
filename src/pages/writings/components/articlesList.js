@@ -14,6 +14,9 @@ export default function ArticlesList({ filtered }) {
         <div className={s.description}>
           {data.description}
         </div>
+        <div className={s.tags_wrapper}>
+          {data.tags.map((tag) => <div className={s.tag}>{tag}</div>)}
+        </div>
       </section>
     )
   }
