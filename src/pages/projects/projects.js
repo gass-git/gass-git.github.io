@@ -6,7 +6,6 @@ import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import Pinned from './layouts/pinned'
 import { ProjectCard } from './layouts/projectCard'
-import { withTheme } from '@emotion/react'
 
 export default function Projects({ repos }) {
   const pinned = [425300173, 372308367] // ID of pinned repos
