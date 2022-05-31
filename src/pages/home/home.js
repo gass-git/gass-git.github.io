@@ -12,33 +12,23 @@ export default function Home() {
   const { state } = useContext(AppContext)
   const { latest } = state
 
+  const [filtered, setFiltered] = useState(latest)
+  const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
   const [playSound] = useSound(tickSound, { volume: 0.6 })
-  const [selectedTypes, setSelectedTypes] = useState({
-    commit: false,
-    SO_answer: false,
-    article: false
-  })
-  const [filteredData, setFilteredData] = useState(latest)
 
-  function handleFilters(filter) {
+  function handleFilters(tag) {
     playSound()
 
-    switch (filter) {
-      case 'commit':
-        return setSelectedTypes({
-          ...selectedTypes,
-          commit: !selectedTypes.commit
-        })
-      case 'SO_answer':
-        return setSelectedTypes({
-          ...selectedTypes,
-          SO_answer: !selectedTypes.SO_answer
-        })
-      case 'article':
-        return setSelectedTypes({
-          ...selectedTypes,
-          article: !selectedTypes.article
-        })
+    switch (tag) {
+      case 'commits':
+        return setSelected({ ...selected, commit: !selected.commit })
+
+      case 'SO answers':
+        return setSelected({ ...selected, answer: !selected.answer })
+
+      case 'articles':
+        return setSelected({ ...selected, article: !selected.article })
+
       default:
         return null
     }
@@ -46,25 +36,23 @@ export default function Home() {
 
   function filter() {
     // if the user hasn't selected filters, show all
-    if (!selectedTypes.commit && !selectedTypes.SO_answer && !selectedTypes.article) {
-      return setFilteredData(latest)
+    if (!selected.commit && !selected.answer && !selected.article) {
+      return setFiltered(latest)
     }
     else {
-      return setFilteredData(latest.filter((el) => selectedTypes[el.type]))
+      return setFiltered(latest.filter((el) => selected[el.type]))
     }
   }
 
-  useEffect(() => {
-    filter()
-  }, [selectedTypes, latest])
+  useEffect(() => filter(), [selected, latest])
 
   return (
     <section id='home'>
       <Header />
       <SectionTitle txt1='latest' txt2='activity online' />
-      <FilterByEvent selectedTypes={selectedTypes} handleFilters={handleFilters} />
+      <FilterByEvent selected={selected} handleFilters={handleFilters} />
       <ContentWrapper>
-        <Latest filteredData={filteredData} />
+        <Latest filteredData={filtered} />
       </ContentWrapper>
     </section>
   )

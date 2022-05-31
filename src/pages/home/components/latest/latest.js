@@ -10,7 +10,7 @@ export default function Latest({ filteredData }) {
   function icon(type) {
     switch (type) {
       case 'commit': return <FontAwesomeIcon icon={faCodeCommit} />
-      case 'SO_answer': return <FontAwesomeIcon icon={faStackOverflow} />
+      case 'answer': return <FontAwesomeIcon icon={faStackOverflow} />
       case 'article': return <FontAwesomeIcon icon={faDev} />
       default: return null
     }

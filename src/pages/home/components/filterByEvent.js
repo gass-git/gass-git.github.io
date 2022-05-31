@@ -4,23 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeCommit } from '@fortawesome/free-solid-svg-icons'
 import { faStackOverflow, faDev } from '@fortawesome/free-brands-svg-icons'
 
-export default function FilterByTopics({ selectedTypes, handleFilters }) {
-  const events = ['commits', 'SO answers', 'articles']  // for buttons
-  const eventTypes = ['commit', 'SO_answer', 'article'] // for filtering data
+export default function FilterByEvent({ selected, handleFilters }) {
+  const tags = ['commits', 'SO answers', 'articles']  // for buttons
   const icons = [faCodeCommit, faStackOverflow, faDev]
+
+  function getValueByIndex(obj, index) {
+    let keysArray = Object.keys(obj)
+    let key = keysArray[index]
+    return obj[key]
+  }
 
   return (
     <section id={s.filterByEvent}>
       {
-        eventTypes.map((type, i) => {
+        tags.map((tag, i) => {
           return (
-            <div 
-              key={type}
-              className={selectedTypes[type] ? s.selected : null}
-              onClick={() => handleFilters(type)}
+            <div
+              key={tag}
+              className={getValueByIndex(selected, i) ? s.selected : null}
+              onClick={() => handleFilters(tag)}
             >
               <FontAwesomeIcon icon={icons[i]} className={s.icon} />
-              {events[i]}
+              {tags[i]}
             </div>
           )
         })

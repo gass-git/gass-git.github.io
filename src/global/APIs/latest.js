@@ -24,7 +24,7 @@ async function fetchLatest({ dispatch }) {
         array.push({
           created_at: el.creation_date,
           id: el.answer_id,
-          type: 'SO_answer',
+          type: 'answer',
           detail: question_data.items[0].title,
           url: `https://stackoverflow.com/a/${el.answer_id}`
         })
