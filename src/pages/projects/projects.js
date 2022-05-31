@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import devPlus_SRC from '../../global/assets/images/dev_plus.png'
 import tipMeDash_SRC from '../../global/assets/images/TMD.png'
 import Header from './components/header'
@@ -6,31 +6,18 @@ import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import Pinned from './layouts/pinned'
 import { ProjectCard } from './layouts/projectCard'
+import { AppContext } from '../../App'
+import s from './projects.module.css'
 
-export default function Projects({ repos }) {
-  const pinned = [425300173, 372308367] // ID of pinned repos
-  const [pinnedRepos, setPinnedRepos] = useState([])
-  const [unpinnedRepos, setUnpinnedRepos] = useState(repos)
+export default function Projects() {
+  const { state } = useContext(AppContext)
+  const { repos } = state
 
-  function updatePinnedRepos() {
-    let filteredRepos = repos.filter((repo) => pinned.includes(repo.id))
-    setPinnedRepos(filteredRepos)
-  }
+  const pinned_IDs = [425300173, 372308367]
+  const pinnedRepos = repos.filter((repo) => pinned_IDs.includes(repo.id))
+  const unpinnedRepos = repos.filter((repo) => !pinned_IDs.includes(repo.id))
 
-  function updateUnpinnedRepos() {
-    let filteredRepos = repos.filter((repo) => !pinned.includes(repo.id))
-    setUnpinnedRepos(filteredRepos)
-  }
-
-  useEffect(() => {
-    if (repos) {
-      updatePinnedRepos()
-      updateUnpinnedRepos()
-    }
-  }, [repos])
-
-  if (!repos) return <p>Loading..</p>
-  else return (
+  return (
     <>
       <Header />
 
@@ -42,12 +29,7 @@ export default function Projects({ repos }) {
 
       <SectionTitle txt1={`archives`} txt2={`other networthy projects`} />
       <ContentWrapper>
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: '800px'
-          }}
-        >
+        <div className={s.unpinned_wrapper}>
           {
             unpinnedRepos.map((repo, i) => {
               return <ProjectCard repo={repo} i={i} />
@@ -55,7 +37,6 @@ export default function Projects({ repos }) {
           }
         </div>
       </ContentWrapper>
-
     </>
   )
 }
