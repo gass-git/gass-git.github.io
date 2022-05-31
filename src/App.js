@@ -15,6 +15,8 @@ import Display from './global/components/display/display'
 import { uniqueVisits, getVisitorLocation } from './global/APIs/visits'
 import { getLatestAnswer } from './global/APIs/SO'
 import { appReducer, initialState } from './stateCapsule'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export const AppContext = createContext(null)
 
@@ -26,6 +28,8 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    AOS.init()
+
     // always coordinate the menu with the current location pathname
     if (selected !== location.pathname) navigate(selected)
 
@@ -61,7 +65,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
-      <div className='app-container'>
+      <div className='app-container' data-aos="flip-up" data-aos-duration="3000">
 
         <section id='top'>
           <Display />
