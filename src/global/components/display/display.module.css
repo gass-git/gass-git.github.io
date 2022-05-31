@@ -40,11 +40,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   border-left: 1px solid rgba(255, 255, 255, 0.07);
   background-color: rgb(33, 56, 100);
-  /*background:
+  background:
     linear-gradient(0deg,
-      rgba(49, 116, 240, 0.12) 10%,
-      rgba(49, 116, 240, 0.14) 50%,
-      rgba(49, 116, 240, 0.17) 80%);*/
+      rgba(47, 48, 49, 0.1) 50%,
+      rgba(250, 251, 251, 0.04) 50%);
   transition: 300ms;
 }
 
@@ -53,12 +52,17 @@
   width: 33px;
   margin: 1px 1px 1px 1px;
   height: 40px;
-  border-radius: 3px 3px 3px 3px;
-  background-color: rgba(0, 0, 0, 0.3);
+  transition: 200ms;
+  border-radius: 3px 0px 0px 3px;
+  background-color: rgba(0, 255, 255, 0.07);
+}
+
+.button_box:hover {
+  background-color: rgba(0, 255, 255, 0.10);
 }
 
 .button_box:hover>* {
-  color: rgba(0, 255, 255, 0.6) !important;
+  color: rgba(0, 255, 255, 0.5) !important;
 }
 
 .icons_wrapper {
@@ -72,13 +76,13 @@
 }
 
 .icons_wrapper>*:hover {
-  color: rgb(0, 255, 255, 0.6);
+  color: rgba(236, 236, 236, 0.7);
 }
 
 #arrow {
   font-size: 28px;
   margin: 7px 0px 0px 9px;
-  color: rgb(0, 255, 255, 0.4);
+  color: rgba(236, 236, 236, 0.5);
   transition: 200ms;
 }
 
