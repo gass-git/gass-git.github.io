@@ -69,14 +69,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.loader {
+.loader_wrapper {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 30px;
 }
 
 .app-container {

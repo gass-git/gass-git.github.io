@@ -11,6 +11,7 @@ import Display from './global/components/display/display'
 import { appReducer, initialState } from './stateCapsule'
 import fetchAllData from './global/functions/fetchAllData'
 import {processVisit} from './global/APIs/visits'
+import Spinner from './global/components/spinner/spinner'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -39,14 +40,15 @@ export default function App() {
 
   useEffect(() => {
     let pathname = location.pathname.slice(1)
+
     if (selected !== pathname) {
       dispatch({type:'update navbar selection', pathname: pathname})
     }
   })
   
   if(loading) return (
-      <div className='loader'>
-        LOADING...
+      <div className='loader_wrapper'>
+        <Spinner />
       </div>
     )
 
@@ -61,8 +63,8 @@ export default function App() {
 
         <section id='content'>
           <Routes>
-            <Route path='*' element={<Navigate to='/' />} />
-            <Route path='/' element={<Home />} />
+            <Route path='*' element={<Navigate to='/home' />} />
+            <Route path='/' element={<Navigate to='/home' />} />
             <Route path='/home' element={<Home />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/writings' element={<Writings />} />
