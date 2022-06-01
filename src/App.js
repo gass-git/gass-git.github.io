@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, createContext } from 'react'
+import React, { useEffect, useReducer, createContext, useState } from 'react'
 import './global/styles.css'
 import Navbar from './global/components/navbar/navbar'
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
@@ -14,7 +14,6 @@ import {processVisit} from './global/APIs/visits'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-
 export const AppContext = createContext(null)
 
 export default function App() {
@@ -22,12 +21,15 @@ export default function App() {
   const { selected } = state
   const location = useLocation()
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     AOS.init()
     fetchAllData({dispatch})
     processVisit()
     
+    setTimeout(() => setLoading(false), 3000)
+
     let interval = setInterval(() => {
       dispatch({type: 'next scroller message'})
     }, 20500)
@@ -42,7 +44,13 @@ export default function App() {
     }
   })
   
-  return (
+  if(loading) return (
+      <div className='loader'>
+        LOADING...
+      </div>
+    )
+
+  else return (
     <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
       <div className='app-container' data-aos="flip-up" data-aos-duration="3000">
 

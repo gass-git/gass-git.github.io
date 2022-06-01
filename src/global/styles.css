@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 :root {
@@ -45,7 +45,6 @@
   --wrapper-border: 1px solid rgba(0, 0, 0, 0.3);
   --wrapper-inner-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 1px inset;
 
-
   /* navbar */
   --selected-bg-color: rgba(255, 255, 255, 0.07);
   --border-radius-two: 3px;
@@ -60,14 +59,24 @@
 }
 
 body {
-  background-color: #251A5A;
+  background-color: #251a5a;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%232c286a' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2334367a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%233b438a' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%2343519a' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%234A5FAA' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
 }
 
 .app-container {
@@ -79,7 +88,13 @@ body {
   border-right: 1px solid rgba(0, 0, 0, 0.4);
   margin: var(--app-container-margin);
   width: 940px;
-  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 6px);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 6px
+  );
   background-size: 3px 3px;
   height: auto;
   background-color: rgba(39, 66, 100, 0.75);
@@ -103,7 +118,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -125,7 +140,7 @@ classes and animations used for Headers
   color: white;
 }
 
-.tab>* {
+.tab > * {
   cursor: pointer;
 }
 
