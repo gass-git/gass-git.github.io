@@ -10,8 +10,10 @@ import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
 import { appReducer, initialState } from './stateCapsule'
 import fetchAllData from './global/functions/fetchAllData'
+import {processVisit} from './global/APIs/visits'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 
 export const AppContext = createContext(null)
 
@@ -24,6 +26,7 @@ export default function App() {
   useEffect(() => {
     AOS.init()
     fetchAllData({dispatch})
+    processVisit()
     
     let interval = setInterval(() => {
       dispatch({type: 'next scroller message'})
