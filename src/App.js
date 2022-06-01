@@ -27,7 +27,7 @@ export default function App() {
     fetchAllData({dispatch})
     
     let interval = setInterval(() => {
-      scrollerInterval({dispatch, scrollMessages, scrollerMsgIndex})
+      dispatch({type: 'next scroller message'})
     }, 20500)
 
     return () => clearInterval(interval)

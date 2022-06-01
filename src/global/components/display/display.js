@@ -57,6 +57,7 @@ export default function Display() {
     </Fragment>
   ]
 
+  // Reset the scrollerSwitch when the scrollerMsgIndex changes
   useEffect(()=> {
     dispatch({ type: 'set scroller off' })
     setTimeout(() => {

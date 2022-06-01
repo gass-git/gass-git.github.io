@@ -84,17 +84,15 @@ function appReducer(state, action) {
         scrollerSwitch: 'off'
       }
 
-    case 'reset scroller msg index':
-      return {
-        ...state,
-        scrollerMsgIndex: 0
-      }
-
-    case 'next scroller msg index':
-      return {
-        ...state,
-        scrollerMsgIndex: state.scrollerMsgIndex + 1
-      }
+    case 'next scroller message':
+      if(state.scrollerMsgIndex < state.scrollMessages - 1) return {
+          ...state,
+          scrollerMsgIndex: state.scrollerMsgIndex + 1
+        }
+      else return {
+          ...state,
+          scrollerMsgIndex: 0
+        }
 
     case 'set latest article':
       return {
@@ -112,12 +110,6 @@ function appReducer(state, action) {
       return {
         ...state,
         latestCommit: action.dataObj
-      }
-
-    case 'set scroll messages count':
-      return {
-        ...state,
-        scrollMessages: action.total
       }
 
     default:
