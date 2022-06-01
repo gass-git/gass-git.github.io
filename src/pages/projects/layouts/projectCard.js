@@ -5,7 +5,7 @@ import s from './projectCard.module.css'
 
 export function ProjectCard({ repo }) {
   return (
-    <section id={s.project_card}>
+    <section id={s.project_card} key={repo.id}>
 
       <div className={s.header}>
         <div className={s.left_box}>
@@ -28,7 +28,7 @@ export function ProjectCard({ repo }) {
         {
           repo.topics.map((topic) => {
             return (
-              <span className={s.tag}>
+              <span className={s.tag} key={topic}>
                 {topic}
               </span>
             )

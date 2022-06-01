@@ -17,10 +17,8 @@ export default function Pinned({ src, data }) {
     setShowModal(true)
   }
 
-  if (!data) return <div>loading..</div>
-
   return (
-    <section id={s.pinned_project}>
+    <section id={s.pinned_project} key={data.id}>
 
       <Modal
         title={data.name}
@@ -79,7 +77,7 @@ export default function Pinned({ src, data }) {
         <div className={s.tech}>
           {
             data['topics'].map((tech) => {
-              return <div>{tech}</div>
+              return <div key={tech}>{tech}</div>
             })
           }
         </div>

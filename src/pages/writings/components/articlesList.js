@@ -15,7 +15,7 @@ export default function ArticlesList({ filtered }) {
           {data.description}
         </div>
         <div className={s.tags_wrapper}>
-          {data.tags.map((tag) => <div className={s.tag}>{tag}</div>)}
+          {data.tags.map((tag) => <div key={tag} className={s.tag}>{tag}</div>)}
         </div>
       </section>
     )
@@ -23,7 +23,7 @@ export default function ArticlesList({ filtered }) {
 
   return (
     <section>
-      {filtered.map((data) => <Card data={data} />)}
+      {filtered.map((data) => <Card key={data.id} data={data} />)}
     </section>
   )
 }

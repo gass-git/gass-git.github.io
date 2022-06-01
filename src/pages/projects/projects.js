@@ -32,7 +32,7 @@ export default function Projects() {
         <div className={s.unpinned_wrapper}>
           {
             unpinnedRepos.map((repo, i) => {
-              return <ProjectCard repo={repo} i={i} />
+              return <ProjectCard key={repo.id} repo={repo} i={i} />
             })
           }
         </div>
