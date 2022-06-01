@@ -6,104 +6,12 @@
   /*border: 1px solid white;*/
 }
 
-.brand {
-  margin-right: 15px;
-  width: 60px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  color: rgba(255, 255, 255, 0.6);
-  /*border: 1px solid white;*/
-  font-size: 40px;
-}
-
 .screen {
   position: relative;
   width: 800px;
   height: 50px;
   overflow: hidden;
   /*border: 1px solid white;*/
-}
-
-.social {
-  display: flex;
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  z-index: 1;
-  width: 270px;
-  height: 42px;
-  color: rgba(255, 255, 255, 0.3);
-  border-radius: 4px 2px 2px 4px;
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  border-left: 1px solid rgba(255, 255, 255, 0.07);
-  background-color: rgb(33, 56, 100);
-  background:
-    linear-gradient(0deg,
-      rgba(47, 48, 49, 0.1) 50%,
-      rgba(250, 251, 251, 0.04) 50%);
-  transition: 300ms;
-}
-
-.button_box {
-  cursor: pointer;
-  width: 33px;
-  margin: 1px 1px 1px 1px;
-  height: 40px;
-  transition: 200ms;
-  border-radius: 3px 0px 0px 3px;
-  background-color: rgba(0, 255, 255, 0.07);
-}
-
-.button_box:hover {
-  background-color: rgba(0, 255, 255, 0.10);
-}
-
-.button_box:hover>* {
-  color: rgba(0, 255, 255, 0.5) !important;
-}
-
-.icons_wrapper {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.icons_wrapper>* {
-  cursor: pointer;
-  transition: 200ms;
-}
-
-.icons_wrapper>*:hover {
-  color: rgba(236, 236, 236, 0.7);
-}
-
-#arrow {
-  font-size: 28px;
-  margin: 7px 0px 0px 9px;
-  color: rgba(236, 236, 236, 0.5);
-  transition: 200ms;
-}
-
-#git {
-  height: 22px;
-  margin: 12px 10px 0px 17px;
-}
-
-#stack {
-  font-size: 24px;
-  margin: 11px 20px 0px 20px;
-}
-
-#twitter {
-  height: 22px;
-  margin: 13px 20px 0px 20px;
-}
-
-#codepen {
-  height: 23px;
-  margin: 13px 15px 0px 20px;
 }
 
 .msg_display {

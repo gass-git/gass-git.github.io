@@ -12,13 +12,12 @@ import { appReducer, initialState } from './stateCapsule'
 import fetchAllData from './global/functions/fetchAllData'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import scrollerInterval from './global/functions/scrollerInterval'
 
 export const AppContext = createContext(null)
 
 export default function App() {
   const [state, dispatch] = useReducer(appReducer, initialState)
-  const { selected, scrollMessages, scrollerMsgIndex } = state
+  const { selected } = state
   const location = useLocation()
   const navigate = useNavigate()
 
