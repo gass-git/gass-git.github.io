@@ -20,6 +20,8 @@ export default function Navbar() {
   const [hiddenItems, setHiddenItems] = useState({ left: 0, right: 0 })
   const links = ['home', 'projects', 'writings', 'stats']
 
+  
+
   useEffect(() => {
     // reset the translation on the X axis every time the window width changes
     setTranslatedX(0)

@@ -13,15 +13,15 @@ const initialState = {
   latestArticle: '',
   SO_latestAnswer: '',
   latestCommit: {},
-  scrollMessages: null
+  scrollMessages: 6
 }
 
 function appReducer(state, action) {
   switch (action.type) {
-    case 'update selected':
+    case 'update navbar selection':
       return {
         ...state,
-        selected: action.option
+        selected: action.pathname
       }
 
     case 'set latest':

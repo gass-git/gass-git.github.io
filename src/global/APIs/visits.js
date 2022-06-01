@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-function uniqueVisits({ dispatch }) {
+function getUniqueVisits({ dispatch }) {
   axios.get('https://api.gass.dev/unique_visitors')
     .then((resp) => {
       dispatch({ type: 'set visits count', count: `000${resp.data.count}` })
@@ -17,4 +17,4 @@ function getVisitorLocation({ dispatch }) {
     })
 }
 
-export { uniqueVisits, getVisitorLocation }
+export { getUniqueVisits, getVisitorLocation }

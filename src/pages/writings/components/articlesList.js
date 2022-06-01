@@ -4,7 +4,7 @@ import s from './articlesList.module.css'
 export default function ArticlesList({ filtered }) {
   const Card = ({ data }) => {
     return (
-      <section id={s.card} onClick={() => window.open(data.url, '_blank')}>
+      <section id={s.card} key={data.id} onClick={() => window.open(data.url, '_blank')}>
         <div className={s.title}>
           {data.title}
         </div>
@@ -23,7 +23,7 @@ export default function ArticlesList({ filtered }) {
 
   return (
     <section>
-      {filtered.map((data) => <Card key={data.id} data={data} />)}
+      {filtered.map((data) => <Card data={data} />)}
     </section>
   )
 }

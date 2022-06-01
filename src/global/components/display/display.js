@@ -57,12 +57,12 @@ export default function Display() {
     </Fragment>
   ]
 
-  useEffect(() => {
-    dispatch({
-      type: 'set scroll messages count',
-      total: messages.length
-    })
-  }, [dispatch, messages.length])
+  useEffect(()=> {
+    dispatch({ type: 'set scroller off' })
+    setTimeout(() => {
+      dispatch({ type: 'set scroller on' })
+    },500)
+  }, [scrollerMsgIndex])
 
   function expand() {
     if (pixels !== ini.pixels) {
