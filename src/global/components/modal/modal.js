@@ -7,7 +7,7 @@ import {AppContext} from '../../../App'
 
 export default function Modal() {
   const {state, dispatch} = useContext(AppContext)
-  const {showModal} = state
+  const {showModal, modalImages, modalData} = state
   
   useEffect(() => {
     if(showModal) document.body.style.overflow = 'hidden'
@@ -24,14 +24,19 @@ export default function Modal() {
           <div className={s.card}>
             <div className={s.header}>
               <div className={s.title}>
-                hello
+                {modalData.name}
               </div>
-              <div className={s.close_btn} id='close_btn' onClick={(e) => handleClose(e)}>
-                <FontAwesomeIcon id='cross_icon' icon={faXmark}/>
+              <div className={s.close_btn} onClick={() => dispatch({type:'hide modal'})}>
+                <FontAwesomeIcon icon={faXmark} />
               </div>
             </div>
             <div className={s.content}>
-              <img src={TMD2} />
+              {
+                modalImages.map((image) => {
+                  return  <img src={image} />
+                })
+              }
+              
             </div>
           </div>
       </section>

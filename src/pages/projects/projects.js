@@ -8,10 +8,33 @@ import Pinned from './layouts/pinned'
 import { ProjectCard } from './layouts/projectCard'
 import { AppContext } from '../../App'
 import s from './projects.module.css'
+import TMD1 from '../../global/assets/projectImages/TMD/1.png'
+import TMD2 from '../../global/assets/projectImages/TMD/2.png'
+import TMD3 from '../../global/assets/projectImages/TMD/3.png'
+import TMD4 from '../../global/assets/projectImages/TMD/4.png'
+import TMD5 from '../../global/assets/projectImages/TMD/5.png'
+import TMD6 from '../../global/assets/projectImages/TMD/6.png'
+import DP1 from '../../global/assets/projectImages/devPlus/1.jpg'
+import DP2 from '../../global/assets/projectImages/devPlus/2.jpeg'
 
 export default function Projects() {
   const { state } = useContext(AppContext)
   const { repos } = state
+
+  const images = {
+    devPlus: [
+      DP1,
+      DP2
+    ],
+    TMD:[
+      TMD1,
+      TMD2,
+      TMD3,
+      TMD4,
+      TMD5,
+      TMD6
+    ]
+  }
 
   const pinned_IDs = [425300173, 372308367]
   const pinnedRepos = repos.filter((repo) => pinned_IDs.includes(repo.id))
@@ -23,8 +46,8 @@ export default function Projects() {
 
       <SectionTitle txt1={`featured`} txt2={`some things I’ve built`} />
       <ContentWrapper>
-        <Pinned src={devPlus_SRC} data={pinnedRepos[0]} />
-        <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} />
+        <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus}/>
+        <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} images={images.TMD}/>
       </ContentWrapper>
 
       <SectionTitle txt1={`archives`} txt2={`other networthy projects`} />

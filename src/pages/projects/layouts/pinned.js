@@ -7,7 +7,7 @@ import {AppContext} from '../../../App'
 import s from './pinned.module.css'
 
 
-export default function Pinned({ src, data }) {
+export default function Pinned({ src, data, images }) {
   const {dispatch} = useContext(AppContext)
 
   return (
@@ -35,7 +35,7 @@ export default function Pinned({ src, data }) {
           <FontAwesomeIcon
             icon={faImages}
             style={{ fontSize: '30px', margin: '0px 20px 0px 7px' }}
-            onClick={() => dispatch({type:'show modal'})}
+            onClick={() => dispatch({type:'show modal', data: data, images: images })}
           />
           <Github
             onClick={() => window.open(data.repo_url, 'blank')}

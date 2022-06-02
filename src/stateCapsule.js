@@ -2,6 +2,8 @@ const initialState = {
   appLoading: true,
   selected: 'home',
   showModal: false,
+  modalData: {},
+  modalImages: [],
   latest: [],
   repos: [],
   articles: [],
@@ -35,6 +37,8 @@ function appReducer(state, action) {
     case 'show modal':
       return{
         ...state,
+        modalImages: action.images,
+        modalData: action.data,
         showModal:true
       }
 
