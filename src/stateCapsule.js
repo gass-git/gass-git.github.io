@@ -1,4 +1,5 @@
 const initialState = {
+  appLoading: true,
   selected: 'home',
   latest: [],
   repos: [],
@@ -18,6 +19,12 @@ const initialState = {
 
 function appReducer(state, action) {
   switch (action.type) {
+    case 'loading completed':
+        return {
+          ...state,
+          appLoading: false
+        }
+
     case 'update navbar selection':
       return {
         ...state,
@@ -84,7 +91,7 @@ function appReducer(state, action) {
         scrollerSwitch: 'off'
       }
 
-    case 'next scroller message':
+    case 'next scroller msg':
       if(state.scrollerMsgIndex < state.scrollMessages - 1) return {
           ...state,
           scrollerMsgIndex: state.scrollerMsgIndex + 1

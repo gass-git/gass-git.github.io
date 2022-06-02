@@ -9,7 +9,7 @@ export default function Header() {
   const ini = { pixels: '240px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [playSound] = useSound(clickStereo, { volume: 0.4 })
+  const [playSound] = useSound(clickStereo, { volume: 0.5 })
 
   function expand() {
 
