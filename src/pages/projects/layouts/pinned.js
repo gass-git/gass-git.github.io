@@ -1,35 +1,17 @@
-import React, { useState } from 'react'
-import devPlusOne from '../../../global/assets/projectImages/devPlus/react_art.jpeg'
-import devPlusTwo from '../../../global/assets/projectImages/devPlus/preview.jpg'
+import React, {useContext} from 'react'
 import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages } from '@fortawesome/free-regular-svg-icons'
+import {AppContext} from '../../../App'
 import s from './pinned.module.css'
-import Modal from '../../../global/components/modal/modal'
+
 
 export default function Pinned({ src, data }) {
-  const [showModal, setShowModal] = useState(false)
-  const [scrollPos, setScrollPos] = useState(0)
-
-  function handleShowModal() {
-    setScrollPos(window.scrollY)
-    setShowModal(true)
-  }
+  const {dispatch} = useContext(AppContext)
 
   return (
     <section id={s.pinned_project} key={data.id}>
-
-      <Modal
-        title={data.name}
-        showModal={showModal}
-        setShowModal={setShowModal}
-        scrollPos={scrollPos}
-      >
-        <img src={devPlusOne} style={{ maxWidth: '100%' }} />
-        <img src={devPlusTwo} style={{ maxWidth: '100%' }} />
-      </Modal>
-
       <div className={s.top}>
 
         <div className={s.left}>
@@ -53,7 +35,7 @@ export default function Pinned({ src, data }) {
           <FontAwesomeIcon
             icon={faImages}
             style={{ fontSize: '30px', margin: '0px 20px 0px 7px' }}
-            onClick={handleShowModal}
+            onClick={() => dispatch({type:'show modal'})}
           />
           <Github
             onClick={() => window.open(data.repo_url, 'blank')}

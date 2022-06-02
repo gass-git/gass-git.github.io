@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, createContext } from 'react'
+import React, { useEffect, useReducer, createContext} from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { appReducer, initialState } from './stateCapsule'
 import Navbar from './global/components/navbar/navbar'
@@ -14,6 +14,7 @@ import Spinner from './global/components/spinner/spinner'
 import './global/styles.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Modal from './global/components/modal/modal'
 
 export const AppContext = createContext(null)
 
@@ -48,6 +49,7 @@ export default function App() {
   else {
     return (
       <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
+        <Modal />
         <div className='app-container' data-aos='flip-up' data-aos-duration='2000'>
 
           <section id='top'>

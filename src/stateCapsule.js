@@ -1,6 +1,7 @@
 const initialState = {
   appLoading: true,
   selected: 'home',
+  showModal: false,
   latest: [],
   repos: [],
   articles: [],
@@ -30,6 +31,18 @@ function appReducer(state, action) {
         ...state,
         selected: action.pathname
       }
+
+    case 'show modal':
+      return{
+        ...state,
+        showModal:true
+      }
+
+    case 'hide modal':
+      return{
+        ...state,
+        showModal: false
+      }    
 
     case 'set latest':
       return {

@@ -54,7 +54,7 @@ export default function Header() {
 
             <div className={s.content_wrapper}>
               <p>
-                I'm constantly building projects related to web development.
+                I'm constantly building projects related to web development. 
               </p>
               <p>
                 Feel free to have a look around and check them out!

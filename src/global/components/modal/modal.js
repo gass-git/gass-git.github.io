@@ -1,55 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import s from './modal.module.css'
+import TMD2 from '../../assets/projectImages/TMD/2.png'
+import {AppContext} from '../../../App'
 
-export default function Modal({ 
-  title,
-  children, 
-  showModal, 
-  setShowModal, 
-  scrollPos
-  }) {
-  const [scrollHeight, setScrollHeight] = useState(0)
-
+export default function Modal() {
+  const {state, dispatch} = useContext(AppContext)
+  const {showModal} = state
+  
   useEffect(() => {
-    setScrollHeight(document.documentElement.scrollHeight)
-  }, [])
+    if(showModal) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = null
+  },[showModal])
+
+  function handleClose(e){
+    if(e.target.id) dispatch({type:'hide modal'})
+  }
 
   if (showModal) {
     return (
-      <section id={s.modal}>
-        <div 
-          className={s.backdrop}
-          style={{ height: `${scrollHeight}px` }}
-          onClick={() => setShowModal(false)}
-        />
-        <div
-          className={s.card}
-          style={{ top: `${scrollPos + 100}px`}}
-        >
-          <div className={s.header}>
-            <div className={s.title}>
-              {title}
+      <section className={s.modal} id='modal' onClick={(e) => handleClose(e)}>
+          <div className={s.card}>
+            <div className={s.header}>
+              <div className={s.title}>
+                hello
+              </div>
+              <div className={s.close_btn} id='close_btn' onClick={(e) => handleClose(e)}>
+                <FontAwesomeIcon id='cross_icon' icon={faXmark}/>
+              </div>
             </div>
-            <div className={s.Xmark_box}>
-              <FontAwesomeIcon
-                icon={faXmark}
-                onClick={() => setShowModal(false)}
-              />
+            <div className={s.content}>
+              <img src={TMD2} />
             </div>
           </div>
-          <div className={s.content}>
-            {children}
-          </div>
-        </div>
-      </section >
+      </section>
     )
   }
 
-  else return (
-    null
-  )
-
-
+  else return null
 }
