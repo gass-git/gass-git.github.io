@@ -79,23 +79,26 @@ body {
 
 .app-container {
   min-height: 100vh;
-  border-radius: 3px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border: 2px solid rgb(255, 255, 255, 0.1);
   margin: var(--app-container-margin);
   width: 940px;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px,
-    transparent 6px
-  );
+  background-image: repeating-linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px,
+      transparent 6px);
   background-size: 3px 3px;
   height: auto;
-  background-color: rgba(39, 66, 100, 0.75);
+  background-color: rgba(39, 66, 100, 0.65);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+
+  /* --- metal border
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 19px;
+  border-image: url('./assets/images/metalic-border-60px-0.2.png') 19 round;
+  */
 }
 
 #top {
@@ -138,7 +141,7 @@ classes and animations used for Headers
   color: white;
 }
 
-.tab > * {
+.tab>* {
   cursor: pointer;
 }
 

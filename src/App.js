@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, createContext} from 'react'
+import React, { useEffect, useReducer, createContext } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { appReducer, initialState } from './stateCapsule'
 import Navbar from './global/components/navbar/navbar'
@@ -9,7 +9,7 @@ import Writings from './pages/writings/writings'
 import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
 import fetchAllData from './global/functions/fetchAllData'
-import {processVisit} from './global/APIs/visits'
+import { processVisit } from './global/APIs/visits'
 import Spinner from './global/components/spinner/spinner'
 import './global/styles.css'
 import AOS from 'aos'
@@ -25,20 +25,20 @@ export default function App() {
 
   useEffect(() => {
     AOS.init()
-    fetchAllData({dispatch})
+    fetchAllData({ dispatch })
     processVisit()
-    setTimeout(() => dispatch({type: 'loading completed'}), 4000)
-    let interval = setInterval(() => dispatch({type: 'next scroller msg'}), 20500)
+    setTimeout(() => dispatch({ type: 'loading completed' }), 4000)
+    let interval = setInterval(() => dispatch({ type: 'next scroller msg' }), 20500)
     return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
     if (selected !== location.pathname.slice(1)) {
-      dispatch({type:'update navbar selection', pathname: location.pathname.slice(1)})
+      dispatch({ type: 'update navbar selection', pathname: location.pathname.slice(1) })
     }
   })
-  
-  if(appLoading){
+
+  if (appLoading) {
     return (
       <div className='loader_wrapper'>
         <Spinner />

@@ -1,14 +1,14 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages } from '@fortawesome/free-regular-svg-icons'
-import {AppContext} from '../../../App'
+import { AppContext } from '../../../App'
 import s from './pinned.module.css'
 
 
 export default function Pinned({ src, data, images }) {
-  const {dispatch} = useContext(AppContext)
+  const { dispatch } = useContext(AppContext)
 
   return (
     <section id={s.pinned_project} key={data.id}>
@@ -35,7 +35,7 @@ export default function Pinned({ src, data, images }) {
           <FontAwesomeIcon
             icon={faImages}
             style={{ fontSize: '30px', margin: '0px 20px 0px 7px' }}
-            onClick={() => dispatch({type:'show modal', data: data, images: images })}
+            onClick={() => dispatch({ type: 'show modal', data: data, images: images })}
           />
           <Github
             onClick={() => window.open(data.repo_url, 'blank')}
@@ -49,7 +49,7 @@ export default function Pinned({ src, data, images }) {
         onClick={() => window.open(data.project_url, 'blank')}
       >
         <div className={s.image_wrapper}>
-          <img src={src} />
+          <img src={src} alt='preview' />
         </div>
 
         <div className={s.about}>
