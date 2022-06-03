@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './topTech.module.css'
+import CountUp from 'react-countup'
 
 export default function TopTech({ topTech }) {
   return (
@@ -16,7 +17,12 @@ export default function TopTech({ topTech }) {
                   {tech.tag_name}
                 </div>
                 <div className={s.score}>
-                  {tech.answer_score}
+                  <CountUp
+                    className={s.stat_number}
+                    duration={0.5}
+                    end={tech.answer_score}
+                    separator=','
+                  />
                 </div>
               </div>
             )

@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './github.module.css'
+import CountUp from 'react-countup'
 
 export default function Github({ githubStats }) {
   return (
@@ -11,7 +12,12 @@ export default function Github({ githubStats }) {
             Public Repositories
           </div>
           <div className={s.big_number}>
-            {githubStats.public_repos}
+            <CountUp
+              className={s.stat_number}
+              end={githubStats.public_repos}
+              separator=','
+              duration={0.8}
+            />
           </div>
         </div>
       </div>
@@ -22,7 +28,12 @@ export default function Github({ githubStats }) {
             Followers
           </div>
           <div className={s.big_number}>
-            {githubStats.followers}
+            <CountUp
+              className={s.stat_number}
+              end={githubStats.followers}
+              separator=','
+              duration={0.6}
+            />
           </div>
         </div>
       </div>

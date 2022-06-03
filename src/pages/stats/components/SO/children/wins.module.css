@@ -9,6 +9,11 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.stat_number {
+  color: white;
+  cursor: default;
+}
+
 .title {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;

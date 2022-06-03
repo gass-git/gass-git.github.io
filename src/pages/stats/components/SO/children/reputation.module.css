@@ -15,10 +15,14 @@
   font-size: 23px;
 }
 
-.big_number {
+.stat_number {
+  color: white;
+  cursor: default;
+}
+
+.big_number_box {
   margin-top: 13px;
   font-size: 40px;
-  color: white;
   font-weight: 700;
 }
 

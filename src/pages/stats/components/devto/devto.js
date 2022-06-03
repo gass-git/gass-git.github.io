@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './devto.module.css'
+import CountUp from 'react-countup'
 
 export default function Devto({ comments, reactions }) {
   return (
@@ -11,7 +12,12 @@ export default function Devto({ comments, reactions }) {
             Total Comments
           </div>
           <div className={s.big_number}>
-            {comments}
+            <CountUp
+              className={s.stat_number}
+              end={comments}
+              separator=','
+              duration={0.5}
+            />
           </div>
           <div className={s.bottom_wrapper}>
             * in the last 30 articles
@@ -25,7 +31,12 @@ export default function Devto({ comments, reactions }) {
             Total Reactions
           </div>
           <div className={s.big_number}>
-            {reactions}
+            <CountUp
+              className={s.stat_number}
+              end={reactions}
+              separator=','
+              duration={0.8}
+            />
           </div>
           <div className={s.bottom_wrapper}>
             * in the last 30 articles

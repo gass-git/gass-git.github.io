@@ -4,6 +4,11 @@
   /*border: 1px solid white;*/
 }
 
+.stat_number {
+  color: white;
+  cursor: default;
+}
+
 .left_box {
   width: 50%;
   height: 100%;
