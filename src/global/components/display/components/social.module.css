@@ -6,28 +6,36 @@
   z-index: 1;
   width: 270px;
   height: 42px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.4);
   border-radius: 4px 2px 2px 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.32);
   border-right: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   border-left: 1px solid rgba(255, 255, 255, 0.07);
-  background-color: rgb(33, 56, 100);
-  background: linear-gradient(
-    0deg,
-    rgba(47, 48, 49, 0.1) 50%,
-    rgba(250, 251, 251, 0.04) 50%
-  );
+
+  background-color: rgb(40, 53, 97);
+  /*
+  background: linear-gradient(0deg,
+      var(--dark-transparent-one) 50%,
+      rgba(7, 7, 7, 0.6) 50%);
+      */
+  /*background-color: var(--dark-transparent-one);*/
+  /*background-color: rgba(37, 50, 92, 0.7);*/
+  /*
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(21, 21, 21, 0.6) 50%);
+      */
   transition: 200ms;
 }
 
 .button_box {
   cursor: pointer;
   width: 33px;
-  margin: 1px 1px 1px 1px;
-  height: 40px;
+  margin: 2px 2px 2px 2px;
+  height: 38px;
   transition: 200ms;
-  border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 3px 3px 3px;
   background-color: rgba(0, 255, 255, 0.07);
 }
 
@@ -35,7 +43,7 @@
   background-color: rgba(0, 255, 255, 0.1);
 }
 
-.button_box:hover > * {
+.button_box:hover>* {
   color: rgba(0, 255, 255, 0.5) !important;
 }
 
@@ -44,19 +52,19 @@
   justify-content: flex-start;
 }
 
-.icons_wrapper > * {
+.icons_wrapper>* {
   cursor: pointer;
   transition: 200ms;
 }
 
-.icons_wrapper > *:hover {
+.icons_wrapper>*:hover {
   color: rgba(236, 236, 236, 0.7);
 }
 
 #arrow {
-  font-size: 28px;
-  margin: 7px 0px 0px 9px;
-  color: rgba(236, 236, 236, 0.5);
+  font-size: 27px;
+  margin: 6px 0px 0px 9px;
+  color: rgba(236, 236, 236, 0.4);
   transition: 200ms;
 }
 
