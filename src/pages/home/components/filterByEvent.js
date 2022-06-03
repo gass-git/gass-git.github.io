@@ -10,7 +10,7 @@ export default function FilterByEvent({ selected, handleFilters }) {
   const icons = [faCodeCommit, faStackOverflow, faDev]
 
   return (
-    <section id={s.filterByEvent}>
+    <section id={s.filterByEvent} data-aos='fade' data-aos-duration='1000'>
       {
         tags.map((tag, i) => {
           return (

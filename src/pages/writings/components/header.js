@@ -25,7 +25,7 @@ export default function Header({ latestArticle }) {
   }
 
   return (
-    <section id={s.header}>
+    <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
       <div className={s.wrapper}>
         <div className={s.glass}>
           <div
