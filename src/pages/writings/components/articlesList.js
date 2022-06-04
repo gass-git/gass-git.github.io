@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './articlesList.module.css'
+import {space1} from '../../../global/utilities/spaces'
 
 export default function ArticlesList({ filtered }) {
   const Card = ({ data }) => {
@@ -9,7 +10,7 @@ export default function ArticlesList({ filtered }) {
           {data.title}
         </div>
         <div className={s.details}>
-          {data.published_at.slice(0, 10)} • {data.reactions} likes
+          {data.published_at.slice(0, 10)} {space1}•{space1} {data.reactions} positive reactions
         </div>
         <div className={s.description}>
           {data.description}

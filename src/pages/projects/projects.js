@@ -44,7 +44,7 @@ export default function Projects() {
     <>
       <Header />
 
-      <SectionTitle txt1={`featured`} txt2={`some things I’ve built`} />
+      <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>
         <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus}/>
         <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} images={images.TMD}/>
