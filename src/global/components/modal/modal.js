@@ -21,6 +21,7 @@ export default function Modal() {
     return (
       <section className={s.modal} id='modal' onClick={(e) => handleClose(e)}>
         <div className={s.card}>
+          
           <div className={s.header}>
             <div className={s.title}>
               {modalData.name}
@@ -29,14 +30,11 @@ export default function Modal() {
               <FontAwesomeIcon icon={faXmark} />
             </div>
           </div>
-          <div className={s.content}>
-            {
-              modalImages.map((image) => {
-                return <img src={image} alt='project' />
-              })
-            }
 
+          <div className={s.content}>
+            {modalImages.map((img) => <img src={img} alt='project' />)}
           </div>
+
         </div>
       </section>
     )
