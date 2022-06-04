@@ -1,8 +1,8 @@
 #project_card {
   flex: 1;
   height: fit-content;
+  margin: 20px 20px 0px 20px;
   padding: 35px 30px 35px 30px;
-  margin-top: 20px;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
