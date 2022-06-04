@@ -11,7 +11,7 @@ export default function Wins({ badges }) {
         Wins
       </div>
       <div className={s.container}>
-        <div style={{ marginRight: '55px' }}>
+        <div style={{ marginRight: '15%' }}>
           <FontAwesomeIcon icon={faTrophy} className={s.gold} />
           {' '}
           <CountUp
@@ -21,7 +21,7 @@ export default function Wins({ badges }) {
             separator=','
           />
         </div>
-        <div style={{ marginRight: '55px' }}>
+        <div style={{ marginRight: '15%' }}>
           <FontAwesomeIcon icon={faTrophy} className={s.silver} />
           {' '}
           <CountUp

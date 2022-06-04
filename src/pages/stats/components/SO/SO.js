@@ -6,7 +6,6 @@ import TopTech from './children/topTech'
 
 export default function SO({ points, badges, topTech }) {
   return (
-    <>
       <section id={s.main}>
 
         <div className={s.left_box}>
@@ -19,6 +18,5 @@ export default function SO({ points, badges, topTech }) {
         </div>
 
       </section>
-    </>
   )
 }

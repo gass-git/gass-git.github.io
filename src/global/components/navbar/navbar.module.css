@@ -14,7 +14,8 @@
 .wrapper {
   display: flex;
   justify-content: center;
-
+  margin:0 auto;
+  /*border:1px solid yellow;*/
 }
 
 .items_container {
@@ -22,6 +23,7 @@
   display: flex;
   justify-content: left;
   overflow-x: hidden;
+  /*border:1px solid white;*/
 }
 
 .movable_container {
@@ -61,7 +63,7 @@
 .left_box {
   height: 55px;
   min-width: 41px;
-  line-height: 60px;
+  line-height: 83px;
   padding-right: 11px;
   padding-top: 2px;
   text-align: right;
@@ -72,7 +74,7 @@
 .right_box {
   height: 58px;
   min-width: 50px;
-  line-height: 60px;
+  line-height: 83px;
   text-align: center;
   padding-top: 2px;
   opacity: 0.3;
