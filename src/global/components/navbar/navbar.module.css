@@ -1,5 +1,6 @@
 #navbar {
   margin: 0 auto;
+  width:95%;
   min-width: 240px;
   max-width: 874px;
   height: 75px;
@@ -151,13 +152,9 @@
   }
 }
 
-@media screen and (max-width: 822px) {
+@media screen and (max-width: 1000px) {
   .railway_container {
     display: none !important;
-  }
-
-  .movable_container>div:hover {
-    background-color: transparent !important;
   }
 }
 

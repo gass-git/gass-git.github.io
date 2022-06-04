@@ -33,7 +33,7 @@ export default function Display() {
       Latest GitHub commit - {latestCommit.comment} (repo: {latestCommit.repo})
     </Fragment>,
     <Fragment>
-      Credits: FontAwesome, SVG Backgrounds, Axios, useSound and the artists behind the cyberpunk gifs..
+      Thanks to: FontAwesome, SVG Backgrounds, Axios, AOS, React, useSound hook and the artists behind the cyberpunk gifs..
     </Fragment>
   ]
 

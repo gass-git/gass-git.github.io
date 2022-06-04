@@ -41,7 +41,7 @@ export default function Header({ latestArticle }) {
                 LATEST
               </p>
               <FontAwesomeIcon
-                className='animated-arrow'
+                className='animated_arrow'
                 style={{ transform: `rotate(${degrees})` }}
                 icon={faAngleLeft}
                 onClick={() => expand()}

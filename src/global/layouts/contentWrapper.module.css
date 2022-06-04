@@ -1,5 +1,6 @@
 #content_wrapper {
   margin: 0 auto;
+  width: 95%;
   padding: var(--content-padding);
   max-width: var(--content-max-width);
   background-color: var(--wrapper-bg-color);

@@ -52,7 +52,7 @@ export default function App() {
     return (
       <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
         <Modal />
-        <div className='app-container' data-aos='flip-up' data-aos-duration='2000'>
+        <div className='app_container' data-aos='flip-up' data-aos-duration='2000'>
 
           <section id='top'>
             <Display />

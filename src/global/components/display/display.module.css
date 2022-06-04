@@ -1,6 +1,7 @@
 #display {
   display: flex;
   justify-content: flex-end;
+  width:95%;
   max-width: 876px;
   margin: 0 auto 15px auto;
   /*border: 1px solid white;*/

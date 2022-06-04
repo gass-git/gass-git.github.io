@@ -67,7 +67,7 @@ export default function Header() {
 
               <FontAwesomeIcon
                 icon={faAngleRight}
-                className='animated-arrow'
+                className='animated_arrow'
                 style={{ transform: `rotate(${degrees})` }}
                 onClick={() => expand()}
               />

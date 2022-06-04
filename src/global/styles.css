@@ -34,6 +34,7 @@
   --light-blue-2: rgb(2, 179, 254, 0.7);
 
   /* header styles */
+  --header-width: 95%;
   --header-max-width: 876px;
   --header-height: 310px;
   --header-border: 0px solid rgb(0, 237, 250, 0.3);
@@ -77,7 +78,7 @@ body {
   align-items: center;
 }
 
-.app-container {
+.app_container {
   min-height: 100vh;
   border-radius: 4px;
   border: 1px solid rgba(122, 235, 255, 0.25);
@@ -91,23 +92,7 @@ body {
   background-size: 3px 3px;
   height: auto;
   background-color: rgb(24, 58, 100, 0.8);
-  /*box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.1) inset;*/
   box-shadow: rgba(50, 50, 93, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.35) 0px 8px 16px -8px, 0px 0px 8px 2px rgba(255, 255, 255, 0.1) inset;
-  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;*/
-
-  /* --- metal border
-  border-radius: 20px;
-  border-style: solid;
-  border-width: 19px;
-  border-image: url('./assets/images/metalic-border-60px-0.2.png') 19 round;
-  */
-
-  /*
-  rgba(39, 66, 100, 0.65)
-  rgb(25, 59, 101)
-  rgb(19, 47, 81)
-  rgb(24, 58, 100)
-  */
 }
 
 #top {
@@ -117,7 +102,7 @@ body {
 
 #content {
   margin: var(--content-section-margin);
-  padding: 0 10px 0 10px;
+  /*padding: 0 10px 0 10px;*/
   /*border: 1px solid white;*/
 }
 
@@ -163,7 +148,7 @@ classes and animations used for Headers
   color: white !important;
 }
 
-.animated-arrow {
+.animated_arrow {
   font-size: 45px;
   transition: var(--slide-transition);
   cursor: pointer;
@@ -183,5 +168,11 @@ classes and animations used for Headers
 
   100% {
     opacity: 0.3;
+  }
+}
+
+@media (min-width:800px) and (max-width:1000px){
+  .app_container{
+    width:850px;
   }
 }

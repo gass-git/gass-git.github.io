@@ -49,7 +49,7 @@ export default function Header({ current, setCurrent }) {
                 select
               </p>
               <FontAwesomeIcon
-                className='animated-arrow'
+                className='animated_arrow'
                 style={{ transform: `rotate(${degrees})` }}
                 icon={faAngleLeft}
                 onClick={() => expand()}
