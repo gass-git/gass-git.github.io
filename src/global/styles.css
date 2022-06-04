@@ -171,8 +171,21 @@ classes and animations used for Headers
   }
 }
 
-@media (min-width:800px) and (max-width:1000px){
+@media (min-width:850px) and (max-width:1000px){
   .app_container{
-    width:850px;
+    width:800px;
+    overflow-x:hidden;
+  }
+}
+
+@media (min-width:700px) and (max-width:849px){
+  .app_container{
+    width: 100vw!important;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    margin: 0!important;
+    background-color: rgb(24, 58, 100);
+    box-shadow: none;
+    overflow-x:hidden;
   }
 }

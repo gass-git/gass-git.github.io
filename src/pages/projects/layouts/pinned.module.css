@@ -2,7 +2,6 @@
   color: var(--white);
   margin: 50px auto 100px auto;
   width: 90%;
-  width: 700px;
 }
 
 .top {
@@ -106,7 +105,7 @@
   opacity: 0.8;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  width: 720px;
+  width: 100%;
 }
 
 .image_wrapper img:hover {
