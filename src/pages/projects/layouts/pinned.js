@@ -11,7 +11,7 @@ export default function Pinned({ src, data, images }) {
   const { dispatch } = useContext(AppContext)
 
   return (
-    <section id={s.pinned_project} key={data.id}>
+    <section id={s.pinned_project} key={data.id} data-aos='fade' data-aos-duration='500'>
       <div className={s.top}>
 
         <div className={s.left}>

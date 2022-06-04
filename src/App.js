@@ -24,10 +24,12 @@ export default function App() {
   const location = useLocation()
 
   useEffect(() => {
-    AOS.init()
+    AOS.init({once:true})
     fetchAllData({ dispatch })
     processVisit()
-    setTimeout(() => dispatch({ type: 'loading completed' }), 4000)
+    setTimeout(() => {
+      dispatch({ type: 'loading completed' })
+    }, 4000)
     let interval = setInterval(() => dispatch({ type: 'next scroller msg' }), 20500)
     return () => clearInterval(interval)
   }, [])

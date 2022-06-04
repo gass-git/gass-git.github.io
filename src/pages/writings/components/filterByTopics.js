@@ -3,7 +3,7 @@ import s from './filterByTopics.module.css'
 
 export default function FilterByTopics({ tags, handleSelected, selected }) {
   return (
-    <section id={s.filterByTopic} data-aos='fade' data-aos-duration='1000'>
+    <section id={s.filterByTopic}>
       {
         tags.map((tag) => {
           return (
