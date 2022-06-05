@@ -1,7 +1,13 @@
+@media screen and (max-width:580px) {
+  .movable_box {
+    display: none !important;
+  }
+}
+
 #header {
   margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.4);
-  width:var(--header-width);
+  width: var(--header-width);
   max-width: var(--header-max-width);
   border-radius: var(--border-radius-one);
 }
@@ -25,21 +31,16 @@
   justify-content: flex-end;
   border-right: 1px solid white;
   overflow-x: hidden;
-  border-image: linear-gradient(
-      to bottom,
+  border-image: linear-gradient(to bottom,
       rgb(255, 255, 255, 0.15),
-      rgba(0, 0, 0, 0.9)
-    )
-    1 100%;
+      rgba(0, 0, 0, 0.9)) 1 100%;
   position: relative;
   z-index: 1;
   position: relative;
-  background: linear-gradient(
-    8deg,
-    rgba(255, 255, 255, 0) 20%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.18) 80%
-  );
+  background: linear-gradient(8deg,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.18) 80%);
   width: calc(100%-1px);
   height: 100%;
 }

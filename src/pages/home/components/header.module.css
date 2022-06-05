@@ -1,3 +1,9 @@
+@media screen and (max-width:580px) {
+  .movable_box {
+    display: none !important;
+  }
+}
+
 #header {
   margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -26,19 +32,14 @@
   width: calc(100% - 1px);
   height: 100%;
   border-right: 1px solid white;
-  border-image: linear-gradient(
-      to bottom,
+  border-image: linear-gradient(to bottom,
       rgb(255, 255, 255, 0.22),
-      rgb(255, 255, 255, 0.1)
-    )
-    1 100%;
+      rgb(255, 255, 255, 0.1)) 1 100%;
   position: relative;
-  background: linear-gradient(
-    8deg,
-    rgba(255, 255, 255, 0) 20%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.18) 80%
-  );
+  background: linear-gradient(8deg,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.18) 80%);
 }
 
 .movable_box {

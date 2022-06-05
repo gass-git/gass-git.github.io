@@ -1,3 +1,9 @@
+@media screen and (max-width:550px) {
+  #main {
+    flex-direction: column;
+  }
+}
+
 #main {
   margin: 0 10px 0 10px;
   display: flex;
@@ -10,12 +16,12 @@
 }
 
 .left_box {
-  width: 50%;
+  flex: 50%;
   height: 100%;
 }
 
 .right_box {
-  flex: auto;
+  flex: 50%;
   height: 100% !important;
 }
 

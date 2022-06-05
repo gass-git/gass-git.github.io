@@ -1,15 +1,22 @@
 #main {
   margin: 0 10px 0 10px;
   display: flex;
+  flex-direction: row;
   /*border: 1px solid white;*/
 }
 
 .left_box {
-  width: 50%;
+  flex: 50%;
   height: 100%;
 }
 
 .right_box {
-  flex: auto;
+  flex: 50%;
   height: 100% !important;
+}
+
+@media screen and (max-width:630px) {
+  #main {
+    flex-direction: column;
+  }
 }
