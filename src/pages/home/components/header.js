@@ -51,7 +51,7 @@ export default function Header() {
       <div 
         className={s.wrapper}
         style={{backgroundImage:`url(${headerImage})`}}
-        onLoad={console.log('loaded')}
+        onLoad={console.log('loaded home image')}
       >
         <div className={s.glass}>
           <div

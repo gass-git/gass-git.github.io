@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import useSound from 'use-sound'
+import headerImage from '../../../global/assets/images/CP_writings.gif'
 
 export default function Header({ latestArticle }) {
   const ini = { pixels: '0px', degrees: '180deg' }
@@ -26,7 +27,11 @@ export default function Header({ latestArticle }) {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
-      <div className={s.wrapper}>
+      <div 
+      className={s.wrapper}
+      style={{backgroundImage: `url(${headerImage})`}}
+      onLoad={console.log('writings image loaded')}
+      >
         <div className={s.glass}>
           <div
             className={s.movable_box}

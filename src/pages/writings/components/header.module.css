@@ -17,7 +17,6 @@
   z-index: 0;
   height: var(--header-height);
   max-width: var(--header-max-width);
-  background-image: url("../../../global/assets/images/CP_writings.gif");
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
