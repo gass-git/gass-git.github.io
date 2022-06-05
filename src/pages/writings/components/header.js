@@ -29,15 +29,13 @@ export default function Header({ latestArticle }) {
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
       <div 
       className={s.wrapper}
-      style={{backgroundImage: `url(${headerImage})`}}
-      onLoad={console.log('writings image loaded')}
       >
+        <img src={headerImage} onLoad={console.log('writing header image loaded')}/>
         <div className={s.glass}>
           <div
             className={s.movable_box}
             style={{ transform: `translateX(${pixels})` }}
           >
-
             <div className='tab'>
               <p
                 className='vertical_text'
