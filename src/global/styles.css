@@ -178,7 +178,7 @@ classes and animations used for Headers
   }
 }
 
-@media (min-width:500px) and (max-width:849px) {
+@media (min-width:300px) and (max-width:849px) {
   .app_container {
     width: 100vw !important;
     border-radius: 0px;
