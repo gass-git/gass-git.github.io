@@ -24,7 +24,7 @@ export default function App() {
   const location = useLocation()
 
   useEffect(() => {
-    AOS.init({once:true})
+    AOS.init({ once: true })
     fetchAllData({ dispatch })
     processVisit()
     setTimeout(() => {
@@ -52,7 +52,7 @@ export default function App() {
     return (
       <AppContext.Provider value={{ state, dispatch }} key={'ctx-key'}>
         <Modal />
-        <div className='app_container' data-aos='flip-up' data-aos-duration='2000'>
+        <div className='app_container' data-aos='fade' data-aos-duration='2000'>
 
           <section id='top'>
             <Display />
