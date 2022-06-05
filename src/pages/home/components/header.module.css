@@ -2,6 +2,10 @@
   .movable_box {
     display: none !important;
   }
+
+  .wrapper {
+    background-position: left !important;
+  }
 }
 
 #header {
