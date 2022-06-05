@@ -27,6 +27,7 @@ export default function Header({ gif }) {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
+      <div className={s.skeleton_loader} />
       <div
         className={s.wrapper}
         style={{ backgroundImage: `url(${gif})` }}
