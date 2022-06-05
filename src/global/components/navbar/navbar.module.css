@@ -1,6 +1,6 @@
 #navbar {
   margin: 0 auto;
-  width:95%;
+  width: 95%;
   min-width: 240px;
   max-width: 874px;
   height: 75px;
@@ -14,7 +14,7 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  margin:0 auto;
+  margin: 0 auto;
   /*border:1px solid yellow;*/
 }
 
@@ -225,40 +225,12 @@
   }
 }
 
-@media (min-width:350px) and (max-width:409px) {
+@media screen and (max-width:409px) {
   .wrapper {
     max-width: 350px;
   }
 
   .movable_container>div {
     width: 119px !important;
-  }
-}
-
-@media (min-width:300px) and (max-width:349px) {
-  .movable_container>div {
-    width: 200px !important;
-  }
-}
-
-@media (min-width:275px) and (max-width:299px) {
-  .movable_container>div {
-    width: 160px !important;
-  }
-}
-
-@media (min-width:260px) and (max-width:275px) {
-  .movable_container>div {
-    width: 145px !important;
-  }
-}
-
-@media screen and (max-width:259px) {
-  .wrapper {
-    min-width: 220px;
-  }
-
-  .movable_container>div {
-    width: 130px !important;
   }
 }

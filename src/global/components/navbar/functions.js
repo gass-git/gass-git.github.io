@@ -17,22 +17,6 @@ function handleTranslationStates({ windowWidth, setHiddenItems, setTranslationWi
     setHiddenItems({ left: 0, right: 2 })
     setTranslationWidth(115)
   }
-  else if (windowWidth < 350 && windowWidth >= 300) {
-    setHiddenItems({ left: 0, right: 3 })
-    setTranslationWidth(200)
-  }
-  else if (windowWidth < 300 && windowWidth >= 275) {
-    setHiddenItems({ left: 0, right: 3 })
-    setTranslationWidth(157)
-  }
-  else if (windowWidth < 275 && windowWidth >= 260) {
-    setHiddenItems({ left: 0, right: 3 })
-    setTranslationWidth(142)
-  }
-  else if (windowWidth < 260) {
-    setHiddenItems({ left: 0, right: 3 })
-    setTranslationWidth(129)
-  }
 }
 
 function handleArrowsState({ windowWidth, setShowArrows, setIsActive }) {

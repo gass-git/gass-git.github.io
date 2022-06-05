@@ -26,7 +26,7 @@ export default function Projects() {
       DP1,
       DP2
     ],
-    TMD:[
+    TMD: [
       TMD1,
       TMD2,
       TMD3,
@@ -46,11 +46,11 @@ export default function Projects() {
 
       <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>
-        <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus}/>
-        <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} images={images.TMD}/>
+        <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus} />
+        <Pinned src={tipMeDash_SRC} data={pinnedRepos[1]} images={images.TMD} />
       </ContentWrapper>
 
-      <SectionTitle txt1={`archives`} txt2={`other networthy projects`} />
+      <SectionTitle txt1={`archives`} txt2={`other projects`} />
       <ContentWrapper>
         <div className={s.unpinned_wrapper}>
           {
