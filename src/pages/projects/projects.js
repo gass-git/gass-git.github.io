@@ -19,7 +19,7 @@ import DP2 from '../../global/assets/projectImages/devPlus/2.jpeg'
 
 export default function Projects() {
   const { state } = useContext(AppContext)
-  const { repos } = state
+  const { repos, headerGifs } = state
 
   const images = {
     devPlus: [
@@ -42,7 +42,7 @@ export default function Projects() {
 
   return (
     <>
-      <Header />
+      <Header gif={headerGifs.projects} />
 
       <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>

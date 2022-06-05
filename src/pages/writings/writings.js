@@ -10,7 +10,7 @@ import { AppContext } from '../../App'
 
 export default function Writings() {
   const { state } = useContext(AppContext)
-  const { articles } = state
+  const { articles, headerGifs } = state
   const [tags, setTags] = useState([])
   const [selected, setSelected] = useState([])
   const [filtered, setFiltered] = useState(articles)
@@ -55,7 +55,7 @@ export default function Writings() {
 
   return (
     <>
-      <Header latestArticle={articles[0]} />
+      <Header latestArticle={articles[0]} gif={headerGifs.writings} />
       <SectionTitle txt1='archives' txt2='filter by topic' />
       <FilterByTopic
         tags={tags}

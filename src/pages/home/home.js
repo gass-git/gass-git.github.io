@@ -10,7 +10,7 @@ import { AppContext } from '../../App'
 
 export default function Home() {
   const { state } = useContext(AppContext)
-  const { latest } = state
+  const { latest, headerGifs } = state
 
   const [filtered, setFiltered] = useState(latest)
   const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <section id='home'>
-      <Header />
+      <Header gif={headerGifs.home} />
       <SectionTitle txt1='latest' txt2='activity online' />
       <FilterByEvent selected={selected} handleFilters={handleFilters} />
       <ContentWrapper>

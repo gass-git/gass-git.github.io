@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import useSound from 'use-sound'
-import headerImage from '../../../global/assets/images/CP_home.gif'
 
-export default function Header() {
+export default function Header({ gif }) {
   const ini = { pixels: '-490px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -48,10 +47,9 @@ export default function Header() {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
-      <div 
+      <div
         className={s.wrapper}
-        style={{backgroundImage:`url(${headerImage})`}}
-        onLoad={console.log('loaded home image')}
+        style={{ backgroundImage: `url(${gif})` }}
       >
         <div className={s.glass}>
           <div

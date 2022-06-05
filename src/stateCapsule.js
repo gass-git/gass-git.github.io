@@ -1,5 +1,11 @@
+import gif1 from './global/assets/images/CP_home.gif'
+import gif2 from './global/assets/images/CP_projects.gif'
+import gif3 from './global/assets/images/CP_writings.gif'
+import gif4 from './global/assets/images/CP_stats.gif'
+
 const initialState = {
   appLoading: true,
+  headerGifs: { home: gif1, projects: gif2, writings: gif3, stats: gif4 },
   selected: 'home',
   showModal: false,
   modalData: {},
@@ -23,10 +29,10 @@ const initialState = {
 function appReducer(state, action) {
   switch (action.type) {
     case 'loading completed':
-        return {
-          ...state,
-          appLoading: false
-        }
+      return {
+        ...state,
+        appLoading: false
+      }
 
     case 'update navbar selection':
       return {
@@ -35,18 +41,18 @@ function appReducer(state, action) {
       }
 
     case 'show modal':
-      return{
+      return {
         ...state,
         modalImages: action.images,
         modalData: action.data,
-        showModal:true
+        showModal: true
       }
 
     case 'hide modal':
-      return{
+      return {
         ...state,
         showModal: false
-      }    
+      }
 
     case 'set latest':
       return {
@@ -109,14 +115,14 @@ function appReducer(state, action) {
       }
 
     case 'next scroller msg':
-      if(state.scrollerMsgIndex < state.scrollMessages - 1) return {
-          ...state,
-          scrollerMsgIndex: state.scrollerMsgIndex + 1
-        }
+      if (state.scrollerMsgIndex < state.scrollMessages - 1) return {
+        ...state,
+        scrollerMsgIndex: state.scrollerMsgIndex + 1
+      }
       else return {
-          ...state,
-          scrollerMsgIndex: 0
-        }
+        ...state,
+        scrollerMsgIndex: 0
+      }
 
     case 'set latest article':
       return {
