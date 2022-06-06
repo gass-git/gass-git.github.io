@@ -5,6 +5,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { faDev, faStackOverflow, faGithub } from '@fortawesome/free-brands-svg-icons'
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import techSound from '../../../global/assets/sounds/unfa_select.flac'
+import LoaderEffect from '../../../global/components/headerLoader/loaderEffect'
 import useSound from 'use-sound'
 
 export default function Header({ current, setCurrent }) {
@@ -34,6 +35,7 @@ export default function Header({ current, setCurrent }) {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
+      <LoaderEffect />
       <div className={s.wrapper}>
         <div className={s.glass}>
           <div

@@ -1,11 +1,5 @@
-import gif1 from './global/assets/images/CP_home.gif'
-import gif2 from './global/assets/images/CP_projects.gif'
-import gif3 from './global/assets/images/CP_writings.gif'
-import gif4 from './global/assets/images/CP_stats.gif'
-
 const initialState = {
   appLoading: true,
-  headerGifs: { home: gif1, projects: gif2, writings: gif3, stats: gif4 },
   selected: 'home',
   showModal: false,
   modalData: {},

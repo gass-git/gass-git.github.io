@@ -8,7 +8,7 @@
 
 .wrapper {
   position: relative;
-  z-index: 0;
+  z-index: 1; /* the loading effect component uses z-index: 0 */
   height: var(--header-height);
   max-width: var(--header-max-width);
   background-image: url("../../../global/assets/images/CP_stats.gif");

@@ -1,0 +1,24 @@
+.effect {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: transparent;
+    background: linear-gradient(100deg, transparent 8%, rgba(255, 255, 255, 0.05) 16%, transparent 24%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear;
+    animation-iteration-count: 20;
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+  

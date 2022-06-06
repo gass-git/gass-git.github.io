@@ -19,31 +19,18 @@ import DP2 from '../../global/assets/projectImages/devPlus/2.jpeg'
 
 export default function Projects() {
   const { state } = useContext(AppContext)
-  const { repos, headerGifs } = state
-
-  const images = {
-    devPlus: [
-      DP1,
-      DP2
-    ],
-    TMD: [
-      TMD1,
-      TMD2,
-      TMD3,
-      TMD4,
-      TMD5,
-      TMD6
-    ]
-  }
-
+  const { repos } = state
   const pinned_IDs = [425300173, 372308367]
   const pinnedRepos = repos.filter((repo) => pinned_IDs.includes(repo.id))
   const unpinnedRepos = repos.filter((repo) => !pinned_IDs.includes(repo.id))
+  const images = {
+    devPlus: [DP1,DP2],
+    TMD: [TMD1, TMD2, TMD3, TMD4, TMD5, TMD6]
+  }
 
   return (
     <>
-      <Header gif={headerGifs.projects} />
-
+      <Header />
       <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>
         <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus} />

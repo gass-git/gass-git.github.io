@@ -3,9 +3,10 @@ import s from './header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
+import LoaderEffect from '../../../global/components/headerLoader/loaderEffect'
 import useSound from 'use-sound'
 
-export default function Header({ latestArticle, gif }) {
+export default function Header({ latestArticle }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -26,10 +27,8 @@ export default function Header({ latestArticle, gif }) {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
-      <div
-        className={s.wrapper}
-        style={{ backgroundImage: `url(${gif})` }}
-      >
+      <LoaderEffect />
+      <div className={s.wrapper}>
         <div className={s.glass}>
           <div
             className={s.movable_box}
