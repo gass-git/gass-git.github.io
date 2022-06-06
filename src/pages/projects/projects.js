@@ -14,8 +14,10 @@ import TMD3 from '../../global/assets/projectImages/TMD/3.png'
 import TMD4 from '../../global/assets/projectImages/TMD/4.png'
 import TMD5 from '../../global/assets/projectImages/TMD/5.png'
 import TMD6 from '../../global/assets/projectImages/TMD/6.png'
-import DP1 from '../../global/assets/projectImages/devPlus/1.jpg'
-import DP2 from '../../global/assets/projectImages/devPlus/2.jpeg'
+import DP1 from '../../global/assets/projectImages/devPlus/1.png'
+import DP2 from '../../global/assets/projectImages/devPlus/2.png'
+import DP3 from '../../global/assets/projectImages/devPlus/3.png'
+import DP4 from '../../global/assets/projectImages/devPlus/4.png'
 
 export default function Projects() {
   const { state, dispatch } = useContext(AppContext)
@@ -24,17 +26,17 @@ export default function Projects() {
   const pinnedRepos = repos.filter((repo) => pinned_IDs.includes(repo.id))
   const unpinnedRepos = repos.filter((repo) => !pinned_IDs.includes(repo.id))
   const images = {
-    devPlus: [DP1,DP2],
+    devPlus: [DP1, DP2, DP3, DP4],
     TMD: [TMD1, TMD2, TMD3, TMD4, TMD5, TMD6]
   }
 
   useEffect(() => {
-    dispatch({type:'update number of renders', page:'projects'})
+    dispatch({ type: 'update number of renders', page: 'projects' })
   }, [])
 
   return (
     <>
-      <Header numberOfRenders={numberOfRenders.projects}/>
+      <Header numberOfRenders={numberOfRenders.projects} />
       <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>
         <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus} />
