@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import devPlus_SRC from '../../global/assets/images/dev_plus.png'
 import tipMeDash_SRC from '../../global/assets/images/TMD.png'
 import Header from './components/header'
@@ -18,8 +18,8 @@ import DP1 from '../../global/assets/projectImages/devPlus/1.jpg'
 import DP2 from '../../global/assets/projectImages/devPlus/2.jpeg'
 
 export default function Projects() {
-  const { state } = useContext(AppContext)
-  const { repos } = state
+  const { state, dispatch } = useContext(AppContext)
+  const { repos, numberOfRenders } = state
   const pinned_IDs = [425300173, 372308367]
   const pinnedRepos = repos.filter((repo) => pinned_IDs.includes(repo.id))
   const unpinnedRepos = repos.filter((repo) => !pinned_IDs.includes(repo.id))
@@ -28,9 +28,13 @@ export default function Projects() {
     TMD: [TMD1, TMD2, TMD3, TMD4, TMD5, TMD6]
   }
 
+  useEffect(() => {
+    dispatch({type:'update number of renders', page:'projects'})
+  }, [])
+
   return (
     <>
-      <Header />
+      <Header numberOfRenders={numberOfRenders.projects}/>
       <SectionTitle txt1={`featured`} txt2={`things I’ve built`} />
       <ContentWrapper>
         <Pinned src={devPlus_SRC} data={pinnedRepos[0]} images={images.devPlus} />

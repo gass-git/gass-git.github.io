@@ -9,8 +9,8 @@ import tickSound from '../../global/assets/sounds/yake.wav'
 import { AppContext } from '../../App'
 
 export default function Writings() {
-  const { state } = useContext(AppContext)
-  const { articles } = state
+  const { state, dispatch } = useContext(AppContext)
+  const { articles, numberOfRenders } = state
   const [tags, setTags] = useState([])
   const [selected, setSelected] = useState([])
   const [filtered, setFiltered] = useState(articles)
@@ -53,9 +53,13 @@ export default function Writings() {
 
   useEffect(() => filter(), [selected])
 
+  useEffect(() => {
+    dispatch({type:'update number of renders', page:'writings'})
+  }, [])
+
   return (
     <>
-      <Header latestArticle={articles[0]} />
+      <Header latestArticle={articles[0]} numberOfRenders={numberOfRenders.writings}/>
       <SectionTitle txt1='archives' txt2='filter by topic' />
       <FilterByTopic
         tags={tags}

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Header from './components/header'
 import SO from './components/SO/SO'
 import SectionTitle from '../../global/layouts/sectionTitle'
@@ -8,8 +8,8 @@ import Github from './components/github/github'
 import { AppContext } from '../../App'
 
 export default function Stats() {
-  const { state } = useContext(AppContext)
-  const { SO_topTech, SO_reputation, articles, githubStats } = state
+  const { state, dispatch } = useContext(AppContext)
+  const { SO_topTech, SO_reputation, articles, githubStats, numberOfRenders } = state
   const [current, setCurrent] = useState('stack overflow')
 
   // Stack Overflow stats
@@ -20,6 +20,10 @@ export default function Stats() {
   // DevTo stats
   const comments = articles.reduce((prev, current) => prev + current.comments, 0)
   const reactions = articles.reduce((prev, current) => prev + current.reactions, 0)
+
+  useEffect(() => {
+    dispatch({type:'update number of renders', page:'stats'})
+  }, [])
 
   function statComponent(name) {
     switch (name) {
@@ -41,7 +45,11 @@ export default function Stats() {
 
   return (
     <>
-      <Header current={current} setCurrent={setCurrent} />
+      <Header 
+        current={current} 
+        setCurrent={setCurrent} 
+        numberOfRenders={numberOfRenders.stats} 
+      />
       <SectionTitle txt1={'statistics'} txt2={current} />
 
       <ContentWrapper>

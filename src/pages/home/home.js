@@ -9,11 +9,15 @@ import tickSound from '../../global/assets/sounds/yake.wav'
 import { AppContext } from '../../App'
 
 export default function Home() {
-  const { state } = useContext(AppContext)
-  const { latest } = state
+  const { state, dispatch } = useContext(AppContext)
+  const { latest, numberOfRenders } = state
   const [filtered, setFiltered] = useState(latest)
   const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
   const [playSound] = useSound(tickSound, { volume: 0.6 })
+
+  useEffect(() => {
+    dispatch({type:'update number of renders', page:'home'})
+  }, [])
 
   function handleFilters(tag) {
     playSound()
@@ -47,7 +51,7 @@ export default function Home() {
 
   return (
     <section id='home'>
-      <Header />
+      <Header numberOfRenders={numberOfRenders.home}/>
       <SectionTitle txt1='latest' txt2='activity online' />
       <FilterByEvent selected={selected} handleFilters={handleFilters} />
       <ContentWrapper>

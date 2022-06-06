@@ -6,7 +6,7 @@ import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
 import LoaderEffect from '../../../global/components/headerLoader/loaderEffect'
 import useSound from 'use-sound'
 
-export default function Header() {
+export default function Header({numberOfRenders}) {
   const ini = { pixels: '-490px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <section id={s.header} data-aos='flip-up' data-aos-duration='500'>
-      <LoaderEffect />
+      {numberOfRenders < 2 ? <LoaderEffect /> :  null}
       <div className={s.wrapper}>
         <div className={s.glass}>
           <div

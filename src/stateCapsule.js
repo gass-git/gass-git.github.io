@@ -1,6 +1,7 @@
 const initialState = {
   appLoading: true,
   selected: 'home',
+  numberOfRenders: {home: 0, projects:0, writings:0, stats:0 },
   showModal: false,
   modalData: {},
   modalImages: [],
@@ -32,6 +33,24 @@ function appReducer(state, action) {
       return {
         ...state,
         selected: action.pathname
+      }
+
+    case 'update number of renders':
+      if(action.page === 'home') return{
+        ...state,
+        numberOfRenders: {...state.numberOfRenders, home: state.numberOfRenders['home'] + 1}
+      }
+      else if(action.page === 'projects') return{
+        ...state,
+        numberOfRenders: {...state.numberOfRenders, projects: state.numberOfRenders['projects'] + 1}
+      }
+      else if(action.page === 'writings') return{
+        ...state,
+        numberOfRenders: {...state.numberOfRenders, writings: state.numberOfRenders['writings'] + 1}
+      }
+      else if(action.page === 'stats') return{
+        ...state,
+        numberOfRenders: {...state.numberOfRenders, stats: state.numberOfRenders['stats'] + 1}
       }
 
     case 'show modal':
