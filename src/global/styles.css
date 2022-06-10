@@ -60,7 +60,7 @@
 }
 
 body {
-  background-color: #291f5d;
+  background-color: #261d54;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%232c286a' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2334367a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%233b438a' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%2343519a' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%234A5FAA' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
@@ -79,9 +79,11 @@ body {
 }
 
 .app_container {
+  background-color: #384773;
   min-height: 100vh;
-  border-radius: 4px;
-  border: 1px solid rgba(122, 235, 255, 0.25);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /*border: 1px solid rgba(122, 235, 255, 0.25);*/
   margin: var(--app-container-margin);
   width: 940px;
   background-image: repeating-linear-gradient(-45deg,
@@ -91,7 +93,7 @@ body {
       transparent 6px);
   background-size: 3px 3px;
   height: auto;
-  background-color: rgb(24, 58, 100, 0.8);
+  /*background-color: rgb(24, 58, 100, 0.8);*/
   box-shadow: rgba(50, 50, 93, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.35) 0px 8px 16px -8px, 0px 0px 8px 2px rgba(255, 255, 255, 0.1) inset;
 }
 
