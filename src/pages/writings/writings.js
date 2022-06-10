@@ -14,7 +14,7 @@ export default function Writings() {
   const [tags, setTags] = useState([])
   const [selected, setSelected] = useState([])
   const [filtered, setFiltered] = useState(articles)
-  const [playSound] = useSound(tickSound, { volume: 0.6 })
+  const [playSound] = useSound(tickSound, { volume: 0.15 })
 
   function handleSelected(tag) {
     playSound()

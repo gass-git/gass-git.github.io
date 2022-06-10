@@ -13,7 +13,7 @@ export default function Home() {
   const { latest, numberOfRenders } = state
   const [filtered, setFiltered] = useState(latest)
   const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
-  const [playSound] = useSound(tickSound, { volume: 0.6 })
+  const [playSound] = useSound(tickSound, { volume: 0.15 })
 
   useEffect(() => {
     dispatch({type:'update number of renders', page:'home'})

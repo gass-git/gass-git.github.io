@@ -12,7 +12,7 @@ export default function Header({ current, setCurrent, numberOfRenders }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [expandSound] = useSound(clickStereo, { volume: 0.5 })
+  const [expandSound] = useSound(clickStereo, { volume: 0.3 })
   const [switchSound] = useSound(techSound, { volume: 0.5 })
 
   function expand() {

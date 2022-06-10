@@ -12,11 +12,10 @@ import unfa from '../../../../global/assets/sounds/unfa_select.flac'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
 export default function Social() {
-  const ini = { pixels: '270px', degrees: '0deg' }
-  const [pixels, setPixels] = useState(ini.pixels)
-  const [degrees, setDegrees] = useState(ini.degrees)
+  const [pixels, setPixels] = useState('33px')
+  const [degrees, setDegrees] = useState('180deg')
   const { windowWidth } = useWindowDimensions()
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [playSound] = useSound(bounce, { volume: 0.5, playbackRate: 2 })
   const [playSoundTwo] = useSound(unfa)
   const links = {
@@ -36,8 +35,8 @@ export default function Social() {
   const [inTransition, setInTransition] = useState(false)
 
   const expand = () => {
-    setDegrees(ini.degrees)
-    setPixels(ini.pixels)
+    setDegrees('0deg')
+    setPixels('270px')
     setIsCollapsed(false)
   }
 
@@ -53,7 +52,6 @@ export default function Social() {
 
   useEffect(() => {
     if (windowWidth < 600 && !isCollapsed && !inTransition) collapse()
-    else if (windowWidth >= 600 && isCollapsed) expand()
   }, [windowWidth])
 
   function goto(site) {
@@ -63,7 +61,7 @@ export default function Social() {
 
   function handleClick() {
     playSound()
-    if (pixels !== ini.pixels) expand()
+    if (pixels !== '270px') expand()
     else collapse()
   }
 
