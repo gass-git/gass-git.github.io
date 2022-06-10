@@ -23,7 +23,7 @@
   --light-green: rgba(70, 201, 70);
   --slate: #3d4c61;
   --dark-transparent-one: rgba(0, 0, 0, 0.7);
-  --dark-transparent-two: rgba(0, 0, 0, 0.4);
+  --dark-transparent-two: rgb(40, 54, 93);
   --dark-transparent-three: rgba(0, 0, 0, 0.3);
   --white-transparent-one: rgba(255, 255, 255, 0.1);
   --white-transparent-two: rgba(255, 255, 255, 0.1);
@@ -31,7 +31,8 @@
   --pink: #df24be;
   --pink-transparent: rgba(223, 36, 190, 0.7);
   --light-blue: rgb(2, 179, 254);
-  --light-blue-2: rgb(2, 179, 254, 0.7);
+  --light-blue-2: rgb(2, 179, 254, 0.9);
+  --light-blue-3: rgb(2, 179, 254, 0.7);
 
   /* header styles */
   --header-width: 95%;
@@ -47,7 +48,7 @@
   --wrapper-inner-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 1px inset;
 
   /* navbar */
-  --selected-bg-color: rgba(255, 255, 255, 0.07);
+  --selected-bg-color: rgba(255, 255, 255, 0.09);
   --border-radius-two: 3px;
 
   /* content wrapper styles */

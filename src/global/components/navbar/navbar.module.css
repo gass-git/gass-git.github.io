@@ -8,7 +8,7 @@
   background-color: var(--wrapper-bg-color);
   border-radius: var(--wrapper-border-radius);
   border: var(--wrapper-border);
-  box-shadow: var(--wrapper-inner-shadow);
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 2px 3px 1px inset;
 }
 
 .wrapper {
@@ -42,22 +42,21 @@
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  color: white;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   width: 164px;
   -webkit-tap-highlight-color: transparent;
 }
 
 .movable_container>div:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  opacity: 1 !important;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--selected-bg-color);
 }
 
 .selected {
-  opacity: 1;
-  background-color: var(--selected-bg-color);
-  color: var(--selected-font-color);
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--bright-slate) !important;
 }
 
 .left_box {

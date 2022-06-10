@@ -12,25 +12,26 @@
   margin: 0px 20px 20px 20px;
   padding: 12px 0px 12px 0px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
   border-radius: var(--border-radius-two);
   background-color: var(--wrapper-bg-color);
   border: var(--wrapper-border);
   box-shadow: var(--wrapper-inner-shadow);
-  transition: 300ms;
+  transition: 200ms;
   cursor: pointer;
   text-transform: uppercase;
 }
 
 #filterByTopic>div:hover {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgb(43, 58, 102) !important;
 }
 
 .selected {
-  color: var(--selected-font-color) !important;
-  animation: glow 1s ease-in-out infinite alternate;
+  color: var(--selected-font-color);
+  animation: glow 1s ease-in-out infinite alternate !important;
 }
 
 @keyframes glow {
