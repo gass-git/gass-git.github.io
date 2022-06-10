@@ -21,12 +21,30 @@
 }
 
 .text_style_two {
-  color: var(--bright-slate);
-  text-transform: capitalize;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 19px;
-  line-height: 20px;
+  color: rgba(0,255,255,0.7);
+  text-transform: uppercase;
+  font-family: Barlow Semi Condensed;
+  max-height:20px;
+  font-size: 16px;
+  line-height: 22px;
   margin: 30px 0 0 10px;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 600;
+  /*width: 14ch;*/
+  /*animation: typing 2s steps(14), blink .5s step-end infinite alternate;*/
+  /*white-space: nowrap;*/
+  /*overflow: hidden;*/
+  /*border-right: 2px solid rgba(255,255,255,0.6);*/
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
 }
