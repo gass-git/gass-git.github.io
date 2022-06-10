@@ -27,7 +27,7 @@ export default function Wins({ badges }) {
           <CountUp
             className={s.stat_number}
             duration={0.6}
-            end={badges.gold}
+            end={badges.silver}
             separator=','
           />
         </div>

@@ -108,7 +108,7 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 .app_container {
-  background-color: #384773;
+  background-color: #34436d;
   min-height: 100vh;
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.2);
