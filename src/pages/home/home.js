@@ -20,7 +20,7 @@ export default function Home() {
   }, [])
 
   function handleFilters(tag) {
-    playSound()
+    //playSound()
 
     switch (tag) {
       case 'commits':

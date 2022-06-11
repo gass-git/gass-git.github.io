@@ -2,19 +2,14 @@ import React, { useState } from 'react'
 import s from './header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import clickStereo from '../../../global/assets/sounds/click_stereo.wav'
-import useSound from 'use-sound'
 import LoaderEffect from '../../../global/components/headerLoader/loaderEffect'
 
 export default function Header({ numberOfRenders }) {
   const ini = { pixels: '240px', degrees: '0deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [playSound] = useSound(clickStereo, { volume: 0.3 })
 
   function expand() {
-    playSound()
-
     if (pixels !== ini.pixels) {
       setPixels(ini.pixels)
       setDegrees(ini.degrees)

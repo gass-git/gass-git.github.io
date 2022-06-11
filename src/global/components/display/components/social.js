@@ -16,8 +16,8 @@ export default function Social() {
   const [degrees, setDegrees] = useState('180deg')
   const { windowWidth } = useWindowDimensions()
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [playSound] = useSound(bounce, { volume: 0.5, playbackRate: 2 })
-  const [playSoundTwo] = useSound(unfa)
+  const [playSound] = useSound(bounce, { volume: 0.2, playbackRate: 2 })
+  const [playSoundTwo] = useSound(unfa, {volume: 0.2})
   const links = {
     SO: `https://stackoverflow.com/users/14895985/gass?tab=profile`,
     github: `https://github.com/gass-git`,
@@ -55,8 +55,8 @@ export default function Social() {
   }, [windowWidth])
 
   function goto(site) {
-    window.open(links[site], '_blank')
     playSoundTwo()
+    window.open(links[site], '_blank')
   }
 
   function handleClick() {
