@@ -9,7 +9,7 @@ import { AppContext } from '../../App'
 
 export default function Stats() {
   const { state, dispatch } = useContext(AppContext)
-  const { SO_topTech, SO_reputation, articles, githubStats, numberOfRenders } = state
+  const { SO_topTech, SO_reputation, articles, githubStats, numberOfRenders, appMuted } = state
   const [current, setCurrent] = useState('stack overflow')
 
   // Stack Overflow stats
@@ -48,6 +48,7 @@ export default function Stats() {
       <Header 
         current={current} 
         setCurrent={setCurrent} 
+        appMuted={appMuted}
         numberOfRenders={numberOfRenders.stats} 
       />
       <SectionTitle txt1={'statistics'} txt2={current} />

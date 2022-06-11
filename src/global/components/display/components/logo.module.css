@@ -1,4 +1,4 @@
-#logo {
+.non_muted_logo {
   margin-right: 15px;
   width: 60px;
   height: 50px;
@@ -18,6 +18,29 @@
     -0.2rem 0.1rem 1rem #00edfa, 0.2rem 0.1rem 1rem #00edfa,
     0 -0.5rem 2rem #008f97, 0 0.5rem 3rem #008f97;
   animation: shine 2s forwards, flicker 3s infinite;
+  /*border: 1px solid white;*/
+}
+
+.muted_logo {
+  margin-right: 15px;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 40px;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #015b60,
+    transparent
+  );
+  cursor:pointer;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: red_shine 2s forwards, red_flicker 3s infinite;
   /*border: 1px solid white;*/
 }
 
@@ -54,6 +77,41 @@
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #00edfa,
       -0.2rem 0.1rem 1rem #00edfa, 0.2rem 0.1rem 1rem #00edfa,
       0 -0.5rem 2rem #008f97, 0 0.5rem 3rem #008f97;
+  }
+}
+
+@keyframes red_blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+@keyframes red_shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   }
 }
 

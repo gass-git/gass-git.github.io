@@ -13,7 +13,8 @@ export default function Display() {
     scrollerMsgIndex,
     latestArticle,
     SO_latestAnswer,
-    latestCommit
+    latestCommit,
+    appMuted
   } = state
 
   const messages = [
@@ -47,10 +48,10 @@ export default function Display() {
 
   return (
     <section id={s.display}>
-      <Logo />
+      <Logo dispatch={dispatch} appMuted={appMuted}/>
 
       <div className={s.screen}>
-        <Social />
+        <Social appMuted={appMuted}/>
 
         <div className={s.msg_display}>
           {

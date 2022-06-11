@@ -11,7 +11,7 @@ import bounce from '../../../../global/assets/sounds/bounce.wav'
 import unfa from '../../../../global/assets/sounds/unfa_select.flac'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
-export default function Social() {
+export default function Social({appMuted}) {
   const [pixels, setPixels] = useState('33px')
   const [degrees, setDegrees] = useState('180deg')
   const { windowWidth } = useWindowDimensions()
@@ -55,12 +55,12 @@ export default function Social() {
   }, [windowWidth])
 
   function goto(site) {
-    playSoundTwo()
     window.open(links[site], '_blank')
+    if(!appMuted) playSoundTwo()
   }
 
   function handleClick() {
-    //playSound()
+    if(!appMuted) playSound()
     if (pixels !== '270px') expand()
     else collapse()
   }

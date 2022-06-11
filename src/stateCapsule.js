@@ -1,6 +1,7 @@
 const initialState = {
   appLoading: true,
   selected: 'home',
+  appMuted: false,
   numberOfRenders: {home: 0, projects:0, writings:0, stats:0 },
   showModal: false,
   modalData: {},
@@ -28,6 +29,12 @@ function appReducer(state, action) {
         ...state,
         appLoading: false
       }
+
+    case 'update app mute state':
+      return {
+        ...state,
+        appMuted: !state.appMuted
+      }  
 
     case 'update navbar selection':
       return {

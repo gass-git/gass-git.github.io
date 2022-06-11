@@ -10,7 +10,7 @@ import { AppContext } from '../../../App'
 
 export default function Navbar() {
   const { state, dispatch } = useContext(AppContext)
-  const { selected } = state
+  const { selected, appMuted } = state
 
   const { windowWidth } = useWindowDimensions()
   const [showArrows, setShowArrows] = useState(false)
@@ -67,6 +67,7 @@ export default function Navbar() {
           <MovableContainer
             dispatch={dispatch}
             selected={selected}
+            appMuted={appMuted}
             links={links}
             translatedX={translatedX}
           />

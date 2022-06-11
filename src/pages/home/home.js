@@ -10,7 +10,7 @@ import sound from '../../global/assets/sounds/quick_blip_2.wav'
 
 export default function Home() {
   const { state, dispatch } = useContext(AppContext)
-  const { latest, numberOfRenders } = state
+  const { latest, numberOfRenders, appMuted } = state
   const [filtered, setFiltered] = useState(latest)
   const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
   const [playSound] = useSound(sound,{volume: 0.15, playbackRate: 2})
@@ -20,7 +20,7 @@ export default function Home() {
   }, [])
 
   function handleFilters(tag) {
-    playSound()
+    if(!appMuted) playSound()
 
     switch (tag) {
       case 'commits':

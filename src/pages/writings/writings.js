@@ -10,14 +10,14 @@ import { AppContext } from '../../App'
 
 export default function Writings() {
   const { state, dispatch } = useContext(AppContext)
-  const { articles, numberOfRenders } = state
+  const { articles, numberOfRenders, appMuted } = state
   const [tags, setTags] = useState([])
   const [selected, setSelected] = useState([])
   const [filtered, setFiltered] = useState(articles)
   const [playSound] = useSound(tickSound, { volume: 0.15, playbackRate: 2 })
 
   function handleSelected(tag) {
-    playSound()
+    if(!appMuted) playSound()
     // if the tag is not in selected array, add it
     if (!selected.includes(tag)) setSelected([...selected, tag])
     // if the tag is in selected array remove it

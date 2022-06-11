@@ -8,7 +8,7 @@ import techSound from '../../../global/assets/sounds/unfa_select.flac'
 import LoaderEffect from '../../../global/components/headerLoader/loaderEffect'
 import useSound from 'use-sound'
 
-export default function Header({ current, setCurrent, numberOfRenders }) {
+export default function Header({ current, setCurrent, numberOfRenders, appMuted }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
@@ -26,7 +26,7 @@ export default function Header({ current, setCurrent, numberOfRenders }) {
   }
 
   function updateCurrent(selected) {
-    switchSound()
+    if(!appMuted)switchSound()
     setCurrent(selected)
   }
 
