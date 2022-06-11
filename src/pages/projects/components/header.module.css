@@ -17,26 +17,25 @@
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
   border-top: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: inset -4px 4px 12px rgb(0, 0, 0, 0.5);
+  /*box-shadow: inset -4px 4px 12px rgb(0, 0, 0, 0.5);*/
 }
 
 .glass {
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
+  width: calc(100%-1px);
+  height: 100%;
   border-right: 1px solid white;
   overflow-x: hidden;
   border-image: linear-gradient(to bottom,
       rgb(255, 255, 255, 0.02),
       rgba(0, 0, 0, 0.9)) 1 100%;
   position: relative;
-  z-index: 1;
-  position: relative;
   background: linear-gradient(8deg,
-      rgba(255, 255, 255, 0) 20%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0.18) 80%);
-  width: calc(100%-1px);
-  height: 100%;
+      rgba(255, 255, 255, 0.01) 20%,
+      rgba(255, 255, 255, 0.03) 50%,
+      rgba(255, 255, 255, 0.05) 80%);
 }
 
 .movable_box {

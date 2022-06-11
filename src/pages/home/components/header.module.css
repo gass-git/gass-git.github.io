@@ -21,13 +21,13 @@
   z-index: 1; /* the loading effect is in z-index: 0 */
   height: var(--header-height);
   max-width: var(--header-max-width);
-  background-image: url("../../../global/assets/images/CP_home.gif");
+  background-image: url("../../../global/assets/images/CP_home_2_optimized.gif");
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
   border-radius: var(--border-radius-one);
   border-top: 1px solid rgba(255, 255, 255, 0.32);
-  box-shadow: inset -4px 4px 12px rgb(0, 0, 0, 1);
+  /*box-shadow: inset -4px 4px 12px rgb(0, 0, 0, 1);*/
 }
 
 .glass {
@@ -41,9 +41,9 @@
       rgb(255, 255, 255, 0.1)) 1 100%;
   position: relative;
   background: linear-gradient(8deg,
-      rgba(255, 255, 255, 0) 20%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0.18) 80%);
+      rgba(255, 255, 255, 0.01) 20%,
+      rgba(255, 255, 255, 0.03) 50%,
+      rgba(255, 255, 255, 0.05) 80%);
 }
 
 .movable_box {
