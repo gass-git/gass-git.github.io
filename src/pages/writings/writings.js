@@ -5,7 +5,7 @@ import FilterByTopic from './components/filterByTopics'
 import SectionTitle from '../../global/layouts/sectionTitle'
 import ContentWrapper from '../../global/layouts/contentWrapper'
 import useSound from 'use-sound'
-import tickSound from '../../global/assets/sounds/yake.wav'
+import tickSound from '../../global/assets/sounds/quick_blip_2.wav'
 import { AppContext } from '../../App'
 
 export default function Writings() {
@@ -14,7 +14,7 @@ export default function Writings() {
   const [tags, setTags] = useState([])
   const [selected, setSelected] = useState([])
   const [filtered, setFiltered] = useState(articles)
-  const [playSound] = useSound(tickSound, { volume: 0.15 })
+  const [playSound] = useSound(tickSound, { volume: 0.15, playbackRate: 2 })
 
   function handleSelected(tag) {
     playSound()

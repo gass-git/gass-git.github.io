@@ -12,7 +12,7 @@ export default function Header({ current, setCurrent, numberOfRenders }) {
   const ini = { pixels: '0px', degrees: '180deg' }
   const [pixels, setPixels] = useState(ini.pixels)
   const [degrees, setDegrees] = useState(ini.degrees)
-  const [switchSound] = useSound(techSound, { volume: 0.5 })
+  const [switchSound] = useSound(techSound, { volume: 0.2 })
 
   function expand() {
     if (pixels !== ini.pixels) {

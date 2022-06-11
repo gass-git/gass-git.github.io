@@ -4,23 +4,23 @@ import SectionTitle from '../../global/layouts/sectionTitle'
 import Header from './components/header'
 import FilterByEvent from './components/filterByEvent'
 import ContentWrapper from '../../global/layouts/contentWrapper'
-import useSound from 'use-sound'
-import tickSound from '../../global/assets/sounds/yake.wav'
 import { AppContext } from '../../App'
+import useSound from 'use-sound'
+import sound from '../../global/assets/sounds/quick_blip_2.wav'
 
 export default function Home() {
   const { state, dispatch } = useContext(AppContext)
   const { latest, numberOfRenders } = state
   const [filtered, setFiltered] = useState(latest)
   const [selected, setSelected] = useState({ commit: false, answer: false, article: false })
-  const [playSound] = useSound(tickSound, { volume: 0.15 })
+  const [playSound] = useSound(sound,{volume: 0.15, playbackRate: 2})
 
   useEffect(() => {
     dispatch({type:'update number of renders', page:'home'})
   }, [])
 
   function handleFilters(tag) {
-    //playSound()
+    playSound()
 
     switch (tag) {
       case 'commits':

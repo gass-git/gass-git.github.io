@@ -60,7 +60,7 @@ export default function Social() {
   }
 
   function handleClick() {
-    playSound()
+    //playSound()
     if (pixels !== '270px') expand()
     else collapse()
   }
