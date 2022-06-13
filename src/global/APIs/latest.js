@@ -1,4 +1,3 @@
-
 async function fetchLatest({ dispatch }) {
   const git_events = 'https://api.github.com/users/gass-git/events/public'
   const dev_articles = 'https://dev.to/api/articles?username=gass'
@@ -28,7 +27,6 @@ async function fetchLatest({ dispatch }) {
           detail: question_data.items[0].title,
           url: `https://stackoverflow.com/a/${el.answer_id}`
         })
-
         count++
       }
     }
@@ -40,9 +38,7 @@ async function fetchLatest({ dispatch }) {
     count = 0 // reset counter
 
     for await (let el of git_data) {
-      if (count === 10) {
-        break
-      }
+      if (count === 5) break
       else if (el.type === 'PushEvent') {
         let seconds = new Date(el.created_at).getTime() / 1000
 
@@ -55,7 +51,6 @@ async function fetchLatest({ dispatch }) {
           url: `https://github.com/${el.repo.name}`
         })
       }
-
       count++
     }
 
@@ -78,16 +73,17 @@ async function fetchLatest({ dispatch }) {
           url: el.url
         })
       }
-
       count++
     }
 
     return array
   }
 
+  /**
+   * sort array by most recent creation dates.
+   * note: the bigger 'created_at' number is, the more recent it is.
+   */
   fetchData().then((array) => {
-    // sort array by most recent creation dates.
-    // note: the bigger 'created_at' number is, the more recent it is.
     array.sort((a, b) => b.created_at - a.created_at)
     dispatch({ type: 'set latest', dataArray: array })
   })
