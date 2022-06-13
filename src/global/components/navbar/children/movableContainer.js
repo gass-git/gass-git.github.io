@@ -5,7 +5,7 @@ import s from '../navbar.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function MovableContainer({ links, translatedX, selected, dispatch, appMuted }) {
-  const [playSound] = useSound(selectionSound, { volume: 0.6})
+  const [playSound] = useSound(selectionSound, { volume: 1})
   const navigate = useNavigate()
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)
