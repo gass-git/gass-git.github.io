@@ -3,14 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
-
 :root {
   /* app margins */
   --app-container-margin: 40px auto;
   --top-section-margin: 25px 0 0 0;
   --content-section-margin: 30px 0 0 0;
-  --bottom-section-margin: 80px 0 15px 0;
+  --bottom-section-margin: 50px 0 15px 0;
 
   /* global styles */
   --box-shadow-one: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -111,8 +109,7 @@ body::-webkit-scrollbar-thumb:active {
   background-color: #34436d;
   min-height: 100vh;
   border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  /*border: 1px solid rgba(122, 235, 255, 0.25);*/
+  border: 1px solid rgba(255, 255, 255, 0.15);
   margin: var(--app-container-margin);
   width: 940px;
   background-image: repeating-linear-gradient(-45deg,
@@ -122,8 +119,7 @@ body::-webkit-scrollbar-thumb:active {
       transparent 6px);
   background-size: 3px 3px;
   height: auto;
-  /*background-color: rgb(24, 58, 100, 0.8);*/
-  box-shadow: rgba(50, 50, 93, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.35) 0px 8px 16px -8px, 0px 0px 8px 2px rgba(255, 255, 255, 0.1) inset;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #top {
@@ -139,7 +135,6 @@ body::-webkit-scrollbar-thumb:active {
 
 #bottom {
   margin: var(--bottom-section-margin);
-  padding: 0 10px 0 10px;
   /*border: 1px solid white;*/
 }
 

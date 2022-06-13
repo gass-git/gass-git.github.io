@@ -70,10 +70,9 @@ export default function App() {
             </Routes>
           </section>
 
-          <section id='bottom'>
-            <Footer />
-          </section>
-
+        <section id='bottom'>
+        </section>
+        
         </div>
       </AppContext.Provider>
     )
