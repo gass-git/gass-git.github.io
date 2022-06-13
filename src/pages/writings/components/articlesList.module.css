@@ -1,30 +1,42 @@
 #card {
   flex: 1;
-  margin: 20px 20px 0px 20px;
-  padding: 20px 30px 20px 30px;
-  border-radius: 5px;
-  transition: 200ms;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0px 65px 0px 65px;
+  padding: 30px 5px 30px 5px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
-#card:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+#card:hover > .title{
+  opacity:1;
+}
+
+#card:hover > .details{
+  opacity:0.8;
+}
+
+#card:hover > .description{
+  opacity: 0.9;
 }
 
 .title {
-  font-size: 19px;
+  transition: 200ms;
+  cursor: pointer;
+  font-size: 23px;
   color: #eee;
-  text-transform: capitalize;
+  opacity:0.8;
+  font-weight: 700;
 }
 
 .details {
-  color: rgba(0, 255, 255, 0.6);
+  transition: 200ms;
+  color: rgba(0, 255, 255);
+  opacity: 0.6;
   margin-top: 5px;
   font-size: 13px;
 }
 
 .description {
+  transition: 200ms;
   margin-top: 12px;
   color: lightblue;
   opacity: 0.7;
@@ -41,11 +53,11 @@
 
 .tag {
   display: inline-block;
-  padding: 2px 8px 3px 8px;
-  font-size: 12px;
+  padding: 3px 15px 4px 15px;
+  font-size: 13px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.9) !important;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(0, 237, 250,0.8) !important;
+  background-color: rgba(0, 0, 0, 0.3);
   color: black;
   border-radius: 2px;
   margin: 3px;
