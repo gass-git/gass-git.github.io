@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import useSound from 'use-sound'
-import selectionSound from '../../../assets/sounds/game_blip_2.wav'
+import selectionSound from '../../../assets/sounds/unfa_select.flac'
 import s from '../navbar.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function MovableContainer({ links, translatedX, selected, dispatch, appMuted }) {
-  const [playSound] = useSound(selectionSound, { volume: 1})
+  const [playSound] = useSound(selectionSound, { volume: 0.4, playbackRate:1})
   const navigate = useNavigate()
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)

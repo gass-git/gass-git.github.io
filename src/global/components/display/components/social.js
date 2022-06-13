@@ -7,8 +7,8 @@ import { ReactComponent as Codepen } from '../../../../global/assets/SVGs/codepe
 import { ReactComponent as Github } from '../../../../global/assets/SVGs/github.svg'
 import { ReactComponent as Twitter } from '../../../../global/assets/SVGs/twitter.svg'
 import useSound from 'use-sound'
-import bounce from '../../../../global/assets/sounds/bounce.wav'
-import unfa from '../../../../global/assets/sounds/unfa_select.flac'
+import soundOne from '../../../../global/assets/sounds/bounce.wav'
+import soundTwo from '../../../../global/assets/sounds/magic.wav'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
 export default function Social({appMuted}) {
@@ -16,8 +16,8 @@ export default function Social({appMuted}) {
   const [degrees, setDegrees] = useState('180deg')
   const { windowWidth } = useWindowDimensions()
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [playSound] = useSound(bounce, { volume: 0.2, playbackRate: 2 })
-  const [playSoundTwo] = useSound(unfa, {volume: 0.2})
+  const [playSound] = useSound(soundOne, { volume: 0.2, playbackRate: 2 })
+  const [playSoundTwo] = useSound(soundTwo, {volume: 0.7 })
   const links = {
     SO: `https://stackoverflow.com/users/14895985/gass?tab=profile`,
     github: `https://github.com/gass-git`,
