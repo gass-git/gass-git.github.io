@@ -1,3 +1,10 @@
+@media screen and (max-width:650px){
+  #card{
+    margin: 0px 20px 0px 20px!important;
+    padding: 20px 30px 20px 30px!important;
+  }
+}
+
 #card {
   flex: 1;
   margin: 0px 65px 0px 65px;
