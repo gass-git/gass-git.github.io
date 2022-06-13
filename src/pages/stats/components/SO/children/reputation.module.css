@@ -5,8 +5,7 @@
   flex: auto;
   padding: 25px 0px 35px 30px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .title {

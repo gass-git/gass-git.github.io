@@ -1,14 +1,14 @@
 #project_card {
   flex: 1;
   height: fit-content;
-  margin: 20px 20px 0px 20px;
-  padding: 35px 30px 35px 30px;
+  margin: 20px 0px 0px 0px;
+  padding: 25px 20px 25px 20px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #project_card:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .header {
@@ -19,10 +19,10 @@
   display: flex;
   flex: auto;
   align-items: center;
-  font-size: 18px;
+  font-size: 22px;
   color: #eee;
-  text-transform: capitalize;
-  font-weight: 500;
+  opacity: 0.7;
+  font-weight: 600;
 }
 
 .header .right_box {
@@ -70,11 +70,11 @@
 
 .tag {
   display: inline-block;
-  padding: 2px 8px 3px 8px;
-  font-size: 12px;
+  padding: 3px 15px 4px 15px;
+  font-size: 13px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.9) !important;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(0, 237, 250,0.8) !important;
+  background-color: rgba(0, 0, 0, 0.3);
   color: black;
   border-radius: 2px;
   margin: 3px;

@@ -34,7 +34,7 @@ export default function Pinned({ src, data, images }) {
         <div className={s.right}>
           <FontAwesomeIcon
             icon={faImages}
-            style={{ fontSize: '30px', margin: '0px 20px 0px 7px' }}
+            style={{ fontSize: '35px', margin: '0px 20px 0px 7px' }}
             onClick={() => dispatch({ type: 'show modal', data: data, images: images })}
           />
           <Github

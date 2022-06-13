@@ -7,10 +7,15 @@
 
 #card {
   flex: 1;
-  margin: 0px 65px 0px 65px;
-  padding: 30px 5px 30px 5px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  margin: 15px 30px 20px 30px;
+  padding: 35px 30px 35px 30px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+#card:hover{
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 #card:hover > .title{
@@ -26,7 +31,6 @@
 }
 
 .title {
-  transition: 200ms;
   cursor: pointer;
   font-size: 23px;
   color: #eee;
