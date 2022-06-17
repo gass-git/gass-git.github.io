@@ -13,7 +13,7 @@
     border-radius: 5px;
     background-size: 200% 100%;
     animation: 1.5s shine linear;
-    animation-iteration-count: 20;
+    animation-iteration-count: 30;
   }
 
   @keyframes shine {

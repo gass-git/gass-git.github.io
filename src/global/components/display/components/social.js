@@ -8,7 +8,6 @@ import { ReactComponent as Github } from '../../../../global/assets/SVGs/github.
 import { ReactComponent as Twitter } from '../../../../global/assets/SVGs/twitter.svg'
 import useSound from 'use-sound'
 import soundOne from '../../../../global/assets/sounds/bounce.wav'
-import soundTwo from '../../../../global/assets/sounds/magic.wav'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
 export default function Social({appMuted}) {
@@ -17,7 +16,6 @@ export default function Social({appMuted}) {
   const { windowWidth } = useWindowDimensions()
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [playSound] = useSound(soundOne, { volume: 0.2, playbackRate: 2 })
-  const [playSoundTwo] = useSound(soundTwo, {volume: 0.7 })
   const links = {
     SO: `https://stackoverflow.com/users/14895985/gass?tab=profile`,
     github: `https://github.com/gass-git`,
@@ -56,7 +54,6 @@ export default function Social({appMuted}) {
 
   function goto(site) {
     window.open(links[site], '_blank')
-    if(!appMuted) playSoundTwo()
   }
 
   function handleClick() {
