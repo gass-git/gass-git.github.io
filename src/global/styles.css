@@ -207,9 +207,9 @@ classes and animations used for Headers
 @media screen and (max-width:849px) {
   .app_container {
     min-width: 375px !important;
-    width: 100vw !important;
+    width: calc(100vw - (100vw - 100%));
     border-radius: 0px;
-    border: 1px solid transparent;
+    border: 0px;
     margin: 0 !important;
     background-color: rgb(24, 58, 100);
     box-shadow: none;
