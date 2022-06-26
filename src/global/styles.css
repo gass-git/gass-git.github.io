@@ -61,7 +61,7 @@
 }
 
 * {
-  /* Removes ugly highlight onclick (touch screens) */
+  /* removes ugly highlight onclick (touch screens) */
   -webkit-tap-highlight-color: transparent; 
 }
 
