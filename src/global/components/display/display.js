@@ -7,7 +7,6 @@ import Logo from './components/logo'
 export default function Display() {
   const { state, dispatch } = useContext(AppContext)
   const {
-    uniqueVisits,
     guestLocation,
     scrollerSwitch,
     scrollerMsgIndex,
@@ -22,16 +21,13 @@ export default function Display() {
       Welcome fellow visitor from {guestLocation ? guestLocation : 'unknown'}!
     </Fragment>,
     <Fragment>
-      Unique visitors to date: {uniqueVisits} and counting...
-    </Fragment>,
-    <Fragment>
       Last blog post on DevTo - {latestArticle}
     </Fragment>,
     <Fragment>
       Latest on Stack Overflow - {SO_latestAnswer}
     </Fragment>,
     <Fragment>
-      Latest GitHub commit - {latestCommit.comment} (repo: {latestCommit.repo})
+      {latestCommit.comment ? `Latest GitHub commit ${latestCommit.comment} - (repo: ${latestCommit.repo})` : null }
     </Fragment>,
     <Fragment>
       Thanks to: FontAwesome, SVG Backgrounds, Axios, AOS, React, useSound hook and the artists behind the cyberpunk gifs..

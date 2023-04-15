@@ -42,13 +42,18 @@ function getLatestCommit({ dispatch }) {
   axios.get(events_api)
     .then((resp) => {
       let gitEvents = resp.data
-      let filteredEvents = gitEvents.filter((obj) => 'commits' in obj.payload)
-      let obj = {
-        comment: filteredEvents[0].payload.commits[0].message,
-        repo: filteredEvents[0]['repo']['name'].slice(9)
+      
+      // if there are no events in the last 90 days resp.data will be empty
+      if(gitEvents.length !== 0){
+        let filteredEvents = gitEvents.filter((obj) => 'commits' in obj.payload)
+        let obj = {
+          comment: filteredEvents[0].payload.commits[0].message,
+          repo: filteredEvents[0]['repo']['name'].slice(9)
+        }
+        dispatch({ type: 'set latest commit', dataObj: obj })
       }
-      dispatch({ type: 'set latest commit', dataObj: obj })
     })
+    .catch((error) => console.log(error))
 }
 
 export { fetchRepos, getLatestCommit, fetchGithubStats }

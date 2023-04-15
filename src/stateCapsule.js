@@ -12,7 +12,6 @@ const initialState = {
   SO_topTech: [],
   SO_scores: {},
   githubStats: {},
-  uniqueVisits: null,
   guestLocation: null,
   scrollerSwitch: 'on',
   scrollerMsgIndex: 0,
@@ -59,6 +58,7 @@ function appReducer(state, action) {
         ...state,
         numberOfRenders: {...state.numberOfRenders, stats: state.numberOfRenders['stats'] + 1}
       }
+      break;
 
     case 'show modal':
       return {
@@ -108,12 +108,6 @@ function appReducer(state, action) {
       return {
         ...state,
         githubStats: action.dataObj
-      }
-
-    case 'set visits count':
-      return {
-        ...state,
-        uniqueVisits: action.count
       }
 
     case 'set guest location':

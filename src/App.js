@@ -6,10 +6,8 @@ import Home from './pages/home/home'
 import Projects from './pages/projects/projects'
 import Stats from './pages/stats/stats'
 import Writings from './pages/writings/writings'
-import Footer from './global/components/footer/footer'
 import Display from './global/components/display/display'
 import fetchAllData from './global/functions/fetchAllData'
-import { processVisit } from './global/APIs/visits'
 import Spinner from './global/components/spinner/spinner'
 import './global/styles.css'
 import AOS from 'aos'
@@ -26,7 +24,7 @@ export default function App() {
   useEffect(() => {
     AOS.init({ once: true })
     fetchAllData({ dispatch })
-    processVisit()
+
     setTimeout(() => {
       dispatch({ type: 'loading completed' })
     }, 4000)

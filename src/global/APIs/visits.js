@@ -17,8 +17,4 @@ function getVisitorLocation({ dispatch }) {
     })
 }
 
-function processVisit() {
-  axios.post('https://api.gass.dev/save_ip')
-}
-
-export { getUniqueVisits, getVisitorLocation, processVisit }
+export { getUniqueVisits, getVisitorLocation }
