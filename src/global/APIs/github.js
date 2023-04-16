@@ -21,7 +21,7 @@ function fetchRepos({ dispatch }) {
   axios.get(repos_api)
     .then((resp) => {
       resp.data.forEach((repo) => {
-        if (repo.name !== "mechanised" && repo.description !== null && repo.homepage !== '' && repo.homepage !== null && !repo.fork) {
+        if (repo.description !== null && repo.homepage !== '' && repo.homepage !== null && !repo.fork) {
           data.push({
             id: repo.id,
             name: repo.name,
