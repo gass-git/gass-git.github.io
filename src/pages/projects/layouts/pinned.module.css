@@ -34,16 +34,6 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.top .middle {
-  display: flex;
-  width: auto;
-  margin-right: 5px;
-  color: rgb(0, 255, 255, 0.8);
-  justify-content: flex-end;
-  align-items: center;
-  overflow-x: hidden;
-}
-
 .movable_text {
   width: 65px;
   height: 40px;

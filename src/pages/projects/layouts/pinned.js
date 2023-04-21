@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
 import { ReactComponent as Folder } from '../../../global/assets/SVGs/folder.svg'
 import { ReactComponent as Github } from '../../../global/assets/SVGs/github.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faImages } from '@fortawesome/free-regular-svg-icons'
+import { ReactComponent as Link } from '../../../global/assets/SVGs/link.svg'
 import { AppContext } from '../../../App'
 import s from './pinned.module.css'
 
@@ -22,21 +21,16 @@ export default function Pinned({ src, data, images }) {
 
         </div>
 
-        <div className={s.middle}>
-          <div className={s.movable_text}>
-            <div style={{ marginTop: '9px' }}>
-              See Live
-            </div>
-
-          </div>
-        </div>
-
         <div className={s.right}>
-          <FontAwesomeIcon
-            icon={faImages}
-            style={{ fontSize: '35px', margin: '0px 20px 0px 7px' }}
-            onClick={() => dispatch({ type: 'show modal', data: data, images: images })}
-          />
+          {
+            data.project_url.length > 0 && 
+            <Link
+              id={s.link_icon}
+              style={{ margin: '0px 20px 0px 7px' }}
+              onClick={() => window.open(data.project_url, '_blank')}
+            />
+          }
+          
           <Github
             onClick={() => window.open(data.repo_url, 'blank')}
           />
@@ -46,7 +40,7 @@ export default function Pinned({ src, data, images }) {
 
       <div
         className={s.preview}
-        onClick={() => window.open(data.project_url, 'blank')}
+        onClick={() => dispatch({ type: 'show modal', data: data, images: images })}
       >
         <div className={s.image_wrapper}>
           <img src={src} alt='preview' />

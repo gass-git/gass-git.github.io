@@ -15,13 +15,13 @@ function fetchGithubStats({ dispatch }) {
     })
 }
 
-function fetchRepos({ dispatch }) {
+function fetchRepos({ dispatch }, pinnedProjects) {
   let data = []
 
   axios.get(repos_api)
     .then((resp) => {
       resp.data.forEach((repo) => {
-        if (repo.description !== null && repo.homepage !== '' && repo.homepage !== null && !repo.fork) {
+        if ((repo.description !== null && repo.homepage !== '' && repo.homepage !== null && !repo.fork) || pinnedProjects.includes(repo.name)) {
           data.push({
             id: repo.id,
             name: repo.name,

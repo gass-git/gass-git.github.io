@@ -5,9 +5,9 @@ import { fetchLatest } from '../APIs/latest'
 import { getVisitorLocation } from '../APIs/visits'
 import { getLatestAnswer } from '../APIs/SO'
 
-export default function fetchAllData({dispatch}){
+export default function fetchAllData({dispatch}, pinnedProjects){
     fetchLatest({ dispatch })
-    fetchRepos({ dispatch })
+    fetchRepos({ dispatch }, pinnedProjects)
     fetchArticles({ dispatch })
     fetchReputation({ dispatch })
     fetchTopTech({ dispatch })

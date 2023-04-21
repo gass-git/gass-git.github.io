@@ -20,17 +20,18 @@ export default function App() {
   const [state, dispatch] = useReducer(appReducer, initialState)
   const { selected, appLoading } = state
   const location = useLocation()
+  const pinnedProjects = ["dev-plus", "tip-me-dash"]
 
   useEffect(() => {
     AOS.init({ once: true })
-    fetchAllData({ dispatch })
+    fetchAllData({ dispatch }, pinnedProjects)
 
     setTimeout(() => {
       dispatch({ type: 'loading completed' })
     }, 4000)
     let interval = setInterval(() => dispatch({ type: 'next scroller msg' }), 20500)
     return () => clearInterval(interval)
-  }, [])
+  }, []) // eslint-disable-line
 
   useEffect(() => {
     if (selected !== location.pathname.slice(1)) {
