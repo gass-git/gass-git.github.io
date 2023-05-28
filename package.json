@@ -1,7 +1,7 @@
 {
   "name": "torando",
   "version": "0.1.0",
-  "homepage": "https://gass-git.github.io/mechanised/",
+  "homepage": "https://gass-git.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
